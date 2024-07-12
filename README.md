@@ -1,5 +1,8 @@
 ## Leetcode PlayLists
+
 https://www.youtube.com/@UnNaGo
+
+The recordings are without spoken words, instead typing sounds and peaceful music are included. This is to keep calm and write code focusing more on my thought process. You will find a certain length of annotations for each question, sometimes longer than its actual code, this is intentional as opposed to an immediate jump into answering questions. I start recordings by paraphrasing the question with my own words and then explain my problem-solving process based on the examples. While writing Python codes, sometimes I fix them if something is wrong or if typing errors by human nature. By the end of the writing code, I also added my test cases.
 
 ## Syntax Cheatsheet
 ### List
