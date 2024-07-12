@@ -1,5 +1,5 @@
 # 104. Maximum Depth of Binary Tree
-# https://leetcode.com/problems/maximum-depth-of-binary-tree
+# https://leetcode.com/problems/maximum-depth-of-binary-tree/
 
 # Definition for a binary tree node.
 # class TreeNode:
@@ -8,14 +8,11 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
-        def _dfs(tree, i):
-            if tree is None:
-                return i
-            depth_left = _dfs(tree.left, i+1)
-            depth_right = _dfs(tree.right, i+1)
+    def maxDepth(self, root: Optional[TreeNode], i=0) -> int:        
+        if root is None:
+            return i
 
-            return max(depth_left, depth_right)
+        depth_left = self.maxDepth(root.left, i+1)
+        depth_right = self.maxDepth(root.right, i+1)
 
-        return _dfs(root, 0)
-    
+        return max(depth_left, depth_right)
