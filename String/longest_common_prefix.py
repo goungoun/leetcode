@@ -18,7 +18,7 @@ class Solution:
 
         Approach:
         Use zip to reconstruct strs
-        And add character if the length of the set is zero
+        And add character if the length of the set is 1
         (f,f,f) => len_set = 1 add f
         (l,l,l) => len_set = 1 add l
         (o,o,i) => len_set = 2 <stop>
