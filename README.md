@@ -1,6 +1,6 @@
 ## Leetcode PlayLists
 
-https://www.youtube.com/@UnNaGo
+https://www.youtube.com/@leetcode-playlists
 
 The recordings are without spoken words, instead typing sounds and peaceful music are included. This is to keep calm and write code focusing more on my thought process. 
 
