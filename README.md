@@ -39,13 +39,13 @@ https://www.youtube.com/@UnNaGo
 266 root.left, root.right = root.right, root.left
 ```
 
-## Exception
+### Exceptions
 ```python
 70 raise ValueError (f"1 <= n <= 45, n={n}")
 
 ```
 
-## Function
+### Functions
 ```python
 67 carry, r = divmod(n1 + n2 + carry,2)
 ```
