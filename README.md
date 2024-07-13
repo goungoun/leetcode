@@ -7,11 +7,12 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 ## Syntax Cheatsheet
 ### List
 ```python
+70 memo = [-1]*(n+1)
 215 l = [-x for x in nums]
 67 l1 = [int(x) for x in a]
 67 n1 = l1.pop() if l1 else 0
 67 return "".join(l[::-1])
-70 memo = [-1]*(n+1)
+58 return len(s.strip().split()[-1])
 ```
 
 ### Set
