@@ -13,6 +13,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 67 n1 = l1.pop() if l1 else 0
 67 return "".join(l[::-1])
 58 return len(s.strip().split()[-1])
+189 nums[:] = nums[-a:] + nums[:-a]
 ```
 
 ### Dictionary
