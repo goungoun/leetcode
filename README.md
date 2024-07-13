@@ -15,6 +15,15 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 58 return len(s.strip().split()[-1])
 ```
 
+### Dictionary
+```python
+1 d = {}
+1 if search in d: # O(1)
+
+383 from collections import Counter
+383 d = Counter(magazine)
+```
+
 ### Set
 ```python
 14 s = set(t)
