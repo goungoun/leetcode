@@ -20,6 +20,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 ```python
 1 d = {}
 1 if search in d: # O(1)
+508 if n not in memo:
 
 383 from collections import Counter
 383 d = Counter(magazine)
