@@ -1,14 +1,29 @@
 ## Leetcode PlayLists
-https://www.youtube.com/@UnNaGo
+
+https://www.youtube.com/@goungouna
+
+The recordings are without spoken words, instead typing sounds and peaceful music are included. This is to keep calm and write code focusing more on my thought process. 
 
 ## Syntax Cheatsheet
 ### List
 ```python
+70 memo = [-1]*(n+1)
 215 l = [-x for x in nums]
 67 l1 = [int(x) for x in a]
 67 n1 = l1.pop() if l1 else 0
 67 return "".join(l[::-1])
-70 memo = [-1]*(n+1)
+58 return len(s.strip().split()[-1])
+189 nums[:] = nums[-a:] + nums[:-a]
+```
+
+### Dictionary
+```python
+1 d = {}
+1 if search in d: # O(1)
+508 if n not in memo:
+
+383 from collections import Counter
+383 d = Counter(magazine)
 ```
 
 ### Set
