@@ -74,8 +74,11 @@ RecursionError: maximum recursion depth exceeded in comparison
 ```
 ### RuntimeError
 Invalid Syntax
+
 NameError: Name mergeTwoLIsts is not defined
+
 TypeError: Solution.mergeTwoLists() takes 2 positional arguments but 3 were given
+
 ```python
 23 def mergeTwoLIsts (list1, list2) # Fix: mergeTwoLIsts (self, list1, list2)
 ```
