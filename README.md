@@ -65,3 +65,11 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 67 carry, r = divmod(n1 + n2 + carry,2)
 ```
 
+
+## Errors
+### RecursionError
+RecursionError: maximum recursion depth exceeded in comparison
+```python
+200   grid[row][col] == "0" # Fix: grid[row][col] = "0"
+```
+
