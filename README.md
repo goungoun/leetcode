@@ -82,5 +82,5 @@ TypeError: Solution.mergeTwoLists() takes 2 positional arguments but 3 were give
 ### TypeError
 TypeError: divmod expected 2 arguments, got 1
 ```python
-carry, r = divmod(n1 + n2 + carry) # Fix:  carry, r = divmod(n1 + n2 + carry, 2)
+67 carry, r = divmod(n1 + n2 + carry) # Fix:  carry, r = divmod(n1 + n2 + carry, 2)
 ```
