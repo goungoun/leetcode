@@ -15,7 +15,7 @@ class Solution:
 
         Approach:
         Bottom-up approach without a recursive call
-        Replaced an array or a dictionary for cache with two variable, prv and pprv 
+        Replaced an array or a dictionary for cache with two variables, prv and pprv 
         """
 
         if n == 0 or n == 1:
