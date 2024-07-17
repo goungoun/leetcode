@@ -18,10 +18,10 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 
 ### Queue
 ```python
-from collections import deque
-q = deque([root])
-node = q.popleft()
-q.append(node.left)
+637 from collections import deque
+637 q = deque([root])
+637 node = q.popleft()
+637 q.append(node.left)
 ```
 
 ### Dictionary
