@@ -16,6 +16,14 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 189 nums[:] = nums[-a:] + nums[:-a]
 ```
 
+### Queue
+```python
+637 from collections import deque
+637 q = deque([root])
+637 node = q.popleft()
+637 q.append(node.left)
+```
+
 ### Dictionary
 ```python
 1 d = {}
