@@ -15,6 +15,10 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 58 return len(s.strip().split()[-1])
 189 nums[:] = nums[-a:] + nums[:-a]
 ```
+### String
+```python
+9 rs = "".join(list(reversed(s)))
+```
 
 ### Queue
 ```python
