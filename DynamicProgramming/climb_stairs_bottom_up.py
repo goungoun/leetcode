@@ -21,13 +21,13 @@ class Solution:
         if n == 0 or n == 1:
             return 1 
 
-        prv = 1 # n = 0
-        pprv = 1 # n = 1
+        pprv = 1 # n = 0
+        prv = 1 # n = 1
 
         curr = 0
         # T=O(n), S=O(1)
         for i in range(2,n+1):
-            curr = prv + pprv
+            curr = pprv + prv
             pprv = prv
             prv = curr
 
