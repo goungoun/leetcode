@@ -17,7 +17,8 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 ```
 ### String
 ```python
-9 rs = "".join(list(reversed(s)))
+9 # rs = "".join(list(reversed(s)))
+9 return s == s[::-1]
 ```
 
 ### Queue
