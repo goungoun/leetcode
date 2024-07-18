@@ -14,7 +14,8 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 67 return "".join(l[::-1])
 58 return len(s.strip().split()[-1])
 189 nums[:] = nums[-a:] + nums[:-a]
-6 l = [[0 for i in range(n)] for j in range(n)]  # Do not initialize like this: [[None] * n] * n
+6 # Unexpected behavior with this initialization: l = [[None] * n] * n
+6 l = [[0 for _ in range(n)] for _ in range(n)]
 ```
 ### String
 ```python
