@@ -45,7 +45,7 @@ class Solution:
 
             invertAdj(row, col-1) # left
             invertAdj(row, col+1) # right
-            invertAdj(row-1, col) # top
+            invertAdj(row-1, col) # up
             invertAdj(row+1, col) # down
 
         # O(mn)
