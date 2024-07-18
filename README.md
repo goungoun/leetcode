@@ -39,6 +39,10 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 
 383 from collections import Counter
 383 d = Counter(magazine)
+
+# key: (row,col), value: char
+6 d = {(0,0):s[0]} 
+6 d[(row, col)] = c
 ```
 
 ### Set
