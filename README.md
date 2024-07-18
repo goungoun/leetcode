@@ -14,6 +14,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 67 return "".join(l[::-1])
 58 return len(s.strip().split()[-1])
 189 nums[:] = nums[-a:] + nums[:-a]
+
 6 # Unexpected behavior with this initialization: l = [[None] * n] * n
 6 l = [[0 for _ in range(n)] for _ in range(n)]
 ```
@@ -64,6 +65,9 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 
 ### Loop
 ```python
+704 l,r = 0, len(nums)-1 
+704 while l <= r:
+
 215 for _ in range(k):
 ```
 
