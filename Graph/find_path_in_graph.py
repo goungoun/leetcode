@@ -47,7 +47,7 @@ class Solution:
             graph[u].append(v)
             graph[v].append(u)
 
-        visited = set()
+        visited = set([source])
 
         def dfs(vertex):
             if vertex == destination:
