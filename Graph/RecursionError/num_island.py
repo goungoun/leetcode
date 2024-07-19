@@ -41,7 +41,7 @@ class Solution:
                 grid[row][col] != "1":
                 return
 
-            grid[row][col] == "0"
+            grid[row][col] == "0" # Fix: grid[row][col] = "0"
 
             invertAdj(row, col-1) # left
             invertAdj(row, col+1) # right
