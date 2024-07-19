@@ -58,6 +58,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 
 ### Heap
 ```python
+215 import heapq
 215 heapify(l)
 215 smallest_val = heappop(l)
 ```
@@ -111,12 +112,9 @@ RecursionError: maximum recursion depth exceeded in comparison
 200   grid[row][col] == "0" # Fix: grid[row][col] = "0"
 ```
 ### RuntimeError
-Invalid Syntax
-
-NameError: Name mergeTwoLIsts is not defined
-
+Invalid Syntax <br>
+NameError: Name mergeTwoLIsts is not defined <br>
 TypeError: Solution.mergeTwoLists() takes 2 positional arguments but 3 were given
-
 ```python
 23 def mergeTwoLIsts (list1, list2) # Fix: mergeTwoLIsts (self, list1, list2)
 ```
