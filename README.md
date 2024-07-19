@@ -41,13 +41,12 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 383 from collections import Counter
 383 d = Counter(magazine)
 
-# key: (row,col), value: char
-6 d = {(0,0):s[0]} 
+6 d = {(0,0):s[0]} # key: (row,col), value: char
 6 d[(row, col)] = c
 
-# defaultdict
 1971 from collections import defaultdict
 1971 graph = defaultdict(list)
+1971 graph[u].append(v)
 ```
 
 ### Set
