@@ -39,7 +39,7 @@ class Solution:
 
             flood(row, col-1) # left
             flood(row, col+1) # right
-            flood(row-1, col) # top
+            flood(row-1, col) # up
             flood(row+1, col) # down
         
         flood(sr, sc)
