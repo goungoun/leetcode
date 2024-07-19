@@ -56,6 +56,11 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 ```python
 215 heapify(l)
 215 smallest_val = heappop(l)
+
+### Graph
+```python
+200 def numIslands(self, grid: List[List[str]]) # matrix
+1971 def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool: # edges = [[0,1],[1,2],[2,0]]
 ```
 
 ### Zip
