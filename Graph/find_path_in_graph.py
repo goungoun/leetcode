@@ -38,27 +38,26 @@ class Solution:
         Traverse the graph DFS or BFS
         Return True if the destination is visited
         """
-
-        # key: vertex, value: adjacent vertexs e.g. {0: [1,2]}
         graph = defaultdict(list)
 
-        # bi-directional edge: u->v, v->u
+        # bi-directional
         for u, v in edges:
             graph[u].append(v)
             graph[v].append(u)
 
         visited = set([source])
+        queue = deque([source])
 
-        def dfs(vertex):
+        # BFS
+        while queue:
+            vertex = queue.popleft()
             if vertex == destination:
                 return True
 
-            for adj_vertex in graph[vertex]:
-                if adj_vertex not in visited:
-                    visited.add(adj_vertex)
-                    if dfs(adj_vertex):
-                        return True
+            for adj in graph[vertex]:
+                if adj not in visited:
+                    visited.add(adj)
+                    queue.append(adj)
 
-            return False
+        return False
 
-        return dfs(source)
