@@ -52,16 +52,12 @@ class Solution:
             if curr_color == target_color and curr_color != color:
                 image[row][col] = color
 
-                adjs = [(row,col-1), 
-                        (row,col+1), 
-                        (row-1,col), 
-                        (row+1,col)]
-
-                valid_adjs = [(r, c) for r, c in adjs \
-                    if r >= 0 and c >= 0 and r < m and c < n]
-
-                for row,col in valid_adjs:
-                    queue.append((row, col))
+                adjs = [(row,col-1), (row,col+1),
+                        (row-1,col), (row+1,col)]
+                        
+                for row,col in adjs:
+                    if row >= 0 and col >= 0 and row < m and col < n:
+                        queue.append((row, col))
 
         return image
 
