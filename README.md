@@ -14,6 +14,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 67 return "".join(l[::-1])
 58 return len(s.strip().split()[-1])
 189 nums[:] = nums[-a:] + nums[:-a]
+733 valid_adjs = [(r, c) for r, c in adjs if r >= 0 and c >= 0 and r < m and c < n]
 
 6 # Unexpected behavior with this initialization: l = [[None] * n] * n
 6 l = [[0 for _ in range(n)] for _ in range(n)]
