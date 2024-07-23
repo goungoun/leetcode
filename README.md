@@ -18,6 +18,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 463 adj_land = [(r,c) for r,c in adj if 0 <= r < m and 0 <= c < n and grid[r][c]==1]
 6 # Unexpected behavior with this initialization: l = [[None] * n] * n
 6 l = [[0 for _ in range(n)] for _ in range(n)]
+1051 expected.extend([i]*counter[i])
 ```
 ### String
 ```python
