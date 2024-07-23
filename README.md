@@ -78,6 +78,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 ### Zip
 ```python
 14 z = zip(*strs)
+2418 l = sorted(list(zip(names, heights)), key=lambda item: item[1], reverse=True)
 ```
 
 ### Loop
