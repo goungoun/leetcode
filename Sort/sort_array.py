@@ -29,16 +29,16 @@ class Solution:
         if nums is None or len(nums) <= 1:
             return nums
         
-        mid = nums[len(nums)//2]
+        pivot = nums[len(nums)//2]
 
         l = []
         m = []
         r = []
 
         for num in nums:
-            if num < mid:
+            if num < pivot:
                 l.append(num)
-            elif num > mid:
+            elif num > pivot:
                 r.append(num)
             else:
                 m.append(num)
