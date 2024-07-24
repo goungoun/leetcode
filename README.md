@@ -114,7 +114,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 RecursionError: maximum recursion depth exceeded in comparison
 ```python
 200 grid[row][col] == "0" # Fix: grid[row][col] = "0"
-912 pivot = len(nums)//2 # FIX: pivot = nums[len(nums)//2]
+912 pivot = len(nums)//2 # Fix: pivot = nums[len(nums)//2]
 ```
 ### RuntimeError
 Invalid Syntax <br>
