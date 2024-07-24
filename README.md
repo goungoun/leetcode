@@ -1,8 +1,6 @@
 ## Leetcode PlayLists
-
 https://www.youtube.com/@goungouna
-
-The recordings are without spoken words, instead typing sounds and peaceful music are included. This is to keep calm and write code focusing more on my thought process. 
+The recordings are without spoken words, instead typing sounds and peaceful music are included.
 
 ## Syntax Cheatsheet
 ### List
