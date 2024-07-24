@@ -49,6 +49,7 @@ class Solution:
 
         visited = set([source])
 
+        # O(V+E)
         def dfs(vertex):
             if vertex == destination:
                 return True
