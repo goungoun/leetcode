@@ -22,8 +22,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 ```
 ### String
 ```python
-9 # rs = "".join(list(reversed(s)))
-9 return s == s[::-1]
+9 return s == s[::-1] # "".join(list(reversed(s)))
 28 haystack.find(needle)
 ```
 
