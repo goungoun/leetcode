@@ -56,6 +56,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 14 s = set(t) # tuple is iterable
 14 prefix.append(s.pop())
 1971 visited = set([source])
+1971 visited.add(adj_vertex)
 ```
 
 ### Heap
