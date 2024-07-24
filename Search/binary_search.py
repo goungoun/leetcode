@@ -5,14 +5,15 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         """
         Write a binary search algorithm with O(log n) complexity
+        nums are sorted in ascending order
+        
         return index (not its value) if target exists, otherwise -1
 
         Approach:
         Use three indexes left(l), right(r), and mid
         Update left or right to decrease its search scope
         
-
-        Example:
+        Example: 
         nums = [-1,0,3,5,9,12], target = 9
         [-,-,-,-,9,12]
         l=0, r=5, mid=(0+5)//2=2 nums[mid]=3 < 9
