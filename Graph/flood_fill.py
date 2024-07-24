@@ -12,7 +12,7 @@ class Solution:
 
         Approach: 
         From the current position as a center 
-        To the left, right, top, down recursive change
+        To the left, right, up, down recursive change
         Do not reapply the color if already has the target color
         
         Example:
