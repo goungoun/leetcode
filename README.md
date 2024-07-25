@@ -48,7 +48,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 1971 graph = defaultdict(list)
 1971 graph[u].append(v)
 
-207 d = {i:[] for i in range(numCourses)}
+207 d = defaultdict(list) # d = {i:[] for i in range(numCourses)}
 ```
 
 ### Set
