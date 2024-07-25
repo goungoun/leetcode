@@ -26,6 +26,8 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 
 ### Queue
 ```python
+67 q.appendleft(carry)
+67 return "".join(map(str, q))
 637 from collections import deque
 637 q = deque([root])
 637 node = q.popleft()
