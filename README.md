@@ -17,6 +17,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 6 # Unexpected behavior with this initialization: l = [[None] * n] * n
 6 l = [[0 for _ in range(n)] for _ in range(n)]
 1051 expected.extend([i]*counter[i])
+136 return reduce(lambda x, y: x ^ y, nums, 0)
 ```
 ### String
 ```python
