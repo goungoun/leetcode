@@ -22,6 +22,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 ```python
 9 return s == s[::-1] # "".join(list(reversed(s)))
 28 haystack.find(needle)
+191 return str(bin(n))[2:].count('1')
 ```
 
 ### Queue
