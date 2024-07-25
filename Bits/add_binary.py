@@ -42,3 +42,26 @@ class Solution:
             l.append(str(carry))
 
         return "".join(l[::-1])
+
+    def addBinary_bak(self, a: str, b: str) -> str:
+        """
+        A queue for a result
+        q.appendleft(r), "".join(map(str, q))
+        """
+        s1 = [int(x) for x in a]
+        s2 = [int(x) for x in b]
+
+        carry = 0
+        q = collections.deque([])
+
+        while s1 or s2:
+            p1 = s1.pop() if s1 else 0
+            p2 = s2.pop() if s2 else 0
+
+            carry, r = divmod(p1 + p2 + carry,2)
+            q.appendleft(r)
+
+        if carry > 0:
+            q.appendleft(carry)
+
+        return "".join(map(str, q))
