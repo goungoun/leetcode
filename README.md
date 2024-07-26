@@ -107,6 +107,7 @@ from functools import reduce
 ```python
 344 s[l], s[r] = s[r], s[l]
 266 root.left, root.right = root.right, root.left
+48 matrix[i][j],matrix[j][i] = matrix[j][i],matrix[i][j]
 ```
 
 ### Exceptions
