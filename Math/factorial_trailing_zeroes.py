@@ -27,8 +27,7 @@ class Solution:
         if n == 0:
             return 0
 
-        l = [i for i in range(1, n+1)]
-        factorial = reduce(lambda a,b: a*b, l, 1)
+        factorial = reduce(lambda a,b: a*b, range(1, n+1), 1)
 
         cnt = 0
         s = factorial
