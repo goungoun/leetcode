@@ -21,6 +21,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 from functools import reduce
 136 return reduce(lambda x, y: x ^ y, nums, 0)
 ```
+
 ### String
 ```python
 9 return s == s[::-1] # "".join(list(reversed(s)))
@@ -97,6 +98,9 @@ from functools import reduce
 704 while l <= r:
 
 215 for _ in range(k):
+
+172 from functools import reduce
+172 factorial = reduce(lambda a,b: a*b, range(1, n+1), 1)
 ```
 
 ### Swap
@@ -108,14 +112,12 @@ from functools import reduce
 ### Exceptions
 ```python
 70 raise ValueError (f"1 <= n <= 45, n={n}")
-
 ```
 
 ### Functions
 ```python
 67 carry, r = divmod(n1 + n2 + carry,2)
 ```
-
 
 ## Errors
 ### RecursionError
