@@ -54,6 +54,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 207 d = defaultdict(list) # d = {i:[] for i in range(numCourses)}
 
 12 d1.update(d2)
+12 for k, v in sorted(d1.items(), reverse=True):
 ```
 
 ### Set
