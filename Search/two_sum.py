@@ -2,7 +2,11 @@
 # https://leetcode.com/problems/two-sum
 
 class Solution:
-    def twoSum(self, nums: List[int], target: int) -> List[int]:        
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        """
+        Approach:
+        Buliding dictionary and search number within the same for loop. T=O(n)
+        """
         d = {} # key=num, value=index
 
         for i, num in enumerate(nums):
@@ -14,7 +18,9 @@ class Solution:
 
     def twoSum_bak(self, nums: List[int], target: int) -> List[int]:
         """
-        This is easier approach to come up with easily, but for loop twice, less efficient than the one above.
+        Approach:
+        This is easier approach to come up with easily from the beginning 
+        You see, not a nested for loop it is also T = O(n) solution.
         """
         d = {} # key: nums, values: index
         for i, num in enumerate(nums):
