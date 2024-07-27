@@ -17,7 +17,7 @@ class Solution:
         Definition:
         A binary search tree is a binary tree with the following properties:
         - All items in the left subtree are less than the root
-        - All items in the right subtree are greater than or equal to the root
+        - All items in the right subtree are greater than the root
         - Each subtree is itself a binary search tree
 
         Example:
