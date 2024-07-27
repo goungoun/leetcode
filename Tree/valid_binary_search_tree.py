@@ -14,6 +14,12 @@ class Solution:
         Validate if the given tree is Binary Search Tree
         return True or False
 
+        Definition:
+        A binary search tree is a binary tree with the following properties:
+        - All items in the left subtree are less than the root
+        - All items in the right subtree are greater than or equal to the root
+        - Each subtree is itself a binary search tree
+
         Example:
         root = [2,1,3]
         return True
