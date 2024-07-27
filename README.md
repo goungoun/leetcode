@@ -118,7 +118,7 @@ from functools import reduce
 ### Functions
 ```python
 67 carry, r = divmod(n1 + n2 + carry,2)
-49 l[ord(c)-ord('a')] += 1
+49 l[ord(c)-ord('a')] += 1  # ord() is inverse of chr()
 ```
 
 ## Errors
