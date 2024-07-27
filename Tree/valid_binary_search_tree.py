@@ -9,7 +9,7 @@ from collections import deque
 #         self.left = left
 #         self.right = right
 class Solution:
-    def isValidBST(self, root: Optional[TreeNode]) -> bool:
+    def isValidBST(self, root: Optional[TreeNode], min_val = -2**31-1, max_val= 2**31) -> bool:
         """
         Validate if the given tree is Binary Search Tree
         return True or False
@@ -28,26 +28,16 @@ class Solution:
         return False
         """
 
-        def dfs(root, min_val = -2**31-1, max_val= 2**31):
-            if not min_val < root.val < max_val:
-                return False
+        if root is None or not min_val < root.val < max_val:
+            return False
 
-            #if root.right and root.val > root.right.val:
-            #    return False
+        l = True
+        r = True
 
-            #if root.left and root.val < root.left.val:
-            #    return False
+        if root.left:
+            l = self.isValidBST(root.left, min_val, min(max_val, root.val))
 
-            a = True
-            b = True
+        if root.right:
+            r = self.isValidBST(root.right, max(min_val, root.val), max_val)
 
-            if root.left:
-                a = dfs(root.left, min_val, min(max_val, root.val))
-
-            if root.right:
-                b = dfs(root.right, max(min_val, root.val), max_val)
- 
-            return a and b
-
-        return dfs(root)
-
+        return l and r
