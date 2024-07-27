@@ -32,11 +32,11 @@ class Solution:
             if not min_val < root.val < max_val:
                 return False
 
-            if root.right and root.val > root.right.val:
-                return False
+            #if root.right and root.val > root.right.val:
+            #    return False
 
-            if root.left and root.val < root.left.val:
-                return False
+            #if root.left and root.val < root.left.val:
+            #    return False
 
             a = True
             b = True
