@@ -39,7 +39,7 @@ class Trie:
         Replace cur trie to the result and relpeat
         If it is successful by the end of the <END> token, return True
 
-        Example 1: Search the woid 
+        Example: Search the woid 
         d = d['T']
         {'r': {'i': {'e': {'<END>': ''}}, 'y': {'<END>': ''}}}
 
@@ -47,7 +47,7 @@ class Trie:
         {'i': {'e': {'<END>': ''}}, 'y': {'<END>': ''}}
 
         search d['y']
-        {'i': {'e': {'<END>': ''}, 'y': {'<END>': ''}}}
+        {'<END>': ''}
 
         retuin True
         """
