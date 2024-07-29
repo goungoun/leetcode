@@ -3,12 +3,17 @@ https://www.youtube.com/@goungouna <br>
 The recordings are without spoken words, instead typing sounds and peaceful music are included.
 
 ## Syntax Cheatsheet
+### String
+```python
+9 return s == s[::-1] # "".join(list(reversed(s)))
+28 haystack.find(needle)
+191 return str(bin(n))[2:].count('1')
+```
+
 ### List
 ```python
 70 memo = [-1]*(n+1)
 215 l = [-x for x in nums]
-67 l1 = [int(x) for x in a]
-67 n1 = l1.pop() if l1 else 0
 67 return "".join(l[::-1])
 58 return len(s.strip().split()[-1])
 189 nums[:] = nums[-a:] + nums[:-a]
@@ -22,11 +27,15 @@ from functools import reduce
 136 return reduce(lambda x, y: x ^ y, nums, 0)
 ```
 
-### String
+### Stack
 ```python
-9 return s == s[::-1] # "".join(list(reversed(s)))
-28 haystack.find(needle)
-191 return str(bin(n))[2:].count('1')
+67 l1 = [int(x) for x in a]
+67 n1 = l1.pop() if l1 else 0 # Add Binary
+67 n2 = l2.pop() if l2 else 0
+
+77 tmp.append(num)
+77 dfs(num + 1) # combination
+77 tmp.pop()
 ```
 
 ### Queue
