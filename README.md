@@ -19,9 +19,10 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 189 nums[:] = nums[-a:] + nums[:-a]
 463 adj = [(row,col-1), (row,col+1), (row-1,col), (row+1,col)]
 463 adj_land = [(r,c) for r,c in adj if 0 <= r < m and 0 <= c < n and grid[r][c]==1]
-6 # Unexpected behavior with this initialization: l = [[None] * n] * n
-6 l = [[0 for _ in range(n)] for _ in range(n)]
 1051 expected.extend([i]*counter[i])
+
+6 l = [[0 for _ in range(n)] for _ in range(n)] # Do not initialize l = [[None] * n] * n 
+78 l_subsets.append(tmp.copy()) # Do not append list tmp itself
 
 from functools import reduce
 136 return reduce(lambda x, y: x ^ y, nums, 0)
