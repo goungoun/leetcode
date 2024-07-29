@@ -18,6 +18,10 @@ class Solution:
         To compare permutation, combination ignores the order
         So, for loop range excludes already used numbers
         """
+
+        if k > n:
+            raise ValueError (f"Expected 'k' to have a value from 1 to n only, k={k}, n={n}")
+            
         l_combinations = []
         tmp = []
 
