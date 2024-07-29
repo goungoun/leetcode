@@ -34,9 +34,14 @@ from functools import reduce
 67 n1 = l1.pop() if l1 else 0 # Add Binary
 67 n2 = l2.pop() if l2 else 0
 
+1971 stack = [source]
+1971 while stack:
+1971     vertex = stack.pop() # dfs
+1971     stack.append(adj) 
+
 77 tmp.append(num)
-77 dfs(num + 1) # combination
-77 tmp.pop()
+77 dfs(num + 1) 
+77 tmp.pop() # backtracking
 ```
 
 ### Queue
