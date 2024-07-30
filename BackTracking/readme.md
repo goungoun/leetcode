@@ -1,5 +1,5 @@
 ## BackTracking
-### Subsets
+### Subsets (Powerset)
 https://leetcode.com/problems/subsets
 
 ### Permutations
