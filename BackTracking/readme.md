@@ -1,9 +1,9 @@
-## Back Tracking
-## Subsets
+## BackTracking
+### Subsets
 https://leetcode.com/problems/subsets
 
-## Permutations
+### Permutations
 https://leetcode.com/problems/permutations
 
-## Combinations
+### Combinations
 https://leetcode.com/problems/combinations
