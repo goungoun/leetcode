@@ -26,6 +26,8 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 
 from functools import reduce
 136 return reduce(lambda x, y: x ^ y, nums, 0)
+
+90 return list(map(list, ret)) # ret={(1, 2), (2,), (1,), (1, 2, 2), (2, 2), ()}
 ```
 
 ### Stack
