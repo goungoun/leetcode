@@ -27,7 +27,7 @@ https://leetcode.com/problems/permutations
 * array nums of distinct integers
 
 nums = [1,2,3]
-        [1]          [2]            [3]           # add one
+        [1]          [2]            [3]           # add something
     [1,2] [1,3]     [2,1] [2,3]    [3,1] [3,2]    # add something different
   [1,2,3] [1,3,2] [2,1,3] [2,3,1] [3,1,2] [3,2,1] # add something different
 
