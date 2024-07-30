@@ -3,9 +3,9 @@
 ```python
 """
 nums = [1,2,3]
-              [1]                []
-      [1,2]        [1]        [2]   []
-  [1,2,3] [1,2] [1,3] [1]  [2,3] [3]  []
+              [1]                []          # nums[0] Exists or not
+      [1,2]        [1]        [2]   []       # nums[1] Exists or not
+  [1,2,3] [1,2] [1,3] [1]  [2,3] [3]  []     # nums[2] Exists or not
 
 return [[1,2,3],[1,2],[1,3],[1],[2,3],[3],[]]
 """
@@ -56,9 +56,9 @@ Combinations of k numbers chosen from the range [1, n]
 n = 3, k = 3
 nums = [i for i in range(1, n+1)]
 nums = [1,2,3]
-        [1]         [2]      [3]
-    [1,2] [1,3]    [2,3]     [3]
-  [1,2,3]
+        [1]         [2]      [3]   # add something
+    [1,2] [1,3]    [2,3]     [3]   # add larger than the existing one to remove duplicate
+  [1,2,3]                          # add larger than the existing one to remove duplicate
 
 return [[1,2,3]]
 """
