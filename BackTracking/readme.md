@@ -39,11 +39,37 @@ def dfs():
         ret.append(tmp.copy())
     
     for i in range(len_nums):
-        if nums[i] not in tmp: # condition for something different
+        if nums[i] not in tmp: # a condition for something different
             tmp.append(nums[i])
             dfs()
             tmp.pop()
 ```
 
-### Combinations
+### Combinations - Something different and remove duplicate
 https://leetcode.com/problems/combinations
+```
+"""
+Approach: 
+Not like permutation, nothing but different order is a duplicate in combination!
+
+Combinations of k numbers chosen from the range [1, n]
+n = 3, k = 3
+nums = [i for i in range(1, n+1)]
+nums = [1,2,3]
+        [1]         [2]      [3]
+    [1,2] [1,3]    [2,3]     [3]
+  [1,2,3]
+
+return [[1,2,3]]
+"""
+def dfs():
+    if len(tmp) == k:
+        ret.append(tmp.copy())
+        return
+
+    for i in range(len_nums):
+        if nums[i] > max(tmp, default=0): # to remove duplicate
+            tmp.append(nums[i])
+            dfs()
+            tmp.pop()
+```
