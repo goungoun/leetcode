@@ -47,7 +47,7 @@ def dfs():
 
 ### Combinations - Something different and remove duplicate
 https://leetcode.com/problems/combinations
-```
+```python
 """
 Approach: 
 Not like permutation, nothing but different order is a duplicate in combination!
