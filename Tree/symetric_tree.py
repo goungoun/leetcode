@@ -1,4 +1,4 @@
-# 101. Sysmetric Tree
+# 101. Symmetric Tree
 # https://leetcode.com/problems/symmetric-tree
 
 # Definition for a binary tree node.
@@ -25,10 +25,10 @@ class Solution:
                3           3
         return False
 
-        Strategy:
-        1) Split out two trees from the left and right of the root
-        2) Flip right tree
-        3) Compare left tree and right tree has the same values in the same position
+        Approach:
+        Split out two trees from the left and right of the root
+        Flip the right tree recursively
+        Traverse the left tree and compare its value with a value from the right tree
         """
 
         l = root.left
