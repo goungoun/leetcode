@@ -1,4 +1,4 @@
-# 15. 3Sum
+# 15. 3Sum (Medium)
 # https://leetcode.com/problems/3sum
 
 class Solution:
@@ -12,7 +12,7 @@ class Solution:
         return [[-1,-1,2],[-1,0,1]]
 
         Approach:
-        First, sort nums arry list
+        First, sort nums array list
         Fix one of the numbers and loop (@ Hint 1)
         Two-pointer approach is chosen inside of the loop
         """
