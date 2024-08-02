@@ -36,28 +36,3 @@ class Solution:
                     k -= 1
 
         return list(s)
-
-    def threeSum_bak(self, nums: List[int]) -> List[List[int]]:
-        """
-        Tried dictionary approach like two-sum
-        Not applicable. Time Limit Exceeded from a specific case repeating 0
-        """
-        set_triplets = set()
-        list_triplets = []
-
-        d = defaultdict(list)
-        for i, num in enumerate(nums):
-            d[num].append(i)
-
-        # i, j, k
-        len_num = len(nums)
-        for i in range(len_num):
-            for j in range(len_num):
-                search_val = -(nums[i] + nums[j])
-                idx_list = d.get(search_val)
-                if idx_list is not None:
-                    for k in idx_list:
-                        if k and i != j and i != k and j != k:
-                            set_triplets.add(tuple(sorted([nums[i], nums[j], search_val])))
-
-        return list(map(list, set_triplets))
