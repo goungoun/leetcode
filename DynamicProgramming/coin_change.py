@@ -58,3 +58,30 @@ class Solution:
         else:
             return -1
 
+    def coinChangeGreedy(self, coins: List[int], amount: int) -> int:
+        """
+        Warning!!!
+        Greedy works only when the the denominations can be multiplied like a Korean won
+        coins = [10, 50, 100, 500, 1000]
+        amount = 800
+        500 * 1 +  100 * 3 = 800
+        return 4
+        """
+        if amount == 0:
+            return 0
+
+        coins.sort(reverse=True)
+
+        cnt = 0
+
+        for coin in coins:
+            while coin <= amount and amount > 0:
+                amount -= coin
+                cnt += 1
+
+        if amount > 0:
+            return -1 
+        
+        return cnt
+
+
