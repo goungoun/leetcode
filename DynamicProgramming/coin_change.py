@@ -3,6 +3,25 @@
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
+        if coins is None or amount is None or amount == 0:
+            return 0
+
+        coins.sort()
+
+        greedy_mode = True
+        for i in range(1,len(coins)):
+            if coins[i]%coins[i-1] != 0:
+                greedy_mode = False
+        print (f"greedy_mode={greedy_mode}")
+
+        if greedy_mode:
+            # T=O(n), S=O(1)
+            return self.coinChangeGreedy(coins, amount)
+        else:
+            # T=O(n * amount), S=O(n)
+            return self.coinChangeDp(coins, amount)
+
+    def coinChangeDp(self, coins: List[int], amount: int) -> int:
         """
         Minimum number of coins to make up the amount
         arg coins: a list of different denominations and infinite use possible
@@ -67,13 +86,11 @@ class Solution:
         500 * 1 +  100 * 3 = 800
         return 4
         """
-        if amount == 0:
-            return 0
-
         coins.sort(reverse=True)
 
         cnt = 0
-
+        
+        # T=O(n), S=O(1)
         for coin in coins:
             while coin <= amount and amount > 0:
                 amount -= coin
@@ -83,5 +100,4 @@ class Solution:
             return -1 
         
         return cnt
-
 
