@@ -41,7 +41,7 @@ class Solution:
         amount_limit = amount +1
         memo = [0] * amount_limit
 
-        # O(N * amount)
+        # T=O(n * amount), S=O(n)
         for change_amount in range(1, amount_limit):
             min_num_coins = amount_limit # if denominated 1 max # of coins
 
