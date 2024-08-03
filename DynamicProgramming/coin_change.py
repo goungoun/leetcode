@@ -19,13 +19,13 @@ class Solution:
         5 + 5 + 1 = 11
         return 3
         
-        amount=1, memo=[0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        amount=2, memo=[0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0]
-        amount=3, memo=[0, 1, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0]
-        amount=4, memo=[0, 1, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0]
-        amount=5, memo=[0, 1, 1, 2, 2, 1, 0, 0, 0, 0, 0, 0]
+        amount=1, memo=[0, 1]
+        amount=2, memo=[0, 1, 1]
+        amount=3, memo=[0, 1, 1, 2]
+        amount=4, memo=[0, 1, 1, 2, 2]
+        amount=5, memo=[0, 1, 1, 2, 2, 1]
         ...
-        amount=10, memo=[0, 1, 1, 2, 2, 1, 2, 2, 3, 3, 2, 0]
+        amount=10, memo=[0, 1, 1, 2, 2, 1, 2, 2, 3, 3, 2]
         amount=11, memo=[0, 1, 1, 2, 2, 1, 2, 2, 3, 3, 2, 3]
 
         Example 2:
@@ -36,27 +36,27 @@ class Solution:
         Example 3: No change_amount required
         coins = [1], amount = 0
         return 0
-        """        
+        """
         coins.sort()
-        amount_limit = amount +1
-        memo = [0] * amount_limit
+        upper_limit = amount + 1
+        memo = [upper_limit] * upper_limit
+        memo[0] = 0
 
         # T=O(n * amount), S=O(n)
-        for change_amount in range(1, amount_limit):
-            min_num_coins = amount_limit # if denominated 1 max # of coins
-
-            for denomination in coins:
-                if change_amount < denomination:
+        for change in range(1, upper_limit):
+            min_cnt = upper_limit
+            for coin in coins:
+                if change < coin:
                     break
-                min_num_coins = min(min_num_coins, memo[change_amount - denomination] + 1)
+                min_cnt = min(min_cnt, memo[change - coin] + 1)
             
-            memo[change_amount] = min_num_coins
-            #print (f"{change_amount}, memo={memo}")
+            memo[change] = min_cnt
+            #print (f"{change}: memo={memo[:change +1]}")
 
-        if memo[amount] < amount_limit:
-            return memo[amount]
-        else:
+        if memo[amount] >= upper_limit:
             return -1
+
+        return memo[amount]
 
     def coinChangeGreedy(self, coins: List[int], amount: int) -> int:
         """
