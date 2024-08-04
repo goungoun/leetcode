@@ -23,6 +23,7 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 
 6 l = [[0 for _ in range(n)] for _ in range(n)] # Do not initialize l = [[None] * n] * n 
 78 l_subsets.append(tmp.copy()) # Do not append list tmp itself
+75 nums.clear() # nums[:] = []
 
 from functools import reduce
 136 return reduce(lambda x, y: x ^ y, nums, 0)
