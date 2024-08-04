@@ -3,6 +3,11 @@
 
 class Solution:
     def coinChange(self, coins: List[int], amount: int) -> int:
+        """
+        Working hybrid between Greedy and DP to solve this coin change problem. 
+        The time complexity and space complexity of the Greedy approach is much better though, 
+        if I have to choose only one approach between Greedy and DP, definitely DP because Greedy approach does not work in most cases. 
+        """
         if coins is None or amount is None or amount == 0:
             return 0
 
