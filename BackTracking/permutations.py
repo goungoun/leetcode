@@ -41,7 +41,7 @@ class Solution:
             for n in nums:
                 if n not in tmp:
                     tmp.append(n)
-                    dfs()
+                    dfs() # tmp is maintained as a context during the recursive call!
                     tmp.pop()
 
         dfs()
