@@ -9,7 +9,8 @@ class Solution:
 
         Approach:
         Decision tree of selecting each of the element or not
-        Leaf nodes will be all possible subsets 
+        Leaf nodes will be all possible subsets
+        No specific condition for prunning
 
         Example 1:
         nums = [1,2,3]
