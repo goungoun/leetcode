@@ -8,7 +8,7 @@ class Solution:
         return max_profit
 
         Approach:
-        Let's assume that I bought stock the day 1 and Iterate the prices to simulate the profit. 
+        Let's assume that I bought stock the day 1 and iterate the prices to simulate the profit. 
         If the price is lower than before, wrong decision in the past. That is the time to buy.
         If the price is higher than before, time to sell. Update the maximum profit.
 
@@ -18,11 +18,13 @@ class Solution:
         Example 2:
         prices = [7,6,4,3,1]
         """
+        
+        if prices is None or len(prices) == 0:
+            return 0
 
         max_profit = 0
-        profit = 0
-
         buy = prices[0]
+        
         for price in prices:
             if buy > price: 
                 buy = price
@@ -30,3 +32,5 @@ class Solution:
                 max_profit = max(max_profit, price - buy) 
 
         return max_profit
+
+
