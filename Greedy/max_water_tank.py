@@ -29,9 +29,9 @@ class Solution:
 
         return 1
 
-        Approach (Two pointers):
+        Approach: Two pointers, Greedy
         Maximize the width first by setting two pointers at distance
-        Move l pointer to the right or r pointer to the left taking taller one
+        Take taller one while moving l to the right or r to the left
         Keep moving and update max area
         """
 
