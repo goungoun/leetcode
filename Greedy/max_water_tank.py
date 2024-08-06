@@ -4,7 +4,7 @@
 class Solution:
     def maxArea(self, height: List[int]) -> int:
         """
-        Find two lines that maximize area of the water tank
+        Maximum amount of water of a container that is supported by two vertical straight lines
         return max_area
 
         Example 1:
