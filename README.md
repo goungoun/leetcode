@@ -135,6 +135,10 @@ from functools import reduce
 ### Exceptions
 ```python
 70 raise ValueError (f"1 <= n <= 45, n={n}")
+
+import traceback
+except Exception as e:
+     traceback.print_exc()
 ```
 
 ### Functions
