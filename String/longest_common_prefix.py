@@ -35,3 +35,28 @@ class Solution:
                 break
 
         return "".join(prefix)
+
+    def longestCommonPrefix2(self, strs: List[str]) -> str:
+        """
+        Approach 2:
+        Use array index without zip and set
+        Check the length of the shortest string first, this is to limit the problem space
+        For each string, check characters at the same position using nested loop
+        """
+        if strs is None or len(strs) == 0:
+            return ""
+
+        len_strs = len(strs)
+        min_len = float('inf')
+        for s in strs:
+            min_len = min(min_len, len(s))
+
+        ret = []
+        for i in range(min_len):
+            c = strs[0][i]
+            for j in range(1, len_strs):
+                if strs[j][i] != c:
+                    return "".join(ret)
+            ret.append(c)
+
+        return "".join(ret)
