@@ -39,7 +39,7 @@ class Solution:
         Return True if the destination is visited
         """
 
-        # key: vertex, value: adjacent vertexs e.g. {0: [1,2]}
+        # key: vertex, value: list of adjacent vertexs e.g. {0: [1,2]}
         graph = defaultdict(list)
 
         # bi-directional edge: u->v, v->u
