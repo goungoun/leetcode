@@ -15,12 +15,13 @@ class Solution:
 
         while q:
             vertex = q.popleft()
-
+            # visited.add(vertex) # If you add this statement here or omissing it will cause time limit issue
+            
             if vertex == destination:
                 return True
 
             if vertex not in visited:
-                visited.add(vertex)
+                visited.add(vertex) # Fixed: moved it here from the above
                 for neighbor in g.get(vertex):
                     if neighbor not in visited:
                         q.append(neighbor)
