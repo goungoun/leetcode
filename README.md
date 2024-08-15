@@ -84,7 +84,7 @@ from functools import reduce
 ```python
 3 while s[r] in dup_chk:
 3 dup_chk.remove(s[l])
-14 s = set(t) # tuple is iterable
+14 s = set(t)
 14 prefix.append(s.pop())
 1971 visited = set([source])
 1971 visited.add(adj_vertex)
