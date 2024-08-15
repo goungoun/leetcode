@@ -53,6 +53,7 @@ from functools import reduce
 637 q = deque([root])
 637 node = q.popleft() # bfs
 637 q.append(node.left)
+67 q.appendleft(carry)
 67 return "".join(map(str, q))
 ```
 
