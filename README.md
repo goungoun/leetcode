@@ -124,6 +124,7 @@ from functools import reduce
 
 172 from functools import reduce
 172 factorial = reduce(lambda a,b: a*b, range(1, n+1), 1)
+443 changed_cnt = sum(1 for i in range(8) if gene[i] != candidate[i])
 ```
 
 ### Swap
