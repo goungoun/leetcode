@@ -4,7 +4,7 @@
 class Solution:
     def floodFill(self, image: List[List[int]], sr: int, sc: int, color: int) -> List[List[int]]:
         """
-        Change the color of a image by filling 4-direcional connected component
+        Change the color of an image by filling 4-directional connected components and all pixels connected
         return image
 
         sr, sc : starting point of the fill
@@ -12,12 +12,12 @@ class Solution:
 
         Approach: 
         From the current position as a center 
-        To the left, right, up, down recursive change
+        To the left, right, up, down recursive change in the path
         Do not reapply the color if already has the target color
         
         Example:
         image = [[1,1,1],[1,1,0],[1,0,1]], 
-        (sr, sc) = (1, 1), color change : 1 -> 2
+        (sr, sc) = (1, 1), color change: 1 -> 2
 
         start: image[1][1]
         [2,2,2] 
