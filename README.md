@@ -119,8 +119,8 @@ from functools import reduce
 ```python
 704 l,r = 0, len(nums)-1 
 704 while l <= r:
-
 215 for _ in range(k):
+1971 for u,v in edges:
 
 172 from functools import reduce
 172 factorial = reduce(lambda a,b: a*b, range(1, n+1), 1)
