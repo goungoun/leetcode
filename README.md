@@ -96,6 +96,10 @@ from functools import reduce
 215 import heapq
 215 heapify(l)
 215 smallest_val = heappop(l)
+
+1584 min_heap = [(0,0)]
+1584 dist, i = heappop(min_heap)
+1584 heappush(min_heap, (manhattan_dist, j))
 ```
 
 ### Graph
