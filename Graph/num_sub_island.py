@@ -39,7 +39,7 @@ class Solution:
 
         Approach:
         Make a list of islands from the grid2
-        Iterate the list of island and check the same position from the grid1
+        Iterate the list of islands and check the same position from the grid1
         If the value is 1, it is a sub island
         """
       
