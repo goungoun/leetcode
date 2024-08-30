@@ -49,10 +49,14 @@ class Solution:
         n = len(grid[0])
         
         def makeIsland(row, col):
+            """
+            This function adds the position to the curret island
+            As one position belongs to one island, sink it to the water updating grid to prevent duplicate
+            """
             if row >= m or col >= n or row < 0 or col < 0 or grid[row][col] != 1:
                 return
 
-            tmp.append((row, col))
+            curr_island.append((row, col))
             grid[row][col] = 0
 
              # 4 directional
@@ -66,9 +70,9 @@ class Solution:
         for row in range(m):
             for col in range(n):
                 if grid[row][col] == 1:
-                    tmp = []
+                    curr_island = []
                     makeIsland(row, col)
-                    islands.append(tmp.copy())
+                    islands.append(curr_island.copy())
 
         cnt_sub_island = 0
         
