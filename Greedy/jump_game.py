@@ -1,4 +1,4 @@
-# 55. Jump Game
+# 55. Jump Game (Medium)
 # https://leetcode.com/problems/jump-game
 
 class Solution:
@@ -19,7 +19,7 @@ class Solution:
 
         Approach:
         Start from the last index the other way around
-        Decrease the indexes and check to see if the given value is enough to reach to the last index
+        Decrease the indexes and check to see if the given value is enough to reach the last index
         If enough it is ok to be just there in the remaining iterations. So change the target to the current position
         """
         last_idx = len(nums)-1
