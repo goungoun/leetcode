@@ -24,7 +24,7 @@ class Solution:
         """
         last_idx = len(nums)-1
 
-        for i in range(last_idx-2, -1, -1):
+        for i in range(last_idx-1, -1, -1):
             if i + nums[i] >= last_idx:
                 last_idx = i
 
