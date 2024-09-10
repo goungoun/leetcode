@@ -17,7 +17,7 @@ class Solution:
         curr = head
         
         while curr:
-            if curr in visited:
+            if ? in visited: # Fix here
                 return True
             else:
                 visited.add(?) # Fix here
