@@ -14,7 +14,7 @@ class Solution:
     """
         slow, fast = head, head
 
-        while ? and ? :
+        while ????? :
             slow = slow.next
             fast = fast.next.next
 
