@@ -53,7 +53,7 @@ class Solution:
 
             avg_vals = int(sum_vals/cnt_nodes)
             
-            if avg_vals == node.val:
+            # complete here #
                 self.cnt_valid_nodes += 1
 
             return (sum_vals, cnt_nodes)
