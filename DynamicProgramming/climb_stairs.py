@@ -11,7 +11,7 @@ class Solution:
 
         1 2 3 5 8 13 21 ....
         Fibonacci Sequence!!
-        climb(n)= climb(n-2) + climb(n-1)
+        Recurrence Formula: climb(n)= climb(n-2) + climb(n-1)
         """
         if n < 1 or n > 45:
             raise ValueError (f"1 <= n <= 45, n={n}")
