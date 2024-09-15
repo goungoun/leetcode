@@ -18,9 +18,9 @@ def merge(arr1, arr2):
 			idx2 -= 1 # Fix This. DO NOT REMOVE IT. (infinit loop)
 
 	if idx1 >= 0:
-		ret.append(arr1[idx1:]) # Fix This
+		ret.expand(arr1[idx1:]) # Fix This
 	if idx2 >=0:
-		ret.append(arr2[idx2:]) # Fix This
+		ret.expand(arr2[idx2:]) # Fix This
 	
 	return ret
 	
