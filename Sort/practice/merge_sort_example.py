@@ -25,17 +25,13 @@ def merge(arr1, arr2):
 	return ret
 	
 def merge_sort(arr):
-	# divide and conquer resursive algorithm
-	# base condition
 	if len(arr) == 1:
 		return arr
 	
-	# divide
 	mid = len(arr)//2
 	left = merge_sort(arr[mid:])
 	right = merge_sort(arr[:mid])
 	
-	# conquer
 	return merge(left, right)
 
 merge_sort([3,5,1,2,9])
