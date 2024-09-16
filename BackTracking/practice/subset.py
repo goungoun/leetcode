@@ -24,17 +24,17 @@ class Solution:
 
         def recSubsets(i):
             if i == len(nums):
-                l_subsets.append(tmp.copy())
-                ?????
+                l_subsets.append(tmp) # Fix here: otherwise it will be empty
+                ????? # Fix here: without this no useful base condition.
             
             # Select
             ?????
-            recSubsets(i+1)
+            recSubsets(i) # Fix here
 
             # Or not
             ?????
-            recSubsets(i+1)
+            recSubsets(i) # Fix here
 
-        ?????
+        ????? # Fix here. You were going to call the helper function. Without this it, empty return. 
 
         return l_subsets
