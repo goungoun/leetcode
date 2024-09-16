@@ -25,7 +25,7 @@ class Solution:
         def recSubsets(i):
             if i == len(nums):
                 l_subsets.append(tmp.copy())
-                return
+                ?????
             
             # Select
             ?????
@@ -35,6 +35,6 @@ class Solution:
             ?????
             recSubsets(i+1)
 
-        recSubsets(0)
+        ?????
 
         return l_subsets
