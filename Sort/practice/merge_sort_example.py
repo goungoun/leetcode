@@ -12,10 +12,10 @@ def merge(arr1, arr2):
     
 		if val1 >= val2:
 			ret.append(val1)
-			idx1 -= 1 # Fix This. DO NOT REMOVE IT. (infinit loop)
+			idx1 -= 1 # Fix This. DO NOT REMOVE IT. (infinite loop)
 		else:
 			ret.append(val2) 
-			idx2 -= 1 # Fix This. DO NOT REMOVE IT. (infinit loop)
+			idx2 -= 1 # Fix This. DO NOT REMOVE IT. (infinite loop)
 
 	if idx1 >= 0:
 		ret.expand(arr1[idx1:]) # Fix This
@@ -29,8 +29,8 @@ def merge_sort(arr):
 		return arr
 	
 	mid = len(arr)//2
-	left = merge_sort(arr[mid:])
-	right = merge_sort(arr[:mid])
+	left = arr[mid:]  # Fix This: It should break down until it gets only one element from the arr
+	right = arr[:mid]  # Fix This: 
 	
 	return merge(left, right)
 
