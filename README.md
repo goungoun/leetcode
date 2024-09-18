@@ -86,10 +86,16 @@ from functools import reduce
 ```python
 3 while s[r] in dup_chk:
 3 dup_chk.remove(s[l])
+
 14 s = set(t)
 14 prefix.append(s.pop())
+
 1971 visited = set([source])
 1971 visited.add(adj_vertex)
+
+49 dup_chk = set()
+49 tmp = []
+49 dup_chk.add(tuple(tmp)) # list is unhashable
 ```
 
 ### Heap
