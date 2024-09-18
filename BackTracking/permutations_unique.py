@@ -1,4 +1,4 @@
-# 47. Permutations II
+# 47. Permutations II (Medium)
 # https://leetcode.com/problems/permutations-ii/
 
 class Solution:
@@ -42,3 +42,40 @@ class Solution:
         dfs()
 
         return ret
+
+    def permuteUnique2(self, nums: List[int]) -> List[List[int]]:
+        """
+        Trade off:
+        Used more memory to improve computation
+        dup_chk, cnt_nums prevent unnecessarly growing trees
+        Improved runtime, it beats 32%. But, it beats 5% in Memory.
+        """
+
+        if not nums or len(nums) == 0:
+            return []
+
+        permutation = []
+        tmp = []
+        dup_chk = set() # it could become really big, as it includes all temporary results
+        cnt_nums = Counter(nums)
+        len_nums = len(nums)
+
+        def dfs(i):
+            if i == len_nums:
+                permutation.append(tmp.copy())
+                return 
+
+            for num in nums:
+                tmp.append(num)
+                if tuple(tmp) not in dup_chk and cnt_nums[num] > 0:
+                    dup_chk.add(tuple(tmp))
+                    cnt_nums[num] -= 1
+                    dfs(i+1)
+                    cnt_nums[num] += 1 
+                    
+                tmp.pop()         
+
+        dfs(0)
+
+        return permutation
+
