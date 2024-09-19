@@ -26,13 +26,20 @@ class Solution:
         l=0, r=1, mid=(0+1)//2=0 nums[0]=-1 < 2
         l=1, r=1, mid=(1+1)//2=1 nums[1]=0 < 2
         l=2, r=1 <Stop>
+        return -1
+
+        nums = [5], target = 5
+        return 5
         """
+        if not nums or len(nums) == 0:
+            return -1
 
         l = 0
         r = len(nums) -1 
 
+        # l < r vs l <=r : to handle the case of having length 1, = is required
         while l <= r:
-            mid = (l+r)//2
+            mid = l + (r - l)//2 # to prevent overflow (l + r)//2, especially in other languages
             
             if nums[mid] == target:
                 return mid
