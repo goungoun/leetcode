@@ -92,10 +92,15 @@ from functools import reduce
 
 1971 visited = set([source])
 1971 visited.add(adj_vertex)
+```
 
+### Tuple
+```
 49 dup_chk = set()
 49 tmp = []
 49 dup_chk.add(tuple(tmp)) # list is unhashable
+
+2265 return (sum_vals, cnt_nodes)
 ```
 
 ### Heap
@@ -180,3 +185,7 @@ TypeError: divmod expected 2 arguments, got 1
 ```python
 67 carry, r = divmod(n1 + n2 + carry) # Fix:  carry, r = divmod(n1 + n2 + carry, 2)
 ```
+### AttributeError
+AttributeError: 'NoneType' object has no attribute 'left'
+        ^^^^^^^^^
+    dfs(node.left, depth+1)
