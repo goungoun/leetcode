@@ -95,7 +95,7 @@ from functools import reduce
 ```
 
 ### Tuple
-```
+```python
 49 dup_chk = set()
 49 tmp = []
 49 dup_chk.add(tuple(tmp)) # list is unhashable
