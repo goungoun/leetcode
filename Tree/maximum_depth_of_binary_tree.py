@@ -8,7 +8,16 @@
 #         self.left = left
 #         self.right = right
 class Solution:
-    def maxDepth(self, root: Optional[TreeNode], i=0) -> int:
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        if root is None:
+            return 0
+        
+        depth_left = self.maxDepth(root.left) 
+        depth_right = self.maxDepth(root.right) 
+
+        return max(depth_left, depth_right) + 1
+    
+    def maxDepth_bak1(self, root: Optional[TreeNode], i=0) -> int:
         """
         DFS - post order
         """
@@ -21,7 +30,7 @@ class Solution:
         return max(depth_left, depth_right)
 
 
-    def maxDepth_bak(self, root: Optional[TreeNode]) -> int:
+    def maxDepth_bak2(self, root: Optional[TreeNode]) -> int:
         """
         DFS - pre order, with helper function
         """
