@@ -188,6 +188,5 @@ TypeError: divmod expected 2 arguments, got 1
 ### AttributeError
 AttributeError: 'NoneType' object has no attribute 'left'
 ```python
-        ^^^^^^^^^
-    dfs(node.left, depth+1)
+48 dfs(node.left, depth+1)
 ```
