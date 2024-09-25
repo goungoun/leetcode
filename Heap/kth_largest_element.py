@@ -1,4 +1,4 @@
-# 215. Kth Largest Element in an Array
+# 215. Kth Largest Element in an Array (Medium)
 # https://leetcode.com/problems/kth-largest-element-in-an-array
 
 class Solution:
@@ -38,12 +38,31 @@ class Solution:
 
         return -(-5) : Second Largest Element, k=2
         """
+        if not nums or not k or k <= 0:
+            return None
 
-        l = [-x for x in nums]
-        heapify(l)
+        h = [-x for x in nums]
+        heapify(h)
 
         for _ in range(k):
-            smallest_val = heappop(l)
+            smallest_val = heappop(h)
 
         return -smallest_val
+        
 
+    def findKthLargest_fu(self, nums: List[int], k: int) -> int:
+        """
+        Follow Up: Decrease the space complexity
+        """
+        if not nums or not k or k <= 0:
+            return None
+        
+        h = [] 
+        for num in nums:
+            heappush(h, num) # min heap
+
+            # Space requires only k, less than the length of nums
+            if len(h) > k:
+                heappop(h) 
+
+        return h[0]
