@@ -56,6 +56,13 @@ from functools import reduce
 637 q.append(node.left)
 67 q.appendleft(carry)
 67 return "".join(map(str, q))
+
+# fyi.Deque means double-ended queue, works as a queue and a stack at the same time.
+71 from collections import deque
+71 path_split = deque([])
+71 path_split.pop() # stack
+71 path_split.popleft() # queue
+71 return "/" + "/".join(path_split)
 ```
 
 ### Dictionary
