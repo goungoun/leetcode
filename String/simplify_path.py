@@ -20,8 +20,8 @@ class Solution:
 
         Approach:
         Iterate tokens by splitting a path using '/'
-        Append a token to the list if it is valid or remove the previous one if it is ".."
-        Remove trailing and starting periods
+        Append a token to a double ended queue(deque) if it is valid or remove the previous one if it is ".."
+        Remove trailing and starting periods with O(1) from the deque
         """
         # It removes multiple consecutive slashes and trailing slash, but not enough
         # path_split = [x for x in path.split("/") if x != ""]
