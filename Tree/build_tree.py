@@ -1,4 +1,4 @@
-# 105. Construct Binary Tree from Preorder and Inorder Traversal
+# 105. Construct Binary Tree from Preorder and Inorder Traversal (Medium)
 # https://leetcode.com/problems/construct-binary-tree-from-preorder-and-inorder-traversal
 
 # Definition for a binary tree node.
@@ -37,7 +37,7 @@ class Solution:
             return None
 
         q = deque(preorder)
-        d = dict([(val,idx) for idx,val in enumerate(inorder)])
+        d = {val: idx for idx, val in enumerate(inorder)}
 
         def build(start, end):
             if start > end:
