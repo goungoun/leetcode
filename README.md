@@ -76,6 +76,10 @@ from functools import reduce
 383 from collections import Counter
 383 d = Counter(magazine)
 
+49 d = defaultdict(list)
+49 l = [0]*26
+49 d[tuple(l)].append(word)
+
 6 d = {(0,0):s[0]} # key: (row,col), value: char
 6 d[(row, col)] = c
 
