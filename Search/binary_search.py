@@ -31,7 +31,7 @@ class Solution:
         nums = [5], target = 5
         return 5
         """
-        if not nums or len(nums) == 0:
+        if not nums or not target:
             return -1
 
         l = 0
@@ -49,3 +49,28 @@ class Solution:
                 r = mid - 1
 
         return -1
+
+    def search_bak(self, nums: List[int], target: int) -> int:
+        """
+        The binary search is implemented using recursive call.
+        It is less efficient than the while loop 
+        """
+        if not nums or not target:
+            return -1 
+        
+        def rec_search(l, r):
+            if l > r:
+                return -1
+
+            mid = l + (r-l)//2
+
+            if nums[mid] == target:
+                return mid
+            elif nums[mid] > target:
+                return rec_search(l, mid-1)
+            else:
+                return rec_search(mid+1, r)
+            
+            return -1
+
+        return rec_search(0, len(nums)-1)
