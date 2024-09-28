@@ -14,12 +14,26 @@ class Solution:
         fib(3) = fib(2)+fib(1)
         fib(4) = fib(3)+fib(2)
         ...
-        fib(n) = fib(n-1) + fib(n-2), for n > 1     
+        fib(n) = fib(n-1) + fib(n-2), for n > 1 
 
-        Approach: Top-down DP
+        Approach: bottom-up DP
         Break down to the sub problem and express a structure of the problem as a recurrence formular. 
         Apply memoization to prevent repetitive calls with the overlapping subproblems
+        Rewrite without recursion for better computation and memory use and replace array S=O(n) to variables S=O(1) if all the spaces are not required.
         """
+        if not n or n < 0:
+            return 0
+        
+        pprv, prv, curr = 0, 1, 1
+
+        for i in range(2, n+1):
+            curr = pprv + prv
+            pprv = prv
+            prv = curr
+            
+        return curr
+
+    def fib_recursive(self, n: int) -> int:
         if not n or n < 0:
             return 0
             
