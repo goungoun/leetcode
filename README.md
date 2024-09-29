@@ -30,6 +30,13 @@ from functools import reduce
 136 return reduce(lambda x, y: x ^ y, nums, 0)
 
 90 return list(map(list, ret)) # ret={(1, 2), (2,), (1,), (1, 2, 2), (2, 2), ()}
+
+72 import numpy as np
+72 print(np.array(cost))
+[[0 1 2 3 4 5]
+ [1 0 0 0 0 0]
+ [2 0 0 0 0 0]
+ [3 0 0 0 0 0]]
 ```
 
 ### Stack
