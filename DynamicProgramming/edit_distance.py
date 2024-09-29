@@ -24,6 +24,9 @@ class Solution:
     T=O(n**2), S=O(n**2)
     """
     def minDistance(self, word1: str, word2: str) -> int:
+        if not word1 or not word2:
+            return 0
+
         m = len(word1)
         n = len(word2)
 
