@@ -15,6 +15,12 @@ class Solution:
     return 5
 
     Approach: DP (Tabular, bottom-up)
+         h  o  r  s  e
+      0  1  2  3  4  5
+    r 1  1  2  2  3  4
+    o 2  2  1  2  3  4
+    s 3  3  2  2  2  3
+
     T=O(n**2), S=O(n**2)
     """
     def minDistance(self, word1: str, word2: str) -> int:
