@@ -23,7 +23,7 @@ class Solution:
         Narrow down to a list of starters of its consecutive sequence
         For each starters, measure actual length of the sequence and get the max length
         """
-        if not nums or len(nums)==0:
+        if not nums:
             return 0
 
         max_length = 1
