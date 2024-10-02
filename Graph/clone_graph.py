@@ -27,31 +27,30 @@ class Solution:
         Traverse the graph in BFS
         Prepare (create or get) a new node before the visit
         While visiting the existing node, get a new node and append the corresponding neighbors
-        """
 
+        Beats 90.46%
+        """
         if not node:
             return None
 
-        new_n = Node(node.val)
-        created = {node.val: new_n}
-
-        q = deque()
-        q.append(node)
-
-        visited = set()
-        visited.add(node)
+        head = Node(node.val)
+        created = {head.val:head} # Node.val is unique for each node.
+        
+        q = deque([node]) # not head
+        visited = set([node]) # not head
 
         while q:
-            n = q.popleft()
-            new_n = created[n.val]
-            
-            for nei in n.neighbors:
+            old_n = q.popleft()
+            new_n = created[old_n.val]
+
+            for nei in old_n.neighbors:
                 if nei.val not in created:
                     created[nei.val] = Node(nei.val)
+
                 new_n.neighbors.append(created[nei.val])
-                
+              
                 if nei not in visited:
                     q.append(nei)
                     visited.add(nei)
-            
-        return created[node.val]
+
+        return head
