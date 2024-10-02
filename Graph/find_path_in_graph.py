@@ -35,8 +35,13 @@ class Solution:
 
         Approach:
         Convert edges to an explicit bi-directional graph using a default dictionary
-        Traverse the graph DFS or BFS
+        Traverse the graph DFS or BFS.
         Return True if the destination is visited
+
+        Performance:
+        Beats 90.65% in BFS, and 75.38% in DFS.
+        BFS vs DFS is controversial, BFS may/may not be visiting unnecessary nodes.
+        The performance depends on how the test cases are designed.
         """
         if not edges and n != 1:
             return False
@@ -51,7 +56,7 @@ class Solution:
         q = deque([source])
 
         while q:
-            curr = q.pop() # DFS: pop(), BFS: popleft()
+            curr = q.popleft() # DFS: pop(), BFS: popleft()
             if curr == destination:
                 return True
 
