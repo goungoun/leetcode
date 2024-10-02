@@ -187,6 +187,36 @@ except Exception as e:
 209 min_length = min(min_length, r-l+1)
 ```
 
+### Not
+```python
+# reverse of the logical state of an expression.
+>>> not True
+False
+>>> not False
+True
+
+# check empty?
+>>> not None
+True
+>>> not 0 # caution!!
+True
+>>> not 0.0 # caution!!
+True
+>>> not ""
+True
+>>> not ''
+True
+>>> not []
+True
+>>> not {}
+True
+>>> not set()
+True
+>>> from collections import deque
+>>> not deque([])
+True
+```
+
 ## Errors
 ### RecursionError
 RecursionError: maximum recursion depth exceeded in comparison
