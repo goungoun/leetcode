@@ -20,8 +20,8 @@ class Solution:
         head = Node(node.val)
         created = {head.val:head} # Node.val is unique for each node.
         
-        q = deque([node])
-        visited = set([node])
+        q = deque([node]) # not head
+        visited = set([node]) # not head
 
         while q:
             old_n = q.popleft()
