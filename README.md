@@ -189,6 +189,8 @@ except Exception as e:
 
 ### Not
 ```python
+207 if not prerequisites: # if prerequisites is None or len(prerequisites) == 0:
+
 # reverse of the logical state of an expression.
 >>> not True
 False
