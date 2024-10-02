@@ -143,6 +143,7 @@ from functools import reduce
      for u, v in edges:
        graph[u].append(v)
        graph[v].append(u)
+1971 curr = q.pop() # DFS: pop(), BFS: popleft()
 ```
 
 ### Zip
