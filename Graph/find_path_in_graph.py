@@ -47,7 +47,7 @@ class Solution:
             graph[u].append(v)
             graph[v].append(u)
 
-        visited = set([source])
+        visited = set([source]) # or visited = {source}
         q = deque([source])
 
         while q:
