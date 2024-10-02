@@ -1,7 +1,7 @@
 # 1971. Find if Path Exists in Graph
 # https://leetcode.com/problems/find-if-path-exists-in-graph
 
-from collections import defaultdict
+from collections import defaultdict, deque
 
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
@@ -38,7 +38,35 @@ class Solution:
         Traverse the graph DFS or BFS
         Return True if the destination is visited
         """
+        if not edges and n != 1:
+            return False
 
+        # bi-directional edge: u->v, v->u
+        graph = defaultdict(list)
+        for u, v in edges:
+            graph[u].append(v)
+            graph[v].append(u)
+
+        visited = set([source])
+        q = deque([source])
+
+        while q:
+            curr = q.pop() # DFS: pop(), BFS: popleft()
+            if curr == destination:
+                return True
+
+            for adj in graph[curr]:
+                if adj not in visited:
+                    visited.add(adj)
+                    q.append(adj)
+
+        return False
+
+    def validPath_deprecated(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
+        """
+        Approach: DFS
+        Recursive call is less efficient then a loop
+        """
         # key: vertex, value: list of adjacent vertexs e.g. {0: [1,2]}
         graph = defaultdict(list)
 
