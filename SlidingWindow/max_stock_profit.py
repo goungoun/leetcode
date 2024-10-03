@@ -22,7 +22,7 @@ class Solution:
 
         return 5
         """
-        if prices is None or len(prices) == 0:
+        if not prices:
             return 0
             
         l = 0
