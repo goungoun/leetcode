@@ -29,7 +29,10 @@ class Solution:
 
             for nei in old_n.neighbors:
                 if nei.val not in created:
-                    created[nei.val] = Node(nei.val)
+                    # Beats only 21% due to unnecessary variable use
+                    # new_nei = Node(nei.val)
+                    # created[nei.val] = new_nei
+                    created[nei.val] = Node(nei.val) # Fixed
 
                 new_n.neighbors.append(created[nei.val])
               
