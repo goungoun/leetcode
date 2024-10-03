@@ -25,7 +25,7 @@ class Solution:
         For optimization, once the course is validated make it empty prerequisits
         """
 
-        if prerequisites is None or len(prerequisites) == 0:
+        if not prerequisites: # prerequisites is None or len(prerequisites) == 0
             return True
         
         graph = defaultdict(list)
