@@ -23,7 +23,12 @@ class Solution:
         Use heap to pickup the heaviest two stones
         Use min heap (by default) like a max heap by making negative values in each element
         One round, heappop twice and push elements according tho the result
+
+        Beats 97.24%
         """
+        if not stones:
+            return 0
+            
         h = [-x for x in stones]
         heapify(h) 
 
