@@ -20,6 +20,13 @@ class Solution:
         Example 3: numCourses = 1
         prerequisites = []
         return [0]
+
+        Approach: DFS
+        Build a graph, key:value = {course:[prerequisites]}
+        Traverse a graph until the course does not have the prerequisites
+        If any cycle is detected just return empty list, otherwise append a course to the course order list
+
+        Beats 90.31%, T=O(V+E)
         """
         graph = defaultdict(list)
 
