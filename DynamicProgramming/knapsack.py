@@ -1,3 +1,7 @@
+# Leet code for Knap Sack problem is not found. 
+# So, I wrote the python code for my practice after watching Tushar Roy's solution.
+# https://www.youtube.com/watch?v=8LusJS5-AGo&list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr&index=2
+
 n_items = 4
 values = [1,4,5,7]
 weights = [1,3,4,5]
@@ -19,10 +23,6 @@ import numpy as np
 print(np.array(T))
 
 """
-Leet code for Knap Sack problem is not found. So, wrote the code to practice after watching 
-Tushar Roy's solution. https://www.youtube.com/watch?v=8LusJS5-AGo&list=PLrmLmBdmIlpsHaNTPP_jHHDx_os9ItYXr&index=2
-
-Result:
 [[0 1 1 1 1 1 1 1]
  [0 1 1 4 5 5 5 5]
  [0 1 1 4 5 6 6 9]
