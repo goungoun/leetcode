@@ -5,7 +5,6 @@
 n_items = 4
 values = [1,4,5,7]
 weights = [1,3,4,5]
-items = list(zip(weights, values))
 weight_limit = 7
 
 T = [[0] * (weight_limit+1) for _ in range(n_items)]
