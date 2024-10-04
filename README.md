@@ -6,8 +6,10 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 ### String
 ```python
 9 return s == s[::-1] # "".join(list(reversed(s)))
-28 haystack.find(needle)
+28 haystack.find(needle) # cf. index() return error if not found, but find() returns -1
 191 return str(bin(n))[2:].count('1')
+
+# strip, replace, upper, lower, startswith, endswith etc..
 ```
 
 ### List
