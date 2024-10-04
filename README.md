@@ -43,6 +43,7 @@ from functools import reduce
 
 ### Stack
 ```python
+# append(), pop()
 67 l1 = [int(x) for x in a]
 67 n1 = l1.pop() if l1 else 0 # Add Binary
 67 n2 = l2.pop() if l2 else 0
@@ -59,6 +60,7 @@ from functools import reduce
 
 ### Queue
 ```python
+# append(), popleft()
 637 from collections import deque
 637 q = deque([root])
 637 node = q.popleft() # bfs
@@ -76,6 +78,7 @@ from functools import reduce
 
 ### Dictionary
 ```python
+# del d[key], val=pop(key) etc..
 1 d = {}
 1 if search in d: # O(1)
 508 if n not in memo:
@@ -106,6 +109,7 @@ from functools import reduce
 
 ### Set
 ```python
+# add(), remove()
 3 while s[r] in dup_chk:
 3 dup_chk.remove(s[l])
 
