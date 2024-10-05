@@ -24,33 +24,38 @@ class Solution:
     T=O(n**2), S=O(n**2)
     """
     def minDistance(self, word1: str, word2: str) -> int:
-        if not word1 or not word2:
+        if not word1 and not word2:
             return 0
+        elif not word1 and word2:
+            return len(word2)
+        elif not word2 and word1:
+            return len(word1)
 
-        m = len(word1)
-        n = len(word2)
+        len_word1 = len(word1)
+        len_word2 = len(word2)
 
-        cost =[[0] * (n + 1) for _ in range(m + 1)]
+        # word1: row, word2: col
+        cost = [[0] * (len_word2 + 1) for _ in range(len_word1 + 1)]
 
         # Left column: The cost of change when word2 is empty
-        for i in range(1, m+1):
-            cost[i][0] = i
+        for row in range(1, len_word1+1):
+            cost[row][0] = row
 
         # Top line: The cost of change when word1 is empty
-        for j in range(1, n+1):
-            cost[0][j] = j
+        for col in range(1, len_word2+1):
+            cost[0][col] = col
 
-        for i in range(1, m+1):
-            for j in range(1, n+1):
-                if word1[i-1] == word2[j-1]:
-                    cost[i][j] = cost[i-1][j-1]
+        for row in range(1, len_word1+1):
+            for col in range(1, len_word2+1):
+                if word1[row-1] == word2[col-1]:
+                    cost[row][col] = cost[row-1][col-1]
                 else:
-                    cost[i][j] = min(
-                        cost[i-1][j-1], 
-                        cost[i-1][j],
-                        cost[i][j-1]
+                    cost[row][col] = min(
+                        cost[row-1][col-1], 
+                        cost[row-1][col],
+                        cost[row][col-1]
                     ) + 1
 
-        return cost[m][n]
+        return cost[len_word1][len_word2]
 
-    # referenced and modified the example code from N7_BLACKHAT
+    # referenced and modified the example code from a Leetcode user N7_BLACKHAT
