@@ -78,7 +78,7 @@ from functools import reduce
 
 ### Dictionary
 ```python
-# del d[key], val=pop(key) etc..
+# del d[key], val=d.pop(key)
 1 d = {}
 1 if search in d: # O(1)
 508 if n not in memo:
