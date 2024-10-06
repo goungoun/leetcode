@@ -33,8 +33,9 @@ class Solution:
         if not text1 or not text2:
             return 0
 
-        l1 = len(text1)+1
-        l2 = len(text2)+1
+        l1 = len(text1)+1 if text1 else 0
+        l2 = len(text2)+1 if text2 else 0
+        
         longest = [[0]*l2 for _ in range(l1)]
 
         for r in range(1, l1):
@@ -45,4 +46,4 @@ class Solution:
                     longest[r][c] = max(longest[r-1][c], longest[r][c-1])
 
         return longest[r][c]
-      
+        
