@@ -26,34 +26,30 @@ class Solution:
     def minDistance(self, word1: str, word2: str) -> int:
         if not word1 and not word2:
             return 0
-        elif not word1 and word2:
-            return len(word2)
-        elif not word2 and word1:
-            return len(word1)
 
-        len_word1 = len(word1)
-        len_word2 = len(word2)
+        len_word1 = len(word1) if word1 else 0
+        len_word2 = len(word2) if word2 else 0
 
         # word1: row, word2: col
         cost = [[0] * (len_word2 + 1) for _ in range(len_word1 + 1)]
 
-        # Left column: The cost of change when word2 is empty
-        for row in range(1, len_word1+1):
-            cost[row][0] = row
+        # first column: The cost of change without word2
+        for r in range(1, len_word1+1):
+            cost[r][0] = r
 
-        # Top line: The cost of change when word1 is empty
-        for col in range(1, len_word2+1):
-            cost[0][col] = col
+        # first row: The cost of change without word1
+        for c in range(1, len_word2+1):
+            cost[0][c] = c
 
-        for row in range(1, len_word1+1):
-            for col in range(1, len_word2+1):
-                if word1[row-1] == word2[col-1]:
-                    cost[row][col] = cost[row-1][col-1]
+        for r in range(1, len_word1+1):
+            for c in range(1, len_word2+1):
+                if word1[r-1] == word2[c-1]:
+                    cost[r][c] = cost[r-1][c-1]
                 else:
-                    cost[row][col] = min(
-                        cost[row-1][col-1], 
-                        cost[row-1][col],
-                        cost[row][col-1]
+                    cost[r][c] = min(
+                        cost[r-1][c-1], 
+                        cost[r-1][c],
+                        cost[r][c-1]
                     ) + 1
 
         return cost[len_word1][len_word2]
