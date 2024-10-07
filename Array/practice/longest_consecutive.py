@@ -10,7 +10,7 @@ class Solution:
         if not nums:
             return 0
 
-        # starters selection: if there is no such number less than the number, it is potentially a starters.
+        # starters: if there is no such number less than the number, it is potentially a starter.
         set_nums = set(nums)
 
         starters = []
@@ -18,7 +18,7 @@ class Solution:
             if num - 1 not in set_nums:
                 starters.append(num)
 
-        # Given starterss, lets' check the longest subsequence... 
+        # Given starters, lets' check the longest subsequence... 
         max_cnt = 0
         for num in starters:
             cnt = 1
