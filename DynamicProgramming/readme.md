@@ -5,7 +5,7 @@
 70. Climbing Stairs
     
 X. 0/1 Knapsack Problem
-72. Edit Distance (Medium)
+72. Edit Distance (Medium) <br>
 1143. Longest Common Subsequence (Medium)
 
 322. Coin Change (Medium)
