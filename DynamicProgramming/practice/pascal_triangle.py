@@ -29,7 +29,7 @@ class Solution:
 
         Beats 68.37%
         """
-        if not numRows:
+        if not numRows: # 0 or None
             return []
 
         p = [[1]]
