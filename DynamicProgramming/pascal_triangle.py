@@ -26,6 +26,8 @@ class Solution:
         1) Edges - just set 1 is ok
         2) None Edges - use the result of the previous row 
            p[row][col] = p[row-1][col-1] + p[row-1][col]
+
+        Beats 68.37%
         """
         if not numRows:
             return []
