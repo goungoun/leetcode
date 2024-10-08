@@ -27,6 +27,9 @@ class Solution:
         2) None Edges - use the result of the previous row 
            p[row][col] = p[row-1][col-1] + p[row-1][col]
         """
+        if not numRows:
+            return []
+            
         p = []
   
         for row in range(numRows):
