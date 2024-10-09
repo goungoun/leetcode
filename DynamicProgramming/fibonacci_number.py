@@ -26,7 +26,7 @@ class Solution:
         
         pprv, prv, curr = 0, 1, 1
 
-        for i in range(2, n+1):
+        for i in range(1, n):
             curr = pprv + prv
             pprv = prv
             prv = curr
