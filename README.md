@@ -166,6 +166,7 @@ from functools import reduce
 704 l,r = 0, len(nums)-1 
 704 while l <= r:
 215 for _ in range(k):
+509 for i in range(1, n): # n=1: range(1,1) does not loop
 1971 for u,v in edges:
 
 172 from functools import reduce
