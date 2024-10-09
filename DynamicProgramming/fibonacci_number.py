@@ -15,9 +15,7 @@ class Solution:
         4: 1 + 2 = 3
 
         Approach: bottom-up DP
-        Break down to the sub problem and express a structure of the problem as a recurrence formular. 
-        Apply memoization to prevent repetitive calls with the overlapping subproblems
-        Rewrite without recursion for better computation and memory use and replace array S=O(n) to variables S=O(1) if all the spaces are not required.
+        replace array S=O(n) to variables S=O(1) if all the spaces are not required.      
         """
         if not n or n < 0:
             return 0
@@ -30,6 +28,24 @@ class Solution:
             prv = curr
             
         return curr
+
+    def fib_dp(self, n: int) -> int:
+        """
+        Approach: bottom-up DP
+        Rewrite without recursion for better computation and memory use
+        T=O(n) beats 99.93%, S=O(n) beats 99.33%
+        """
+        if not n or n < 0:
+            return 0
+
+        f = [0] * (n+1)
+        f[0] = 0
+        f[1] = 1
+
+        for i in range(2,n+1):
+            f[i] = f[i-1] + f[i-2]
+
+        return f[-1]
 
     def fib_recursive(self, n: int) -> int:
         """
@@ -46,6 +62,8 @@ class Solution:
         fib(n) = fib(n-1) + fib(n-2), for n > 1
 
         Approach: Top-down DP, recursive
+        Break down to the sub problem and express a structure of the problem as a recurrence formular. 
+        Apply memoization to prevent repetitive calls with the overlapping subproblems
         """
         if not n or n < 0:
             return 0
