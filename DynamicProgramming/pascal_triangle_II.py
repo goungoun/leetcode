@@ -1,7 +1,7 @@
 # 119. Pascal's Triangle II
 # https://leetcode.com/problems/pascals-triangle-ii  
-from typing import List
 
+from typing import List
 class Solution:
     def getRow(self, rowIndex: int) -> List[int]:
         """
@@ -10,6 +10,12 @@ class Solution:
 
         Example:
         rowIndex = 3
+        
+        [1,1,1,1]
+        [1,1,1,1]
+        [1,2,1,1]
+        [1,3,3,1]
+        
         return [1,3,3,1]
 
         Approach: Backward iteration
