@@ -8,13 +8,11 @@ class Solution:
         return number
 
         Example:
-        fib(0) = 0
-        fib(1) = 1
-        fib(2) = fib(0)+fib(1)
-        fib(3) = fib(2)+fib(1)
-        fib(4) = fib(3)+fib(2)
-        ...
-        fib(n) = fib(n-1) + fib(n-2), for n > 1 
+        0: 0
+        1: 1
+        2: 0 + 1 = 1
+        3: 1 + 1 = 2
+        4: 1 + 2 = 3
 
         Approach: bottom-up DP
         Break down to the sub problem and express a structure of the problem as a recurrence formular. 
@@ -26,7 +24,7 @@ class Solution:
         
         pprv, prv, curr = 0, 1, 1
 
-        for i in range(1, n):
+        for i in range(1, n): # Hint: if n=1, range(1,1) does not loop
             curr = pprv + prv
             pprv = prv
             prv = curr
@@ -34,6 +32,21 @@ class Solution:
         return curr
 
     def fib_recursive(self, n: int) -> int:
+        """
+        Fibonacci sequence, such that each number is the sum of the two preceding ones
+        return number
+        
+        Example:
+        fib(0) = 0
+        fib(1) = 1
+        fib(2) = fib(0)+fib(1)
+        fib(3) = fib(2)+fib(1)
+        fib(4) = fib(3)+fib(2)
+        ...
+        fib(n) = fib(n-1) + fib(n-2), for n > 1
+
+        Approach: Top-down DP, recursive
+        """
         if not n or n < 0:
             return 0
             
