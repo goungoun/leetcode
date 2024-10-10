@@ -17,8 +17,5 @@ class Solution:
 
         return T
 
-  """
-    def transpose_np(self, A):
-        import numpy as np
-        return np.transpose(np.array(A)).tolist()
-  """
+
+# return np.transpose(np.array(A)).tolist()
