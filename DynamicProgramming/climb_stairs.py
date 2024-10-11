@@ -3,7 +3,7 @@
 class Solution:
     def climbStairs(self, n: int) -> int:
         """
-        Ways to reach to the top either 1 or two steps
+        Ways to reach the top either 1 or two steps
         return cnt
 
         Example:
@@ -17,9 +17,9 @@ class Solution:
         Fibonacci Sequence!
         
         Approach: 
-        Bottom-up DP wihout recursive calls
-        Practically it should faster without many function calls
-        Additionaly, we can remove an array or a dictionary for memoization to decrease space complexity as well
+        Bottom-up DP without recursive calls
+        Practically it should be faster without many function calls
+        Additionally, we can remove an array or a dictionary for memoization to decrease space complexity as well
         """
         if not n or n < 0:
             return 0
@@ -33,10 +33,29 @@ class Solution:
             prv = curr
 
         return curr
-    
-    def climbStairs_bak(self, n: int) -> int:
+
+    def climbStairs_bottom_up(self, n: int) -> int:
         """
-        Approach: recursion & memoization
+        Approach: bottom up DP
+        Subproblem depends only on solving smaller subproblem
+        Design loop as the actual order of recursive call, from the smallest to larger one
+        Store the computed result to a dp table and reuse
+        Return the last element of the table
+        """
+        if n is None or n < 1 or n > 45:
+            raise ValueError (f"1 <= n <= 45, n={n}")
+
+        cnt = [1]*(n+1)
+
+        # T=O(n), S=O(1)
+        for i in range(2,n+1):
+            cnt[i] = cnt[i-2] + cnt[i-1]
+
+        return cnt[-1]
+        
+    def climbStairs_top_down(self, n: int) -> int:
+        """
+        Approach: Top down DP, recursion & memoization
         Design problem with sub problems
         Recurrence Formula: climb(n)= climb(n-2) + climb(n-1)
         Memoize the subproblem result to prevent recomputation by recursive calls
