@@ -1,16 +1,20 @@
 # Practice Orders
 ~~~
-118. Pascal's Triangle
-119. Pascal's Triangle II
-~~~
-
-~~~
 509. Fibonacci Number
 70. Climbing Stairs
 ~~~
 
 ~~~
-0/1 Knapsack Problem
+118. Pascal's Triangle
+119. Pascal's Triangle II
+~~~
+
+~~~
+##. Cutting Rod
+~~~
+
+~~~
+##. 0/1 Knapsack Problem
 72. Edit Distance (Medium)
 1143. Longest Common Subsequence (Medium)
 ~~~
