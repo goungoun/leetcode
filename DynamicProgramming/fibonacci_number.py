@@ -36,7 +36,7 @@ class Solution:
         
         T=O(n) beats 99.93%, S=O(n) beats 99.33%
         * The time complexity and space complexity can be different time to time
-        * Due to the short range of the given input, the result was quiute decent even though O(n) space complxity.
+        * Due to the short range of the given input, the result was quite decent even though O(n) space complxity.
         """
         if not n or n < 0:
             return 0
@@ -64,8 +64,8 @@ class Solution:
         fib(n) = fib(n-1) + fib(n-2), for n > 1
 
         Approach: Top-down DP, recursive
-        Break down to the sub problem and express a structure of the problem as a recurrence formular. 
-        Apply memoization to prevent repetitive calls with the overlapping subproblems
+        Break down to the sub problem and express a structure of the problem as a recurrence formular. T=O(2^n), S=O(1)
+        Apply memoization to prevent repetitive calls with the overlapping subproblems. T=O(n), S=(n)
         """
         if not n or n < 0:
             return 0
