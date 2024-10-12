@@ -32,8 +32,11 @@ class Solution:
     def fib_dp(self, n: int) -> int:
         """
         Approach: bottom-up DP
-        Rewrite without recursion for better computation and memory use
+        Rewrite without recursion for better computation, but increased memory use
+        
         T=O(n) beats 99.93%, S=O(n) beats 99.33%
+        * The time complexity and space complexity can be different time to time
+        * Due to the short range of the given input, the result was quiute decent even though O(n) space complxity.
         """
         if not n or n < 0:
             return 0
