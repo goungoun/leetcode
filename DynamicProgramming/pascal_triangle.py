@@ -27,17 +27,15 @@ class Solution:
         2) None Edges - use the result of the previous row 
            p[row][col] = p[row-1][col-1] + p[row-1][col]
 
-        Beats 68.37%
+        Beats 99.40%
         """
         if not numRows:
             return []
             
-        p = []
+        p = [[1]*(row+1) for row in range(numRows)]
   
-        for row in range(numRows):
-            tmp = [1] * (row + 1)
+        for row in range(2, numRows):
             for col in range(1, row):
-                tmp[col] = p[row-1][col-1] + p[row-1][col]
-            p.append(tmp)
+                p[row][col] = p[row-1][col-1] + p[row-1][col]
 
         return p
