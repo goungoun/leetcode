@@ -1,7 +1,5 @@
-"""
 In some cases, Top-down approach is better as it solves related problems only.
 For example, C(5,4) 
-"""
 
 ~~~
 i) Top Down
@@ -22,4 +20,4 @@ ii) bottom up
 1 5 10 10 5 -
 ~~~
 
-# ref: Dynamic Programming by Meenakshi
+ref: Dynamic Programming by Meenakshi
