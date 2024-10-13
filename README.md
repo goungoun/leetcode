@@ -118,6 +118,8 @@ from functools import reduce
 
 1971 visited = set([source])
 1971 visited.add(adj_vertex)
+
+128 starters = {num for num in nums if num-1 not in set_nums} # handle duplicates ahead
 ```
 
 ### Tuple
