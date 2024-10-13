@@ -13,8 +13,13 @@ class Solution:
         The longest consecutive sequence is [1,2,3,4]
         return 4
 
-        Example 2: hidden case
-        nums = [9,1,4,7,3,-1,0,5,8,-1,6] * unsorted, duplicated
+        Example 2:
+        nums = [0,3,7,2,5,8,4,6,0,1] * unsorted, duplicated 0
+        The longest consecutive sequence is [0,1,2,3,4,5,6,7,8]
+        return 9
+
+        Example 3: hidden case
+        nums = [9,1,4,7,3,-1,0,5,8,-1,6] * unsorted, duplicated -1
         The longest consecutive sequence is [6,7,8,9]
         return 4
 
@@ -22,6 +27,8 @@ class Solution:
         Convert nums array list to a set
         Narrow down to a list of starters of its consecutive sequence
         For each starters, measure actual length of the sequence and get the max length
+
+        Beats 88.9%
         """
         if not nums:
             return 0
@@ -29,7 +36,7 @@ class Solution:
         max_length = 1
 
         set_nums = set(nums)
-        starters = set([num for num in nums if num-1 not in set_nums]) # handle duplicates ahead
+        starters = {num for num in nums if num-1 not in set_nums} # handle duplicates ahead
         
         for starter in starters:
             length = 1       
