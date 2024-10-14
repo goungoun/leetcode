@@ -27,20 +27,20 @@ class Solution:
         If dup_cnt is less than 2, in-place update to the num and increase k
         """
 
-        dup_cnt = 1
-        k = 0
+        if not nums:
+            return 0
 
-        for i in range(len(nums)):
-            if i > 0 and nums[i] == nums[i-1]:
-                dup_cnt += 1
+        cnt =  1
+        k = 1
+
+        for i in range(1, len(nums)):
+            if nums[i] == nums[i-1]:
+                cnt += 1
             else:
-                dup_cnt = 1
+                cnt = 1
 
-            if dup_cnt <= 2:
+            if cnt <= 2:
                 nums[k] = nums[i]
                 k += 1
 
         return k
-
-
-        
