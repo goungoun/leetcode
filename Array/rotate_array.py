@@ -41,7 +41,7 @@ class Solution:
         reverse(0, r - 1)
         reverse(r, len_nums - 1)
 
-        # See also: 344. Reverse String
+        # See also: 344. Reverse String, 48. Rotate Image
         
     def rotate_idx(self, nums: List[int], k: int) -> None:
         """
