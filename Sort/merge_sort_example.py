@@ -4,6 +4,7 @@ def merge(arr1, arr2):
 	len_arr1 = len(arr1)
 	len_arr2 = len(arr2)
 
+	# merge sort requires O(n) auxiliary space to hold the sorted elements
 	ret = []
 
 	while idx1 < len_arr1 and idx2 < len_arr2:
