@@ -40,6 +40,8 @@ class Solution:
         reverse(0, len_nums - 1)
         reverse(0, r - 1)
         reverse(r, len_nums - 1)
+
+        # See also: 344. Reverse String
         
     def rotate_idx(self, nums: List[int], k: int) -> None:
         """
