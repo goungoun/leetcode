@@ -5,9 +5,44 @@ class Solution:
     def rotate(self, nums: List[int], k: int) -> None:
         """
         Rotate the given integer array num k times
-        + Try to come up with as many solutions as you can. (F/U)
         Do not return anything, modify nums in-place instead.
 
+        F/U
+        + Try to come up with as many solutions as you can. 
+        + Could you do it in-place with O(1) extra space? ***
+
+        Example: 
+        nums = [1,2,3,4,5,6,7], k = 9
+        group:  # # * * * * *, remainder r = 2
+        
+        return [6,7,1,2,3,4,5]
+                
+        Approach: Reverse
+        Reverse all number.
+        Reverse before r
+        Reverse after r
+        
+        T=O(n), S=O(1)
+        Beats 85.42%
+        """
+        if not nums:
+            return []
+
+        len_nums = len(nums)
+        r = k % len_nums
+        
+        def reverse(left, right):
+            while left < right:
+                nums[left], nums[right] = nums[right], nums[left]
+                left += 1
+                right -= 1
+
+        reverse(0, len_nums - 1)
+        reverse(0, r - 1)
+        reverse(r, len_nums - 1)
+        
+    def rotate_idx(self, nums: List[int], k: int) -> None:
+        """
         Example 1:
         nums = [1,2,3,4,5,6,7], k = 3
         k = 1 [7,1,2,3,4,5,6]
@@ -35,8 +70,13 @@ class Solution:
 
         Approach:
         One approach can be using index slicing to perform several rotates at once
-
+        
+        T=O(n), S=O(n)
         """
+        if not nums:
+            return []
+            
         a = k % len(nums)
         nums[:] = nums[-a:] + nums[:-a]
-        
+
+# Referenced and updated the solution from a leetcode user niits
