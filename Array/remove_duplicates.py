@@ -25,6 +25,7 @@ class Solution:
         Initialize k to 2 because the problem allows each unique element to appear at most twice.
         Compare the current value with the element located at k - 2.        
 
+        T=O(n), S=O(1)
         Beats 81.45%
         """
         if not nums:
@@ -46,6 +47,9 @@ class Solution:
         Compare previous value and the current value for each iteration of the given array nums 
         Reset the count if the value is not the same
         If cnt is less than 2, in-place update to the num and increase k
+
+        T=O(n), S=O(1)
+        Beats 53.91%
         """
 
         if not nums:
