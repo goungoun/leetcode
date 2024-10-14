@@ -20,11 +20,32 @@ class Solution:
         nums = [0,0,1,1,2,3,3,_,_]
         return 7
 
+        Approach: by niits
+        The point is how we can decide whether current number is valid or not.
+        Initialize k to 2 because the problem allows each unique element to appear at most twice.
+        Compare the current value with the element located at k - 2.        
+
+        Beats 81.45%
+        """
+        if not nums:
+            return 0
+
+        k = 2
+
+        for i in range(2, len(nums)):
+            if nums[i] != nums[k - 2]:
+                nums[k] = nums[i]
+                k += 1 
+
+        return k
+        
+    def removeDuplicates_my(self, nums: List[int]) -> int:
+        """
         Approach:
-        Use dup_cnt for each value
+        Use cnt for each value
         Compare previous value and the current value for each iteration of the given array nums 
         Reset the count if the value is not the same
-        If dup_cnt is less than 2, in-place update to the num and increase k
+        If cnt is less than 2, in-place update to the num and increase k
         """
 
         if not nums:
@@ -44,3 +65,5 @@ class Solution:
                 k += 1
 
         return k
+
+# Referenced the solution by a leetcode user niits to compare my solution
