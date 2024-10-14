@@ -18,7 +18,10 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 215 l = [-x for x in nums]
 67 return "".join(l[::-1])
 58 return len(s.strip().split()[-1])
-189 nums[:] = nums[-a:] + nums[:-a]
+
+189 nums[:] = nums[-k:] + nums[:-k]
+189 nums[:k], nums[k:] = nums[-k:], nums[:-k]
+
 463 adj = [(row,col-1), (row,col+1), (row-1,col), (row+1,col)]
 463 adj_land = [(r,c) for r,c in adj if 0 <= r < m and 0 <= c < n and grid[r][c]==1]
 1051 expected.extend([i]*counter[i])
@@ -181,6 +184,7 @@ from functools import reduce
 344 s[l], s[r] = s[r], s[l]
 266 root.left, root.right = root.right, root.left
 48 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
+189 nums[:k], nums[k:] = nums[-k:], nums[:-k]
 ```
 
 ### Exceptions
