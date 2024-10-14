@@ -78,7 +78,14 @@ class Solution:
         if not nums:
             return []
             
-        a = k % len(nums)
-        nums[:] = nums[-a:] + nums[:-a]
+        r = k % len(nums)
+        nums[:] = nums[-r:] + nums[:-r]
+        
+    def rotate_idx2(self, nums: List[int], k: int) -> None:
+        if not nums:
+            return []
+        
+        r = k % len(nums)
+        nums[:r], nums[r:] = nums[-r:], nums[:-r]
 
 # Referenced and updated the solution from a leetcode user niits
