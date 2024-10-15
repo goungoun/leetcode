@@ -42,25 +42,19 @@ class Solution:
         reverse(r, len_nums - 1)
 
         # See also: 344. Reverse String, 48. Rotate Image
-        
-    def rotate_idx1(self, nums: List[int], k: int) -> None:
+
+    def rotate_bad(self, nums: List[int], k: int) -> None:
         """
         Example 1:
         nums = [1,2,3,4,5,6,7], k = 3
         k = 1 [7,1,2,3,4,5,6]
         k = 2 [6,7,1,2,3,4,5]
         k = 3 [5,6,7,1,2,3,4]
-        
-        nums[-3:] == [5, 6, 7]
-        nums[:-3] == [1, 2, 3, 4]
 
         Example 2:
         nums = [-1,-100,3,99], k = 2
         k = 1 [99,-1,-100,3]
         k = 2 [3,99,-1,-100]
-
-        nums[-2:] == [3,99]
-        nums[:-2] == [-1,-100]
 
         Example 3 (*):
         nums = [1,2,3], k = 5
@@ -69,6 +63,39 @@ class Solution:
         k = 3 [1,2,3] <- Back to the initial list
         k = 4 [3,1,2] <- The same as k = 1
         k = 5 [2,3,1] <- The same as k = 2
+        
+        Approach:
+        This simulates rotating array exactly as explained.
+        Bad idea, but if I have to suggest different algorithms.
+        It would acceptable only when k is very small. 
+
+        T=O(n^2), S=O(n)
+        Beats 10.38%
+        """
+        if not nums:
+            return []
+            
+        r = k % len(nums)
+        
+        # T=O(n*r), worst O(n^2)
+        while r > 0:
+            val = nums.pop() # O(1)
+            nums.insert(0, val) # O(n), right shift values in nums to make a room for a new element
+            r -= 1
+        
+    def rotate_idx1(self, nums: List[int], k: int) -> None:
+        """
+        Example 1:
+        nums = [1,2,3,4,5,6,7], k = 3
+
+        nums[-3:] == [5, 6, 7]
+        nums[:-3] == [1, 2, 3, 4]
+
+        Example 2:
+        nums = [-1,-100,3,99], k = 2
+
+        nums[-2:] == [3,99]
+        nums[:-2] == [-1,-100]
 
         Approach:
         One approach can be using index slicing to perform several rotates at once
@@ -94,27 +121,6 @@ class Solution:
         
         r = k % len(nums)
         nums[:r], nums[r:] = nums[-r:], nums[:-r]
-
-    def rotate_bad(self, nums: List[int], k: int) -> None:
-        """
-        Approach:
-        This simulates rotating array exactly as explained.
-        Bad idea, but if I have to suggest different algorithms.
-        It would acceptable only when k is very small. 
-
-        T=O(n^2), S=O(n)
-        Beats 10.38%
-        """
-        if not nums:
-            return []
-            
-        r = k % len(nums)
-        
-        # T=O(n*r), worst O(n^2)
-        while r > 0:
-            val = nums.pop() # O(1)
-            nums.insert(0, val) # O(n), right shift values in nums to make a room for a new element
-            r -= 1
-        
+      
 
 # Referenced solutions from a leetcode user niits
