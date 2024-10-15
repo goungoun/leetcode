@@ -21,6 +21,8 @@ The recordings are without spoken words, instead typing sounds and peaceful musi
 
 189 nums[:] = nums[-k:] + nums[:-k]
 189 nums[:k], nums[k:] = nums[-k:], nums[:-k]
+189 val = nums.pop() # O(1)
+189 nums.insert(0, val) # O(n)
 
 463 adj = [(row,col-1), (row,col+1), (row-1,col), (row+1,col)]
 463 adj_land = [(r,c) for r,c in adj if 0 <= r < m and 0 <= c < n and grid[r][c]==1]
