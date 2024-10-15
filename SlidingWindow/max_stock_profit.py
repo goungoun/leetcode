@@ -68,4 +68,16 @@ class Solution:
 
         return max_profit
 
+    def maxProfit_bruth_force(self, prices: List[int]) -> int:
+        """
+        Bruth force approch, T=O(n^2), S=O(n)
+        Not a good solution
+        """
+        max_profit = 0
 
+        for i, buy in enumerate(prices):
+            for j, sell in enumerate(prices[i:]):
+                profit = sell - buy
+                max_profit = max(profit, max_profit)
+
+        return max_profit
