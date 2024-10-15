@@ -22,6 +22,9 @@ class MaxHeap:
         return -heappop(self._h)
 
     def len(self):
+        if not self._h:
+            return 0
+            
         return len(self._h)
 
 class Solution:
