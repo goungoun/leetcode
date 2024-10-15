@@ -43,7 +43,7 @@ class Solution:
 
         # See also: 344. Reverse String, 48. Rotate Image
         
-    def rotate_idx(self, nums: List[int], k: int) -> None:
+    def rotate_idx1(self, nums: List[int], k: int) -> None:
         """
         Example 1:
         nums = [1,2,3,4,5,6,7], k = 3
@@ -72,6 +72,7 @@ class Solution:
 
         Approach:
         One approach can be using index slicing to perform several rotates at once
+        Slicing requires auxiliary space, not a good idea
         
         T=O(n), S=O(n)
         """
@@ -82,10 +83,37 @@ class Solution:
         nums[:] = nums[-r:] + nums[:-r]
         
     def rotate_idx2(self, nums: List[int], k: int) -> None:
+        """
+        Approach:
+        Slicing requires auxiliary space to copy elements, not a good idea
+
+        T=O(n), S=O(n)
+        """
         if not nums:
             return []
         
         r = k % len(nums)
         nums[:r], nums[r:] = nums[-r:], nums[:-r]
 
-# Referenced and updated the solution from a leetcode user niits
+    def rotate_bad(self, nums: List[int], k: int) -> None:
+        """
+        Approach:
+        This simulates rotating array exactly as explained
+        This is bad idea, but if I have to suggest different algorithms...
+
+        T=O(n^2), S=O(n)
+        Beats 10.38%
+        """
+        if not nums:
+            return []
+            
+        r = k % len(nums)
+        
+        # T=O(n*r), worst O(n^2)
+        while r > 0:
+            val = nums.pop() # O(1)
+            nums.insert(0, val) # O(n), right shift values in nums to make a room for a new element
+            r -= 1
+        
+
+# Referenced solutions from a leetcode user niits
