@@ -9,20 +9,20 @@ class MaxHeap:
     The purpose of MaxHeap is to simplify code when max heap is required.
     """
     def __init__(self):
-        self.h = []
+        self._h = []
 
     def heapify(self, l):
-        self.h = [-x for x in l]
-        heapify(self.h)
+        self._h = [-x for x in l]
+        heapify(self._h)
 
     def heappush(self, value):
-        heappush(self.h, -value)
+        heappush(self._h, -value)
 
     def heappop(self):
-        return -heappop(self.h)
+        return -heappop(self._h)
 
     def len(self):
-        return len(self.h)
+        return len(self._h)
 
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
