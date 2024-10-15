@@ -1,5 +1,5 @@
 ---
-name: Leetcode Solution template
+name: Leetcode Solution
 about: Use this template to provide a solution
 title: ''
 labels: ''
