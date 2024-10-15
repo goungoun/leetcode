@@ -98,8 +98,9 @@ class Solution:
     def rotate_bad(self, nums: List[int], k: int) -> None:
         """
         Approach:
-        This simulates rotating array exactly as explained
-        This is bad idea, but if I have to suggest different algorithms...
+        This simulates rotating array exactly as explained.
+        Bad idea, but if I have to suggest different algorithms.
+        It would acceptable only when k is very small. 
 
         T=O(n^2), S=O(n)
         Beats 10.38%
