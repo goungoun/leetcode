@@ -42,3 +42,5 @@ class Solution:
                 heappush(h, -(h2-h1))
 
         return -h[0] if len(h) > 0 else 0
+
+# See also max heap design: https://github.com/goungoun/leetcode/blob/main/Design/max_heap.py
