@@ -1,8 +1,6 @@
 # 1046. Last Stone Weight
 # https://leetcode.com/problems/last-stone-weight
 
-from heapq import heapify, heappop, heappush
-
 class MaxHeap:
     """
     Python heap is min heap by default
@@ -13,13 +11,13 @@ class MaxHeap:
 
     def heapify(self, l):
         self._h = [-x for x in l]
-        heapify(self._h)
+        heapq.heapify(self._h)
 
     def heappush(self, value):
-        heappush(self._h, -value)
+        heapq.heappush(self._h, -value)
 
     def heappop(self):
-        return -heappop(self._h)
+        return -heapq.heappop(self._h)
 
     def len(self):
         if not self._h:
@@ -63,6 +61,5 @@ class Solution:
                 h.heappush(diff)
             
         return h.heappop() if h.len() > 0 else 0
-
 
 
