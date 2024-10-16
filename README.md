@@ -1,7 +1,3 @@
-## Leetcode PlayLists
-https://www.youtube.com/@goungouna <br>
-The recordings are without spoken words, instead typing sounds and peaceful music are included.
-
 ## Syntax Cheatsheet
 ### String
 ```python
