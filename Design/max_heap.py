@@ -54,8 +54,13 @@ class Solution:
         h = MaxHeap()
         h.heapify(stones)
 
-        while h.len() >= 2:
-            h.heappush(abs(h.heappop() - h.heappop()))
+        while h.len() > 1:
+            w1 = h.heappop()
+            w2 = h.heappop()
+
+            diff = abs(w1-w2)
+            if diff > 0:
+                h.heappush(diff)
             
         return h.heappop() if h.len() > 0 else 0
 
