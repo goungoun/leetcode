@@ -1,7 +1,9 @@
 # 1046. Last Stone Weight
 # https://leetcode.com/problems/last-stone-weight
 
-from heapq import heapify, heappop, heappush
+from heapq import heapify, heappop, ?  ### FIX THIS
+
+### Note: If heapq.heapify, heapq.heappop is used directly rather than import, the code looks more readable avoiding confusion.
 
 class MaxHeap:
     """
@@ -14,8 +16,8 @@ class MaxHeap:
     def heapify(self, l):
         heapify([-x for x in l]) #### FIX THIS: heapify is an in-place algorithm
 
-    def heappush(self, value):
-        heappush(self._h, -value)
+    def ?(self, value): ### FIX THIS
+        ?(self._h, -value) ### FIX THIS
 
     def heappop(self):
         return -heappop(self._h)
@@ -54,6 +56,6 @@ class Solution:
         h.heapify(stones)
 
         while h.len() >= 2:
-            h.heappush(abs(h.heappop() - h.heappop())) #### FIX THIS: If x == y, both stones are destroyed
+            h.?(abs(h.heappop() - h.heappop())) #### FIX THIS: If x == y, both stones should be destroyed
             
         return h.heappop() if h.len() > 0 else 0
