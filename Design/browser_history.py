@@ -1,4 +1,4 @@
-# 1472. Design Browser History
+# 1472. Design Browser History (Medium)
 # https://leetcode.com/problems/design-browser-history
 class BrowserHistory:
     """
