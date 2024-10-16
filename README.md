@@ -141,7 +141,8 @@ from functools import reduce
 347 h = [(-cnt, num) for num, cnt in counter.items()]
 347 heapify(h) #O(n)
 
-1046 h = heapify(h) # Bug: h becomes None. It causes error for len(h).
+# Heap is an in-place algorithm, do not assign the return value. If h becomes None, it will cause an error to use len(h).
+1046 h = heapify(h) 
 
 1584 min_heap = [(0,0)]
 1584 dist, i = heappop(min_heap)
