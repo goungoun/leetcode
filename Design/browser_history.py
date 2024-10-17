@@ -45,7 +45,9 @@ class BrowserHistory:
         """
         Visits url from the current page. It clears up all the forward history.
         """
-        while len(self.history) > self.curr + 1:
+        # if curr is not the last idx make it as a last one by removing ends
+        # e.g self.history = self.history[:self.curr] which is O(n)
+        while len(self.history) -1 > self.curr:
             self.history.pop()
          
         self.history.append(url)
