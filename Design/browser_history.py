@@ -11,20 +11,10 @@ class BrowserHistory:
     back(1): Facebook
     back(1): Google
     forward(1): Facebook
-    visits = [Leetcode, Google, Facebook, LinkedIn]
-    forward(2): LinkedIn
+    visits = [Leetcode, Google, Facebook, LinkedIn]    ** LinkedIn added from the Facebook, Youtube is replaced
+    forward(2): LinkedIn    ** no more than the last idx
     back(2): Google
-    back(7): Leetcode
-
-    Example 2: The visit clears up all the forward history.
-    visits = [Leetcode, Google, Facebook, Youtube]
-    back(1): Facebook
-    back(1): Google
-    forward(1): Facebook
-    visits = [Leetcode, Google, Facebook, LinkedIn]
-    forward(2): LinkedIn
-    back(2): Google
-    back(7): Leetcode
+    back(7): Leetcode    **no more than the first idx
 
     Approach:
     History is a append only log.
