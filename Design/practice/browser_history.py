@@ -29,7 +29,7 @@ class BrowserHistory:
         """
         Initializes the object with the homepage of the browser.
         """
-        self.history = [homepage]
+        self.history = [?] ### Complete Here
         self.curr = 0
         
     def visit(self, url):
@@ -40,13 +40,13 @@ class BrowserHistory:
             self.history.pop()
          
         self.history.append(url)
-        self.curr += 1
+        self.curr += ? ### Complete Here
     
     def back(self, steps):
         """
         Move steps back in history. If you can only return x steps in the history and steps > x, you will return only x steps. Return the current url after moving back in history at most steps.
         """
-        self.curr -= steps
+        self.curr -= ? ### Complete Here
         self.curr = max(self.curr, 0)
         
         return self.history[self.curr]
@@ -55,8 +55,8 @@ class BrowserHistory:
         """
         Move steps forward in history. If you can only forward x steps in the history and steps > x, you will forward only x steps. Return the current url after forwarding in history at most steps.
         """
-        self.curr += steps
-        self.curr = min(self.curr, len(self.history)-1)
+        self.curr += ? ### Complete Here
+        self.curr = min(self.curr, ?) ### Complete Here
 
         return self.history[self.curr]
         
