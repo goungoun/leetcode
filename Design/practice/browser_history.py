@@ -17,16 +17,6 @@ class BrowserHistory:
     back(2): Google
     back(7): Leetcode
 
-    Example 2: The visit clears up all the forward history.
-    visits = [Leetcode, Google, Facebook, Youtube]
-    back(1): Facebook
-    back(1): Google
-    forward(1): Facebook
-    visits = [Leetcode, Google, Facebook, LinkedIn]
-    forward(2): LinkedIn
-    back(2): Google
-    back(7): Leetcode
-
     Approach:
     History is a append only log.
     Use python list to append history which is O(1)
