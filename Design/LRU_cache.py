@@ -40,7 +40,7 @@ class LRUCache:
         Initialize the LRU cache with positive size capacity.
         """
         if not isinstance(capacity, int) or capacity <= 0:
-            raise ValueError(f"Capacity must be a positive integer. capacity={capacity}")
+            raise ValueError(f"capacity must be a positive integer. capacity={capacity}")
 
         self.cache = OrderedDict()
         self.capacity = capacity
