@@ -196,6 +196,9 @@ from functools import reduce
 ```python
 70 raise ValueError (f"1 <= n <= 45, n={n}")
 
+146 if not isinstance(capacity, int) or capacity <= 0:
+146 raise ValueError(f"capacity must be a positive integer. capacity={capacity}")
+
 import traceback
 except Exception as e:
      traceback.print_exc()
