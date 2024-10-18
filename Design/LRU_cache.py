@@ -29,7 +29,7 @@ class LRUCache:
     get(4) => return 4 {3:3, 4:4}
     
     Approach:
-    Used ordered dictionary in Python
+    Used built-in data structure in python, ordered dictionary
     Whenever put or get called, move the value to the end
     
     Best beats 100.00 %
@@ -38,6 +38,9 @@ class LRUCache:
     def __init__(self, capacity: int):
         """
         Initialize the LRU cache with positive size capacity.
+        """
+        if not isinstance(capacity, int) or capacity <= 0:
+            raise ValueError(f"Capacity must be a positive integer. capacity={capacity}")
 
         self.cache = OrderedDict()
         self.capacity = capacity
