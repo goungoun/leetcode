@@ -31,8 +31,6 @@ class LRUCache:
     Approach:
     Used built-in data structure in python, ordered dictionary
     Whenever put or get called, move the value to the end
-    
-    Best beats 100.00 %
     """
 
     def __init__(self, capacity: int):
