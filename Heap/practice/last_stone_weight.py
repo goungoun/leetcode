@@ -29,8 +29,8 @@ class Solution:
         if not stones:
             return 0
             
-        h = [-x for x in stones]
-        h = heapify(h) 
+        h = [-x for -x in stones]  # Fix This
+        h = heapify(stones) # Fix This
       
         # TypeError: object of type 'NoneType' has no len()
         #  ^^^^^^
@@ -43,6 +43,6 @@ class Solution:
             elif h1 < h2:
                 heappush(h, -(h2-h1))
 
-        return -h[0] if len(h) > 0 else 0
+        return h[0] if len(h) > 0 else 0 # Fix This
 
 # See also max heap design: ../Design/max_heap.py
