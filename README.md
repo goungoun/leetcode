@@ -207,7 +207,7 @@ except Exception as e:
 ### Functions
 ```python
 67 carry, r = divmod(n1 + n2 + carry,2)
-49 l[ord(c)-ord('a')] += 1  # ord() is inverse of chr() which means ordinal
+49 l[ord(c)-ord('a')] += 1  # ord() is inverse of chr() which means ordinal, returns Unicode. 
 209 min_length = min(min_length, r-l+1)
 ```
 
