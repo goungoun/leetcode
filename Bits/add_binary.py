@@ -11,6 +11,28 @@ class Solution:
 
         Example:
         a = "11", b = "1"
+        > int("11",2) = 3
+        > int("1",2) = 1
+        > 3 + 1 = 4
+        > bin(4) = '0b100'
+        return "100"
+
+        Approach: type conversion
+        When convert the value to the integer, let the function int() knows the string is binary numeral
+        Directly add two integers
+        Convert integer to binary and remove the prefix '0b'
+
+        T=O(1), S=O(1)
+        """
+        if not isinstance(a,str) and not isinstance(b,str):
+            return ""
+
+        return bin(int(a, 2) + int(b, 2))[2:]
+
+    def addBinary_bak1(self, a: str, b: str) -> str:
+        """
+        Example:
+        a = "11", b = "1"
           11
         +  1
         ----
@@ -24,6 +46,8 @@ class Solution:
           
         Approach: Use Stack
         Use Stack to access the number at the end of the string
+
+        T=O(n), S=O(n)
         """
         if not a and not b:
             return ""
@@ -46,11 +70,13 @@ class Solution:
 
         return "".join(map(str,q))
 
-    def addBinary_2(self, a: str, b: str) -> str:
+    def addBinary_bak2(self, a: str, b: str) -> str:
         """
         Approach: Index
         Start from the end of each string
         While decreasing indexs, add numbers and a carry
+
+        T=O(n), S=O(n)
         """
         if not a and not b:
             return ""
