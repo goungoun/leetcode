@@ -24,7 +24,7 @@ class Solution:
 
         T=O(1), S=O(1)
         """
-        if not isinstance(a,str) and not isinstance(b,str):
+        if not isinstance(a,str) or not isinstance(b,str):
             return ""
 
         return bin(int(a, 2) + int(b, 2))[2:]
