@@ -10,13 +10,13 @@ class Solution:
         return sum
 
         Intuition:
-        I cannot use bin() to add binary
+        I cannot use bin() to add binary because it concats bin strings.
         > a = bin(11)
         > b = bin(11)
         a + b
         '0b10110b1011'
 
-        Approach: type conversion
+        Approach: Type conversion
         When convert the value to the integer, let the function int() knows the string is binary numeral
         Directly add two integers
         Convert integer to binary and remove the prefix '0b'
@@ -38,6 +38,11 @@ class Solution:
 
     def addBinary_bak1(self, a: str, b: str) -> str:
         """
+        Without knowing the second argument of int() is for a base, the time and space complexity is increasing to O(n)
+        
+        Approach: Use Stack
+        Use Stack to access the number at the end of the string
+        
         Example:
         a = "11", b = "1"
           11
@@ -50,9 +55,6 @@ class Solution:
           +1011
           -----
           10101
-          
-        Approach: Use Stack
-        Use Stack to access the number at the end of the string
 
         T=O(n), S=O(n)
         """
@@ -78,8 +80,9 @@ class Solution:
         return "".join(map(str,q))
 
     def addBinary_bak2(self, a: str, b: str) -> str:
-        """
+        """   
         Approach: Index
+        Use Index, removed two stacks to improve the space use
         Start from the end of each string
         While decreasing indexs, add numbers and a carry
 
@@ -87,26 +90,24 @@ class Solution:
         """
         if not a and not b:
             return ""
-
-        l1 = [int(x) for x in a] if a else []
-        l2 = [int(x) for x in b] if b else []
+        
+        i = len(a)-1
+        j = len(b)-1
 
         carry = 0
         q = deque([])
-        i = len(l1)-1
-        j = len(l2)-1
-
+ 
         while i >= 0 or j >= 0:
-            n1 = l1[i] if i >= 0 else 0
-            n2 = l2[j] if j >= 0 else 0
+            n1 = int(a[i]) if i >= 0 else 0
+            n2 = int(b[j]) if j >= 0 else 0
 
             carry, r = divmod(n1 + n2 + carry, 2)
-            q.appendleft(r)
+            q.appendleft(str(r))
 
             i -= 1
             j -= 1
 
         if carry > 0:
-            q.appendleft(carry)
+            q.appendleft(str(carry))
 
-        return "".join(map(str,q))
+        return "".join(q)
