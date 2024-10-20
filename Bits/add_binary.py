@@ -29,7 +29,7 @@ class Solution:
         > bin(4) = '0b100'
         return "100"
 
-        T=O(1), S=O(1)
+        T=O(n), S=O(n)
         """
         if not isinstance(a,str) or not isinstance(b,str):
             return ""
