@@ -9,6 +9,18 @@ class Solution:
         Add two binary numbers, a + b
         return sum
 
+        Intuition:
+        I cannot use bin() to add binary
+        > a = bin(11)
+        > b = bin(11)
+        a + b
+        '0b10110b1011'
+
+        Approach: type conversion
+        When convert the value to the integer, let the function int() knows the string is binary numeral
+        Directly add two integers
+        Convert integer to binary and remove the prefix '0b'
+
         Example:
         a = "11", b = "1"
         > int("11",2) = 3
@@ -16,11 +28,6 @@ class Solution:
         > 3 + 1 = 4
         > bin(4) = '0b100'
         return "100"
-
-        Approach: type conversion
-        When convert the value to the integer, let the function int() knows the string is binary numeral
-        Directly add two integers
-        Convert integer to binary and remove the prefix '0b'
 
         T=O(1), S=O(1)
         """
