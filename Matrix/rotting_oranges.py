@@ -6,8 +6,9 @@ from collections import deque
 class Solution:
     def orangesRotting(self, grid: List[List[int]]) -> int:
         """
-        Estimate the time of rotten oranges spread to adjacent fresh oranges.
-        return mins
+        Estimate the time of rotten oranges spread to all fresh oranges.
+        The 4-directional adjacents become to a rotten orange every min.
+        return mins or -1
 
         * 0: empty cell
         * 1: fresh orange
@@ -42,7 +43,6 @@ class Solution:
 
         Approach: BFS
         """
-
         if not grid or not grid[0]:
             return -1
 
