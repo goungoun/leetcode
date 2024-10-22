@@ -243,6 +243,12 @@ True
 True
 ```
 
+### Type Hint
+```python
+1268 from typing import List
+1268 def build(self, words:List[str])-> None:
+```
+
 ## Errors
 ### RecursionError
 RecursionError: maximum recursion depth exceeded in comparison
