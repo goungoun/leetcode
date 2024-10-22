@@ -1,6 +1,8 @@
 # 900. RLE Iterator (Medium)
 # https://leetcode.com/problems/rle-iterator
 
+### Fix This: Memory Limit Exceeded from hidden cases
+
 from collections import deque
 
 class RLEIterator:
@@ -29,8 +31,6 @@ class RLEIterator:
             self.seq.extend([val]*cnt)
             i += 2
 
-        print(f"self.seq={self.seq}")
-
     def next(self, n: int) -> int:
         val = -1
         while n > 0:
@@ -43,8 +43,6 @@ class RLEIterator:
             n -= 1
 
         return val
-        
-
 
 # Your RLEIterator object will be instantiated and called as such:
 # obj = RLEIterator(encoding)
