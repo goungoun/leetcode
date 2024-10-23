@@ -1,4 +1,4 @@
-# 1268. Search Suggestions System
+# 1268. Search Suggestions System (Medium)
 # https://leetcode.com/problems/search-suggestions-system
 
 from typing import List
@@ -6,8 +6,16 @@ from typing import List
 class Trie:
     def __init__(self):
         self.root = {}
+        self.END = "*"
     
-    def build(self, words:List[str])-> None: 
+    def build(self, words:List[str]) -> None:
+        """
+        Build trie (prefix tree)
+
+        T=O(wl), S=(wl)
+        * w: num of word (1 <= words.length <= 1000)
+        * l: avg length of the words (1 <= word[i].length <= 3000)
+        """
         for word in words:
             curr = self.root
             for c in word:
@@ -15,13 +23,23 @@ class Trie:
                     curr[c] = {}
                 curr = curr[c]
                 
-            curr['<END>'] = ''
+            curr[self.END] = ''
                 
         return
     
-    def startsWith(self, node, prefix, cutoff=3):
-        ret = []
+    def startsWith(self, prefix, cutoff=3) -> List[str]:
+        """
+        Traverse trie and return words that are started with a given prefix
+        return wlist
+
+        T=(l+n)
+        * l: the length of prefix (1 <= prefix.length <= 1000)
+        * n: num of nodes in the tree
+        """
+        wlist = []
         tmp = []
+
+        node = self.root
 
         for c in prefix:
             if c not in node:
@@ -29,32 +47,37 @@ class Trie:
             node = node[c]
 
         def dfs(node):
-            if len(ret) == cutoff:
+            if len(wlist) == cutoff:
                 return
 
             for key in node:
-                if key != '<END>':
+                if key != self.END:
                     tmp.append(key)
                     dfs(node[key])
                     tmp.pop()
                 else:
-                    ret.append(prefix + "".join(tmp))
+                    wlist.append(prefix + "".join(tmp))
                     
         dfs(node)
                     
-        return ret
+        return wlist
 
 class Solution:
-    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
-        
-        products.sort()
+    def buildTrie(self, products: List[str]):
+        """
+        Prepare a data structure - trie optimized for suggests.
+        Build once and reuse it. Do not call it directly for enduser typing.
+        """
+        products.sort() # T=O(nlogn) lexicographical order
+
         t = Trie()
-        t.build(products)
+        t.build(products) # T=O(wl)
 
-        ret = []
+        return t
+
+    def suggestedProducts(self, products: List[str], searchWord: str) -> List[List[str]]:
+        t = self.buildTrie(products)
+        suggests = [t.startsWith(searchWord[:i]) for i in range(1, len(searchWord) + 1)]
+
+        return suggests
         
-        for i in range(1, len(searchWord)+1):
-            search = t.startsWith(t.root, searchWord[:i])
-            ret.append(search)
-
-        return ret
