@@ -1,6 +1,6 @@
 ---
-name: Leetcode Scratch Note
-about: Explain thought process while solving the problem
+name: Leetcode Issues
+about: Describe issues while solving the leetcode problem
 title: ''
 labels: ''
 assignees: ''
@@ -12,6 +12,9 @@ assignees: ''
 
 ## Assumption
 <!-- Make it clear if there is any assumption or hidden assumption from the description. -->
+
+## Approach
+<!-- Describe your approach to solving the problem. -->
 
 ## Issue
 ```python3 []
