@@ -2,10 +2,11 @@
 # https://leetcode.com/problems/search-suggestions-system
 
 from typing import List
+from collections import OrderedDict
 
 class Trie:
     def __init__(self):
-        self.root = {}
+        self.root = OrderedDict()
         self.END = "*"
     
     def build(self, words:List[str]) -> None:
@@ -80,4 +81,3 @@ class Solution:
         suggests = [t.startsWith(searchWord[:i]) for i in range(1, len(searchWord) + 1)]
 
         return suggests
-        
