@@ -6,6 +6,36 @@ from typing import List
 class Solution:
     def twoSum(self, numbers: List[int], target: int) -> List[int]:
         """
+        Find two numbers to make target
+        return [index1, index2]
+        
+        Example:
+        numbers = [2,7,11,15], target = 9
+
+        Approach: Two index
+        Use two index l(left) and r(right)
+        Move the index l to the right and index r to the left until find the target
+
+        T=O(n), S=O(1)
+        """
+        if not numbers and target is None:
+            return []
+
+        l, r = 0, len(numbers) -1
+
+        while l < r:
+            s = numbers[l] + numbers[r]
+            if s == target:
+                return [l+1,r+1] # non-zero index system
+            elif s > target:
+                r -= 1
+            elif s < target:
+                l += 1
+
+        return [-1,-1]
+    
+    def twoSum_bak(self, numbers: List[int], target: int) -> List[int]:
+        """
         Approach:
         Use nested iteration.
         One iteration is for loop, the inside loop is replaced with a binary search call
