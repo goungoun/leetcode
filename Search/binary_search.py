@@ -31,7 +31,7 @@ class Solution:
         nums = [5], target = 5
         return 5
         """
-        if not nums or not target:
+        if not nums or target is None:
             return -1
 
         l = 0
@@ -55,7 +55,7 @@ class Solution:
         The binary search is implemented using recursive call.
         It is less efficient than the while loop 
         """
-        if not nums or not target:
+        if not nums or target is None:
             return -1 
         
         def rec_search(l, r):
