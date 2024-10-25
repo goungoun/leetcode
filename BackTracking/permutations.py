@@ -28,9 +28,12 @@ class Solution:
         Go down to a deeper level and select another one and add it to a tmp list
         If tmp is filled with all numbers, append it to the result list
         Go back where it was and remove the value to prepare next iteration
+
+        T=O(n!), S=O(n!)
         """
         len_nums = len(nums)
         tmp = []
+        tmp_set = set() # According to the constraint, all the integers of nums are unique.
         l_permutations = []
 
         def dfs():
@@ -39,10 +42,12 @@ class Solution:
                 return
             
             for n in nums:
-                if n not in tmp:
+                if n not in tmp_set:
                     tmp.append(n)
+                    tmp_set.add(n)
                     dfs() # tmp is maintained as a context during the recursive call!
                     tmp.pop()
+                    tmp_set.remove(n)
 
         dfs()
 
