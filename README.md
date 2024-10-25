@@ -249,6 +249,12 @@ True
 1268 def build(self, words:List[str])-> None:
 ```
 
+### Random
+```python
+380 from random import randint
+380 idx = random.randint(0, len(self.dummy)-1)
+```
+
 ## Errors
 ### RecursionError
 RecursionError: maximum recursion depth exceeded in comparison
