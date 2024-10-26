@@ -5,8 +5,40 @@ class Solution:
     def trap(self, height: List[int]) -> int:
         """
         Trap maximum water with the height of each bar
-        return max_water
+        return water
 
+        Approach:
+        Two pointer
+        Forward and Backward iteration
+
+        T=O(n), S=O(1)
+        """
+        if not height:
+            return 0
+
+        len_height = len(height)
+        water = 0
+
+        l,r = 0, 0
+        while r < len_height:
+            if height[r] >= height[l]:
+                for i in range(l, r):
+                    water += max(height[l]-height[i], 0)
+                l = r
+            r += 1
+
+        l,r = len_height-1, len_height-1
+        while l >= 0:
+            if height[l] > height[r]:    
+                for i in range(l, r):
+                    water += max(height[r]-height[i], 0)
+                r = l
+            l -= 1
+
+        return water
+    
+    def trap_bak(self, height: List[int]) -> int:
+        """
         Approach:
         Two walls on the left and right works like a container
         Store the max height of the wall from the left and from the right
@@ -20,7 +52,7 @@ class Solution:
 
         sum of water = 1 + 1 + 2 + 1 + 1 = 6
         return 6
-        """        
+        """
         n = len(height)
         max_l = height.copy()
         max_r = height.copy()
@@ -36,11 +68,11 @@ class Solution:
             r -= 1
 
         # expected vs actual
-        max_water = 0
+        water = 0
         for i in range(n):
             expected = min(max_l[i], max_r[i])
             actual = max(0, expected - height[i]) # adj elevated height
-            max_water += actual
+            water += actual
 
-        return max_water
+        return water
 
