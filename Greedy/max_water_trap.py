@@ -52,6 +52,8 @@ class Solution:
 
         sum of water = 1 + 1 + 2 + 1 + 1 = 6
         return 6
+
+        T=O(n), S=O(n)
         """
         n = len(height)
         max_l = height.copy()
