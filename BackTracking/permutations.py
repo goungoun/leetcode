@@ -5,7 +5,7 @@ class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         """
         List up the possible permutation using nums
-        return l_permutations
+        return permutations
         
         Example 1:
         nums = [1]
@@ -31,14 +31,17 @@ class Solution:
 
         T=O(n!), S=O(n!)
         """
-        len_nums = len(nums)
+        if not nums:
+            return []
+        
         tmp = []
         tmp_set = set() # According to the constraint, all the integers of nums are unique.
-        l_permutations = []
+        permutations = []
+        len_nums = len(nums)
 
         def dfs():
             if len(tmp) == len_nums:
-                l_permutations.append(tmp.copy())
+                permutations.append(tmp.copy())
                 return
             
             for n in nums:
@@ -51,5 +54,12 @@ class Solution:
 
         dfs()
 
-        return l_permutations
-        
+        return permutations
+
+    def permute_bak(self, nums: List[int]) -> List[List[int]]:
+        """
+        The built-in python function returns a list of tuples, it also pass the test cases.
+        return [(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]
+        """
+        from itertools import permutations
+        return list(permutations(nums))
