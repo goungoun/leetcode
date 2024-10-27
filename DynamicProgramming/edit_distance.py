@@ -59,7 +59,6 @@ class Solution:
 
     T=O(mn) Beats 52.95 %, S=O(mn)14 %
     """
-    def minDistance(self, word1: str, word2: str) -> int:
         if not word1 and not word2:
             return 0
 
