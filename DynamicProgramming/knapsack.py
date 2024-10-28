@@ -9,14 +9,14 @@ weight_limit = 7
 
 T = [[0] * (weight_limit+1) for _ in range(n_items)]
 
-for r in range(n_items):
+for c in range(weight_limit + 1):
+    T[0][c] = values[0] if c >= weights[0] else 0
+
+for r in range(1,n_items):
     for c in range(weight_limit + 1):
-        if r == 0:
-            T[0][c] = values[0] if c >= weights[0] else 0
-        else:
-            add = values[r] + T[r-1][c - weights[r]] if c >= weights[r] else 0
-            or_not = T[r-1][c]
-            T[r][c] = max(add, or_not)
+        add = values[r] + T[r-1][c - weights[r]] if c >= weights[r] else 0
+        or_not = T[r-1][c]
+        T[r][c] = max(add, or_not)
 
 import numpy as np
 print(np.array(T))
