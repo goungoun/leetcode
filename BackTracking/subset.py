@@ -38,7 +38,25 @@ class Solution:
         recSubsets(0)
 
         return l_subsets
+
+
+    def subsets_combination(self, nums: List[int]) -> List[List[int]]:
+        """
+        Approach:
+        Use itertools.combinations
+
+        return [[],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]]
+        """
+        l_subsets = []
+        n = len(nums)
+
+        from itertools import combinations
         
+        for i in range(n + 1):
+            for combo in combinations(nums, i):
+                l_subsets.append(list(combo))
+
+        return l_subsets
 
         
         
