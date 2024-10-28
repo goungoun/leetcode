@@ -15,8 +15,8 @@
 
 ~~~
 ##. 0/1 Knapsack Problem
-72. Edit Distance (Medium)
 1143. Longest Common Subsequence (Medium)
+72. Edit Distance (Medium)
 ~~~
 
 ~~~
