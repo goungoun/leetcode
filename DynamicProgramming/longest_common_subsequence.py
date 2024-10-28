@@ -76,8 +76,8 @@ class Solution:
                     max_length[r][c] = 1 + max_length[r-1][c-1]
                 else:
                     max_length[r][c] = max(
-                        max_length[r-1][c], # Insert
-                        max_length[r][c-1]  # Delete
+                        max_length[r-1][c], 
+                        max_length[r][c-1]  
                         )
 
         return max_length[-1][-1]
