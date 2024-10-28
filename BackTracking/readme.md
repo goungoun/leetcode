@@ -1,4 +1,4 @@
-## Practice Order
+## Practice Orders
 ~~~
 46. Permutations (Medium)
 77. Combinations (Medium)
