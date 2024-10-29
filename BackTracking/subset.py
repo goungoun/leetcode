@@ -5,7 +5,7 @@ class Solution:
     def subsets(self, nums: List[int]) -> List[List[int]]:
         """
         Find all possible subsets from an integer array num
-        return l_subsets 
+        return all_subsets 
 
         Approach:
         Decision tree of selecting each of the element or not
@@ -19,12 +19,12 @@ class Solution:
         i = 2: Select 3 or not  [1,2,3] [1,2] [1,3] [1] [2,3] [2] [3] []  
         i = 3: append possible sets
         """
-        l_subsets = []
+        all_subsets = []
         tmp = []
 
         def recSubsets(i):
             if i == len(nums):
-                l_subsets.append(tmp.copy())
+                all_subsets.append(tmp.copy())
                 return
             
             # Select
@@ -37,8 +37,23 @@ class Solution:
 
         recSubsets(0)
 
-        return l_subsets
+        return all_subsets
 
+    def subsets_order(self, nums: List[int]) -> List[List[int]]:
+        if not nums:
+            return []
+
+        all_subsets = []
+ 
+        def dfs(i, tmp=[]):
+            if i == -1:
+                all_subsets.append(tmp)
+                return
+            
+            dfs(i-1, tmp)
+            dfs(i-1, [nums[i]]+tmp)
+            
+        dfs(len(nums)-1)
 
     def subsets_combination(self, nums: List[int]) -> List[List[int]]:
         """
@@ -47,16 +62,16 @@ class Solution:
 
         return [[],[1],[2],[3],[1,2],[1,3],[2,3],[1,2,3]]
         """
-        l_subsets = []
+        all_subsets = []
         n = len(nums)
 
         from itertools import combinations
         
         for i in range(n + 1):
             for combo in combinations(nums, i):
-                l_subsets.append(list(combo))
+                all_subsets.append(list(combo))
 
-        return l_subsets
+        return all_subsets
 
         
         
