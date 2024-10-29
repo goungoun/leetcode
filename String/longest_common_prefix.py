@@ -60,3 +60,32 @@ class Solution:
             ret.append(c)
 
         return "".join(ret)
+
+    def longestCommonPrefix3(self, strs: List[str]) -> str:
+        """
+        Approach 3:
+        It does not check the min length of the string.
+        Use the constraint range 0 <= strs[i].length <= 200, just start the loop
+        Simply revert False and break if not the same.
+        """
+        if not strs:
+            return ""
+            
+        prefix = ""
+        first = ""
+        curr = ""
+        is_common = True
+
+        for i in range(200):
+            first = strs[0][i] if i < len(strs[0]) else ""
+            for j in range(1,len(strs)):
+                curr = strs[j][i] if i < len(strs[j]) else ""
+                if first != curr:
+                    is_common = False
+                    break
+            if is_common:
+                prefix += first
+            else:
+                break
+
+        return prefix
