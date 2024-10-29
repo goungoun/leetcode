@@ -70,33 +70,3 @@ class Solution:
 
         return "".join(prefix)
 
-    def longestCommonPrefix3(self, strs: List[str]) -> str:
-        """
-        Approach 3:
-        Used the constraint range 0 <= strs[i].length <= 200, just start the loop without checking min length
-        Reverted is_common flag False and break if not the same.
-
-        T=O(mn)
-        S=O(m)
-        """
-        if not strs:
-            return ""
-            
-        prefix = ""
-        first = ""
-        curr = ""
-        is_common = True
-
-        for i in range(200):
-            first = strs[0][i] if i < len(strs[0]) else ""
-            for j in range(1,len(strs)):
-                curr = strs[j][i] if i < len(strs[j]) else ""
-                if first != curr:
-                    is_common = False
-                    break
-            if is_common:
-                prefix += first
-            else:
-                break
-
-        return prefix
