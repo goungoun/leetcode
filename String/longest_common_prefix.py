@@ -23,7 +23,13 @@ class Solution:
         (l,l,l) => len_set = 1 add l
         (o,o,i) => len_set = 2 <stop>
         (w,w,g)
+
+        T=O(mn)
+        S=O(m + n)
         """
+        if not strs:
+            return ""
+                    
         prefix = []
         z = zip(*strs)
 
@@ -42,6 +48,9 @@ class Solution:
         Use array index without zip and set
         Check the length of the shortest string first, this is to limit the problem space
         For each string, check characters at the same position using nested loop
+
+        T=O(mn)
+        S=O(m)
         """
         if strs is None or len(strs) == 0:
             return ""
@@ -51,15 +60,15 @@ class Solution:
         for s in strs:
             min_len = min(min_len, len(s))
 
-        ret = []
+        prefix = []
         for i in range(min_len):
             c = strs[0][i]
             for j in range(1, len_strs):
                 if strs[j][i] != c:
-                    return "".join(ret)
-            ret.append(c)
+                    return "".join(prefix)
+            prefix.append(c)
 
-        return "".join(ret)
+        return "".join(prefix)
 
     def longestCommonPrefix3(self, strs: List[str]) -> str:
         """
@@ -67,6 +76,9 @@ class Solution:
         It does not check the min length of the string.
         Use the constraint range 0 <= strs[i].length <= 200, just start the loop
         Simply revert False and break if not the same.
+
+        T=O(mn)
+        S=O(m)
         """
         if not strs:
             return ""
