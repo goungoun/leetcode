@@ -52,7 +52,7 @@ class Solution:
         T=O(mn)
         S=O(m)
         """
-        if strs is None or len(strs) == 0:
+        if not strs:
             return ""
 
         len_strs = len(strs)
