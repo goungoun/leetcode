@@ -73,9 +73,8 @@ class Solution:
     def longestCommonPrefix3(self, strs: List[str]) -> str:
         """
         Approach 3:
-        It does not check the min length of the string.
-        Use the constraint range 0 <= strs[i].length <= 200, just start the loop
-        Simply revert False and break if not the same.
+        Used the constraint range 0 <= strs[i].length <= 200, just start the loop without checking min length
+        Reverted is_common flag False and break if not the same.
 
         T=O(mn)
         S=O(m)
