@@ -6,6 +6,7 @@ class Solution:
         """
         Just to test bubble sort. 
         It passes leetcode test cases, but it performs the worst. 
+        Please refer to count_sort.py for better solution.
 
         Only beats 5% at best
         """
