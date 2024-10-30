@@ -36,3 +36,6 @@ class Solution:
                 cnt_mismatch += 1
 
         return cnt_mismatch
+
+    def heightChecker_1ine(self, heights: List[int]) -> int:
+        return sum([1 if x!=y else 0 for x, y in zip(heights, sorted(heights))])
