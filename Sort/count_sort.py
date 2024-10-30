@@ -20,6 +20,8 @@ class Solution:
         This is about student's height, if initilized using array most of them will be sparse
         I selected a dictionary for this reason, but it is not a stable sort anymore. 
         """
+        if not heights:
+            return 0
 
         # If the original order is important, use array as designed counter sort. 
         # Initialize the counter = [0]*101, and then increase the number of counter within a for loop O(n)
@@ -37,5 +39,5 @@ class Solution:
 
         return cnt_mismatch
 
-    def heightChecker_1ine(self, heights: List[int]) -> int:
-        return sum([1 if x!=y else 0 for x, y in zip(heights, sorted(heights))])
+    def heightChecker_1line(self, heights: List[int]) -> int:
+        return sum(1 for x, y in zip(heights, sorted(heights)) if x!=y)
