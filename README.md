@@ -178,7 +178,7 @@ from functools import reduce
 215 for _ in range(k):
 509 for i in range(1, n): # n=1: range(1,1) does not loop
 1971 for u,v in edges:
-1051 sum(1 for i in range(n) if heights[i]!=expected[i])
+1051 return sum(1 for i in range(n) if heights[i]!=expected[i])
 
 172 from functools import reduce
 172 factorial = reduce(lambda a,b: a*b, range(1, n+1), 1)
