@@ -32,11 +32,11 @@ class Solution:
 
         idx = 0
         cnt_mismatch = 0
-        for i in range(min_height,max_height+1): # for i in range(1,101):
+        for i in range(min_height, max_height+1): # for i in range(1,101):
             height, cnt = i, counter[i]
             for _ in range(cnt):
                 if heights[idx] != height:
-                    cnt_mismatch +=1
+                    cnt_mismatch += 1
                 idx += 1
         
         return cnt_mismatch
