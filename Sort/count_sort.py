@@ -1,8 +1,6 @@
 # 1051. Height Checker
 # https://leetcode.com/problems/height-checker
 
-from collections import Counter
-
 class Solution:
     def heightChecker(self, heights: List[int]) -> int:
         """
@@ -22,10 +20,15 @@ class Solution:
         """
         if not heights:
             return 0
-        
-        counter = Counter(heights) # key: height, value: cnt
-        min_height = min(counter)
-        max_height = max(counter)
+
+        counter = defaultdict(int) # key: height, value: cnt
+        min_height, max_height = 100, 0
+        for height in heights:
+            counter[height] += 1
+            if height > max_height:
+                max_height = height
+            elif height < min_height:
+                min_height = height
 
         idx = 0
         cnt_mismatch = 0
