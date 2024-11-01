@@ -6,6 +6,7 @@ from heapq import heapify, heappop
 class Solution:
     """
     Sort an array nums without built-in functions in O(nlog(n))
+    
     return sorted_nums
     
     Example 1:
@@ -17,9 +18,8 @@ class Solution:
     return [0,0,1,1,2,5]
     
     Approach:
-    Need to specify the built-in function means sort() or sorted() 
-    Quick Sort is easy to implement, but showed excedded memory for some cases 
-    If heapify() is allowed just in case, it works as a in-place algorithm with less memory and passes all the cases
+    Stable algorithm only!! Quick sort or heap sort is not applicable.
+    And quick Sort showed excedded memory for some cases 
     """
   
     def sortArray(self, nums: List[int]) -> List[int]:

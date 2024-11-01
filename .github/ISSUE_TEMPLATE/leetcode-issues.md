@@ -3,7 +3,7 @@ name: Leetcode Issues
 about: Describe issues while solving the leetcode problem
 title: ''
 labels: ''
-assignees: ''
+assignees: goungoun
 
 ---
 
@@ -17,6 +17,16 @@ assignees: ''
 <!-- Describe your approach to solving the problem. -->
 
 ## Issue
+```python3 []
+
+```
+
+## Coding Style
+```python3 []
+
+```
+
+## Performance
 ```python3 []
 
 ```
