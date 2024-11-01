@@ -20,22 +20,47 @@ class Solution:
         This is about student's height, if initilized using array most of them will be sparse
         I selected a dictionary for this reason, but it is not a stable sort anymore. 
         """
+        if not heights:
+            return 0
+        
+        counter = Counter(heights) # key: height, value: cnt
+        min_height = min(counter)
+        max_height = max(counter)
 
-        # If the original order is important, use array as designed counter sort. 
-        # Initialize the counter = [0]*101, and then increase the number of counter within a for loop O(n)
-        counter = Counter(heights)
-        
-        expected = []
-        for i in range(1,101):
-            if i in counter:
-                expected.extend([i]*counter[i])
-        
+        idx = 0
         cnt_mismatch = 0
-        for i in range(len(heights)):
-            if heights[i] != expected[i]:
-                cnt_mismatch += 1
-
+        for i in range(min_height,max_height+1): # for i in range(1,101):
+            height, cnt = i, counter[i]
+            for _ in range(cnt):
+                if heights[idx] != height:
+                    cnt_mismatch +=1
+                idx += 1
+        
         return cnt_mismatch
 
-    def heightChecker_1ine(self, heights: List[int]) -> int:
+    def heightChecker_array(self, heights: List[int]) -> int:
+        if not heights:
+            return 0
+
+        # O(k)
+        counter = [0]*(max(heights)+1)
+        
+        # O(n)
+        for height in heights:
+            counter[height] += 1
+
+        # O(n+k)
+        expected = []
+        for i in range(len(counter)): # for i in range(1,101):
+            expected.extend([i]*counter[i])
+        
+        # O(n)
+        cnt_wrong_order = 0
+        for i in range(len(heights)):
+            if heights[i] != expected[i]:
+                cnt_wrong_order += 1
+
+        return cnt_wrong_order
+
+    def heightChecker_sorted(self, heights: List[int]) -> int:
         return sum([1 if x!=y else 0 for x, y in zip(heights, sorted(heights))])
