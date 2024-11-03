@@ -256,6 +256,12 @@ True
 380 idx = random.randint(0, len(self.dummy)-1)
 ```
 
+## Limits and Thresholds
+```
+200 Stack overvlow limit in leetcode is 998
+1051 For arrays of size 63 or less, Tim sort uses insertion sort.
+```
+
 ## Errors
 ### RecursionError
 RecursionError: maximum recursion depth exceeded in comparison
