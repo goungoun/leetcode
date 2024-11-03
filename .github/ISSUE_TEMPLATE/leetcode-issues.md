@@ -45,3 +45,6 @@ assignees: goungoun
 
 ## Conclusion
 <!-- Summary and lesson learned from the issue. -->
+
+## Further Research
+<!-- Other questions with the similar pattens or research topics -->
