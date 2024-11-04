@@ -100,9 +100,10 @@ from functools import reduce
 1971 graph = defaultdict(list)
 1971 graph[u].append(v)
 
-146 from collections import OrderedDict
+# 3.7+ Dictionary order is guaranteed to be insertion order by default
+146 from collections import OrderedDict 
 146 self.cache.move_to_end(key)
-146 self.cache.popitem(last=False)
+146 self.cache.popitem(last=False) # cf. standard dictionaries does not accept any parameters
 
 207 d = defaultdict(list) # d = {i:[] for i in range(numCourses)}
 
