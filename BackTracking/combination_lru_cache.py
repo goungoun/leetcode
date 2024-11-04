@@ -2,6 +2,7 @@
 # https://leetcode.com/problems/combinations/
 
 from typing import List
+from functools import lru_cache
 
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
@@ -11,12 +12,14 @@ class Solution:
         If n is included, k-1 numbers chosen from the range[1, n-1]
         If n is not included, k numbers chosen from the range [1, n-1]
 
-        Beats 5.62%
+        Beats 85% (with lru cache)
         """
         if not n or not k:
             return []
 
         #self.call_cnt = 0
+
+        @lru_cache(None)
         def bfs(n, k):
             #self.call_cnt += 1
             if k == 1:
@@ -27,7 +30,7 @@ class Solution:
 
             include_n = bfs(n - 1, k - 1)
             exclude_n = bfs(n - 1, k)
-            
+           
             return [x+[n] for x in include_n] + exclude_n
 
         ret = bfs(n,k)
@@ -36,4 +39,5 @@ class Solution:
         return ret
 
 # referenced and updated semochka(leetcode id:semochka)'s solution
+# the original solution is without lru cache, it beats only 8%
 # https://leetcode.com/problems/combinations/solutions/2036326/using-pascal-triangle-to-calculate-combinations/
