@@ -34,4 +34,6 @@ class Solution:
         #print (f"self.call_cnt={self.call_cnt}, len(ret)={len(ret)}")
 
         return ret
-      
+
+# referenced and updated semochka(leetcode id:semochka)'s solution
+# https://leetcode.com/problems/combinations/solutions/2036326/using-pascal-triangle-to-calculate-combinations/
