@@ -262,6 +262,12 @@ True
 1051 For arrays of size 63 or less, Tim sort uses insertion sort.
 ```
 
+## Cache
+```python
+77 from functools import lru_cache
+77 @lru_cache(None)
+```
+
 ## Errors
 ### RecursionError
 RecursionError: maximum recursion depth exceeded in comparison
