@@ -4,8 +4,12 @@
 class Solution:
     def combine(self, n: int, k: int) -> List[List[int]]:
         """
-        List up the possible combinations on the range [1, n]
+        Generate all possible combinations of k numbers chosen from the range [1, n]
         return l_combinations
+
+        Parameters:
+        n: int The upper limit of the range (1 to n).
+        k: int The number of elements to select.
 
         Example: 
         n = 4, k = 2
@@ -18,6 +22,8 @@ class Solution:
         To compare permutation, combination ignores the order
         So, for loop range excludes already used numbers
         """
+        if not n or not k:
+            return []
 
         if k > n:
             raise ValueError (f"Expected 'k' to have a value from 1 to n only, k={k}, n={n}")
