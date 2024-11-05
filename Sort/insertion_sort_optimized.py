@@ -51,5 +51,4 @@ class Solution:
         n = len(heights)
         expected = self._insertionSort(heights.copy()) #in-place algorithm
         
-        print(f"expected={expected}, heights={heights}")
         return sum(1 for i in range(n) if heights[i]!=expected[i])
