@@ -10,9 +10,9 @@ class Solution:
         T=O(n*log n)
         S=O(1)
         """
-        len_arr = len(arr)
+        n = len(arr)
         
-        for i in range(1, len_arr):
+        for i in range(1, n):
             key = arr[i]
 
             # O(log n): 0 ~ i-1 is already sorted
