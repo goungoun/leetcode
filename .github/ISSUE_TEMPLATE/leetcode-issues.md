@@ -16,17 +16,19 @@ assignees: goungoun
 ## Approach
 <!-- Describe your approach to solving the problem. -->
 
-## Issue
+### Dry Run
+
+## Issue  (Optional)
 ```python3 []
 
 ```
 
-## Coding Style
+## Coding Style (Optional)
 ```python3 []
 
 ```
 
-## Performance
+## Performance  (Optional)
 ```python3 []
 
 ```
@@ -46,5 +48,5 @@ assignees: goungoun
 ## Conclusion
 <!-- Summary and lesson learned from the issue. -->
 
-## Further Research
+## Further Research  (Optional)
 <!-- Other questions with the similar pattens or research topics -->
