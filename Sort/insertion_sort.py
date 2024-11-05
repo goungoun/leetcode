@@ -7,7 +7,8 @@ class Solution:
         T=O(n**2)
         S=O(1)
         """
-        for i in range(1, len(arr)):
+        n = len(arr)
+        for i in range(1, n):
             key = arr[i]
             j = i - 1
 
