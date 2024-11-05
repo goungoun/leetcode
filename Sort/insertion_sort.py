@@ -2,7 +2,7 @@
 # https://leetcode.com/problems/height-checker
 
 class Solution:
-    def insertionSort(self, arr):
+    def _insertionSort(self, arr):
         """
         T=O(n**2)
         S=O(1)
@@ -27,6 +27,6 @@ class Solution:
             return 0
         
         n = len(heights)
-        expected = self.insertionSort(heights.copy()) #in-place algorithm
+        expected = self._insertionSort(heights.copy()) #in-place algorithm
 
         return sum(1 for i in range(n) if heights[i]!=expected[i])
