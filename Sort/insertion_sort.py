@@ -3,6 +3,10 @@
 
 class Solution:
     def insertionSort(self, arr):
+        """
+        T=O(n**2)
+        S=O(1)
+        """
         for i in range(1, len(arr)):
             key = arr[i]
             j = i - 1
@@ -15,6 +19,10 @@ class Solution:
         return arr
 
     def heightChecker(self, heights: List[int]) -> int:
+        """
+        T=O(n**2) beats 5.38%
+        S=O(n) beats 15.18% 
+        """
         if not heights:
             return 0
         
