@@ -1,7 +1,7 @@
 # 1051. Height Checker
 # https://leetcode.com/problems/height-checker/
 
-# WARNING!! This code has many bugs, fix this!!
+# WARNING!! This code has many bugs, fix this by "dry run"!!
 
 from typing import List
 
