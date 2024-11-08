@@ -42,58 +42,48 @@ class Solution:
         return 4
 
         Approach: BFS
+
+        2024.11.08 Removed visited to save space and updated grid[r][c]
         """
         if not grid or not grid[0]:
-            return -1
+            return 0
 
         m = len(grid)
         n = len(grid[0])
 
-        cnt_fresh = 0
-
-        FRESH = 1
-        ROTTEN = 2
-
         q = deque([])
-        visited = set()
-        
-        for row in range(m):
-            for col in range(n):
-                if grid[row][col] == FRESH: 
-                    cnt_fresh += 1
-                elif grid[row][col] == ROTTEN:
-                    q.append((row,col))
-                    visited.add((row, col))
+        cnt_fresh_orange = 0
 
-        if cnt_fresh == 0:
+        for r in range(m):
+            for c in range(n):
+                if grid[r][c] == 2:
+                    q.append((r,c))                    
+                elif grid[r][c] == 1:
+                    cnt_fresh_orange += 1
+
+        if cnt_fresh_orange == 0:
             return 0
 
-        mins = -1
-        
-        #import numpy as np
-        while q:
-            #print(np.array(grid))
+        mins = 0
+
+        while q and cnt_fresh_orange > 0:
             for _ in range(len(q)):
-                row, col = q.popleft()
+                r, c = q.popleft()
+
+                adjs = [
+                    (r-1,c), # top
+                    (r+1,c), # bottom
+                    (r,c-1), # left
+                    (r,c+1)  # right
+                ]
+                valid_adj = [(r,c) for (r,c) in adjs 
+                    if 0<=r<m and 0<=c<n and grid[r][c] == 1]
+
+                for r,c in valid_adj:
+                    q.append((r,c))
+                    grid[r][c] = 2
+                    cnt_fresh_orange -= 1
                 
-                if grid[row][col] == FRESH:
-                    #grid[row][col] = ROTTEN
-                    cnt_fresh -= 1
-
-                adjs = [(row-1, col), 
-                        (row+1, col), 
-                        (row, col-1), 
-                        (row, col+1)]
-
-                adjs = [(row, col) for (row, col) in adjs \
-                        if 0 <= row < m and 0 <= col < n \
-                            and grid[row][col] != 0
-                            and (row, col) not in visited]
-
-                for adj in adjs:
-                    q.append(adj)
-                    visited.add(adj)
-
             mins += 1
-
-        return mins if cnt_fresh == 0 else -1
+        
+        return mins if cnt_fresh_orange == 0 else -1
