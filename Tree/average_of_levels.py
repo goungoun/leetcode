@@ -42,6 +42,8 @@ class Solution:
         Consider using double loop to ensure one iteration on the while loop collects all values within the same level
         No avg() in Python, combine sum() and len() instead.
         """
+        if not root:
+            return []
 
         q = deque([root])
         level_avgs = []
@@ -50,12 +52,11 @@ class Solution:
         while q:
             # nodes in the same level
             level_sum = 0
-            level_cnt = 0
-            for _ in range(len(q)): 
+            len_q = len(q)
+            for _ in range(len_q): 
                 node = q.popleft()
                 node_val = node.val if node.val else 0
                 level_sum += node_val
-                level_cnt += 1
 
                 # all children belongs to the node to be ready on the queue
                 if node.left:
@@ -64,7 +65,7 @@ class Solution:
                 if node.right:
                     q.append(node.right)
             
-            level_avg = level_sum/level_cnt if level_cnt !=0 else 0
+            level_avg = level_sum/len_q if len_q !=0 else 0
             level_avgs.append(level_avg)
 
         return level_avgs
