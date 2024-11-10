@@ -55,6 +55,8 @@ class Solution:
             
         dfs(len(nums)-1)
 
+        return all_subsets
+
     def subsets_combination(self, nums: List[int]) -> List[List[int]]:
         """
         Approach:
