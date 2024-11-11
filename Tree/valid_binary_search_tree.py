@@ -20,13 +20,15 @@ class Solution:
         - All items in the right subtree are greater than the root
         - Each subtree is itself a binary search tree
 
-        Example:
+        Example 1: basic case
         root = [2,1,3]
         return True
 
+        Example 2: edge case, equal condition
         root = [2,2,2]
         return False
 
+        Example 3: edge case, hidden case
         root=[5,4,6,null,null,3,7]
              "5"
           4       6
