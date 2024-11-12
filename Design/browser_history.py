@@ -39,7 +39,7 @@ class BrowserHistory:
         """
         # if curr is not the last idx make it as a last one by removing ends
         # e.g self.history = self.history[:self.curr] which is O(n)
-        while len(self.history) -1 > self.curr:
+        while self.curr < len(self.history) -1:
             self.history.pop()
          
         self.history.append(url)
