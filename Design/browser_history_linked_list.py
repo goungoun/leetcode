@@ -68,3 +68,6 @@ class BrowserHistory:
 # obj.visit(url)
 # param_2 = obj.back(steps)
 # param_3 = obj.forward(steps)
+
+# Referenced and updated a solution by leetcode user 101leetcode
+# https://leetcode.com/problems/design-browser-history/solutions/674447/python-very-simple-solution-using-double-linked-list/
