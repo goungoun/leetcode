@@ -8,6 +8,16 @@ class VisitNode:
         self.prev = None
         
 class BrowserHistory:
+    """
+    Design browser history
+    Start from a homepage, visit url
+    And then, back or forward the history
+    
+    Approach:
+    Double linked list
+
+    Beats 53.85%
+    """
     def __init__(self, homepage: str):
         self.curr = VisitNode(homepage)
 
