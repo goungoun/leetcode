@@ -23,19 +23,15 @@ class BrowserHistory:
         self.curr = node
 
     def back(self, steps: int) -> str:
-        while steps and self.curr.prev:
+        while steps and self.curr:
             #print(f"self.curr.url={self.curr.url}, self.curr.prev={self.curr.prev.url}")
             self.curr = self.curr.prev
             steps -= 1
-        
-        return self.curr.url
 
     def forward(self, steps: int) -> str:
-        while steps and self.curr.next:
+        while steps and self.curr:
             self.curr = self.curr.next
             steps -= 1
-
-        return self.curr.url
         
 # ["BrowserHistory","visit","visit","visit","back","back","forward","visit","forward","back","back"]
 # [["leetcode.com"],["google.com"],["facebook.com"],["youtube.com"],[1],[1],[1],["linkedin.com"],[2],[2],[7]]
