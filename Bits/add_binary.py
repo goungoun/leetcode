@@ -56,10 +56,15 @@ class Solution:
           -----
           10101
 
-        T=O(n), S=O(n)
+        T=O(n), beats 19.49 %
+        S=O(n), beats 43.92 %
         """
         if not a and not b:
             return ""
+        elif not a:
+            return b
+        elif not b:
+            return a
 
         l1 = [int(x) for x in a] if a else []
         l2 = [int(x) for x in b] if b else []
@@ -86,10 +91,15 @@ class Solution:
         Start from the end of each string
         While decreasing indexs, add numbers and a carry
 
-        T=O(n), S=O(n)
+        T=O(n), 45.98 %
+        S=O(n), 43.92 %
         """
         if not a and not b:
             return ""
+        elif not a:
+            return b
+        elif not b:
+            return a
         
         i = len(a)-1
         j = len(b)-1
@@ -102,12 +112,12 @@ class Solution:
             n2 = int(b[j]) if j >= 0 else 0
 
             carry, r = divmod(n1 + n2 + carry, 2)
-            q.appendleft(str(r))
+            q.appendleft(r)
 
             i -= 1
             j -= 1
 
         if carry > 0:
-            q.appendleft(str(carry))
+            q.appendleft(carry)
 
-        return "".join(q)
+        return "".join(map(str,q))
