@@ -20,8 +20,6 @@ class MyCircularQueue:
         """
         Inserts an element into the circular queue. 
         Return true if the operation is successful.
-
-        T=O(1), S=O(1)
         """
         if self.isFull():
             return False
