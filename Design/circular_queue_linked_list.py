@@ -1,7 +1,5 @@
-# 622. Design Circular Queue
+# 622. Design Circular Queue (Medium)
 # https://leetcode.com/problems/design-circular-queue/
-
-# TODO: Remove self.cnt
 
 class ListNode:
     def __init__(self, val):
@@ -9,34 +7,35 @@ class ListNode:
         self.next = None
 
 class MyCircularQueue:
+    """
+    Design circular queue
+    """
 
     def __init__(self, k: int):
-        self.k = k
-        self.dummy = ListNode(None)
-        self.front = self.dummy 
-        self.rear = self.dummy
-        self.cnt = 0
+        self.capacity = k
+        self.front = self.rear = None
+        self.size = 0
 
     def enQueue(self, value: int) -> bool:
         """
         Inserts an element into the circular queue. 
         Return true if the operation is successful.
+
+        T=O(1), S=O(1)
         """
         if self.isFull():
             return False
 
         n = ListNode(value)
 
-        if self.cnt == 0:
-            self.rear = n
-            self.front = n
-
+        if self.isEmpty():
+            self.rear = self.front = n
         else:
             self.rear.next = n      
             self.rear = n
         
-        self.rear.next = self.front
-        self.cnt += 1
+        self.rear.next = self.front # circle back
+        self.size += 1
 
         return True
 
@@ -45,19 +44,16 @@ class MyCircularQueue:
         Deletes an element from the circular queue. 
         Return true if the operation is successful.
         """
-        if not self.cnt:
+        if self.size == 0:
             return False
 
-        if self.cnt == 1:
-            self.dummy = ListNode(None)
-            self.front = self.dummy 
-            self.rear = self.dummy
-            self.cnt = 0
+        if self.size == 1:
+            self.front = self.rear = None
+            self.size = 0
         else:
-            if self.front.next: 
-                self.front = self.front.next
-            self.rear.next = self.front 
-            self.cnt -= 1 
+            self.front = self.front.next
+            self.rear.next = self.front
+            self.size -= 1
 
         return True      
 
@@ -66,7 +62,7 @@ class MyCircularQueue:
         Gets the front item from the queue. 
         If the queue is empty, return -1.
         """
-        if self.front is None or self.front.val is None:
+        if self.isEmpty():
             return -1
 
         return self.front.val
@@ -76,24 +72,14 @@ class MyCircularQueue:
         Gets the last item from the queue. 
         If the queue is empty, return -1.
         """
-        if self.rear is None or self.rear.val is None:
+        if self.isEmpty():
             return -1
 
         return self.rear.val
 
     def isEmpty(self) -> bool:
-        return self.cnt == 0
+        return self.size == 0
 
     def isFull(self) -> bool:
-        return self.cnt == self.k
+        return self.size == self.capacity
         
-
-
-# Your MyCircularQueue object will be instantiated and called as such:
-# obj = MyCircularQueue(k)
-# param_1 = obj.enQueue(value)
-# param_2 = obj.deQueue()
-# param_3 = obj.Front()
-# param_4 = obj.Rear()
-# param_5 = obj.isEmpty()
-# param_6 = obj.isFull()
