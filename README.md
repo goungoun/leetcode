@@ -70,7 +70,7 @@ from functools import reduce
 67 return "".join(map(str, q))
 
 # fyi.Deque means double-ended queue, works as a queue and a stack at the same time.
-# But, slicing such as [1:] is not supported 
+# But, slicing such as [1:] is not supported, index access is O(n)
 71 from collections import deque
 71 path_split = deque([])
 71 path_split.pop() # stack
