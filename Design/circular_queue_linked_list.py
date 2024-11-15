@@ -1,6 +1,8 @@
 # 622. Design Circular Queue
 # https://leetcode.com/problems/design-circular-queue/
 
+# TODO: Remove self.cnt
+
 class ListNode:
     def __init__(self, val):
         self.val = val
@@ -9,9 +11,6 @@ class ListNode:
 class MyCircularQueue:
 
     def __init__(self, k: int):
-        if not k or not (1 <= k <= 1000):
-            raise ValueError (f"1 <= k <= 1000, k={k}")
-
         self.k = k
         self.dummy = ListNode(None)
         self.front = self.dummy 
@@ -52,7 +51,7 @@ class MyCircularQueue:
         if self.cnt == 1:
             self.dummy = ListNode(None)
             self.front = self.dummy 
-            self.rear = self.dummy  # cannot be self.front
+            self.rear = self.dummy
             self.cnt = 0
         else:
             if self.front.next: 
@@ -64,7 +63,8 @@ class MyCircularQueue:
 
     def Front(self) -> int:
         """
-        Gets the front item from the queue. If the queue is empty, return -1.
+        Gets the front item from the queue. 
+        If the queue is empty, return -1.
         """
         if self.front is None or self.front.val is None:
             return -1
@@ -73,7 +73,8 @@ class MyCircularQueue:
 
     def Rear(self) -> int:
         """
-        Gets the last item from the queue. If the queue is empty, return -1.
+        Gets the last item from the queue. 
+        If the queue is empty, return -1.
         """
         if self.rear is None or self.rear.val is None:
             return -1
