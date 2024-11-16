@@ -10,6 +10,12 @@ from heapq import heappush, heappop
 #         self.next = next
 class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
+        """
+        Merge linked-lists sorted in ascending order.
+        
+        T=O(nlogk), beats 91.67%
+        S=(k), beats 47.26%
+        """
         if not lists:
             return None
 
