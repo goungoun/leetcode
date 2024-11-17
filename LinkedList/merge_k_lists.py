@@ -24,7 +24,7 @@ class Solution:
         -,-
         return [1,1,2,3,4,4,5,6]
         """
-        if not lists or len(lists) < 1:
+        if not lists:
             return None
         
         l = lists[0]
