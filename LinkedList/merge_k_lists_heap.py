@@ -12,17 +12,22 @@ class Solution:
     def mergeKLists(self, lists: List[Optional[ListNode]]) -> Optional[ListNode]:
         """
         Merge linked-lists sorted in ascending order.
+
+        Approach: Use heap to compare values more then two
+        Add first nodes to the heap
+        Iterate through the heap and heap pop to get the min_node
+        Add another min_node to the heap
         
-        T=O(nlogk), beats 91.67%
-        S=(k), beats 47.26%
+        T=O(nlogk), beats 96.09%
+        S=(k), beats 77.54%
         """
         if not lists:
             return None
 
         h = [] # min heap by default
-        for i, start_node in enumerate(lists):
-            if start_node:
-                heappush(h, (start_node.val, i, start_node))
+        for i, node in enumerate(lists):
+            if node:
+                heappush(h, (node.val, i, node))
 
         dummy = ListNode()
         curr = dummy
