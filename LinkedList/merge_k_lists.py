@@ -40,7 +40,7 @@ class Solution:
             return list1
 
         curr = ListNode()
-        head = curr
+        dummy = curr
 
         while list1 and list2:
             if list1.val <= list2.val:
@@ -56,4 +56,4 @@ class Solution:
         elif list2:
             curr.next = list2
 
-        return head.next
+        return dummy.next
