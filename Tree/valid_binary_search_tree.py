@@ -35,17 +35,15 @@ class Solution:
                "3"  7
         return False
         """
-
+        
         if root is None or not min_val < root.val < max_val:
             return False
 
-        l = True
-        r = True
+        if root.left and not self.isValidBST(root.left, min_val, min(max_val, root.val)):
+            return False
 
-        if root.left:
-            l = self.isValidBST(root.left, min_val, min(max_val, root.val))
+        if root.right and not self.isValidBST(root.right, max(min_val, root.val), max_val):
+            return False
 
-        if root.right:
-            r = self.isValidBST(root.right, max(min_val, root.val), max_val)
-
-        return l and r
+        return True
+        
