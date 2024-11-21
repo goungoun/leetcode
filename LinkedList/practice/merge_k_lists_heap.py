@@ -3,7 +3,6 @@
 
 from heapq import heappush, heappop
 
-
 #### Warning!!! This is a buggy code for a practice
 
 class Solution:
@@ -34,10 +33,9 @@ class Solution:
         curr = dummy
 
         for i, node in enumerate(lists):
-            if node:
-                heappush(h, (node.val, i, node))
-                node = node.next
-
+            heappush(h, (node.val, i, node))
+            node = node.next
+    
         while h:
             _, i, node = heappop(h)
             curr.next = node
@@ -51,6 +49,19 @@ class Solution:
         return dummy.next
       
 #### Warning!!! This is a buggy code for a practice
+"""
+AttributeError: 'NoneType' object has no attribute 'val'
+                 ^^^^^^^^
+    heappush(h, (node.val, i, node))
+Line 19 in mergeKLists (Solution.py)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    ret = Solution().mergeKLists(param_1)
+Line 58 in _driver (Solution.py)
+    _driver()
+Line 73 in <module> (Solution.py)
+"""
+
+
 """
 TypeError: '<' not supported between instances of 'ListNode' and 'ListNode'
     heappush(h, (node.val, i, node))
