@@ -31,7 +31,7 @@ class Solution:
             return None
 
         def rec(node):
-            if node.left or node.right:  # Fix this!!
+            if node.left and node.right:  # Fix this!! Test case: root = [1,2]
                 node.left, node.right = node.right, node.left
             else:
                 return
