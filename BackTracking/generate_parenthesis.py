@@ -4,7 +4,7 @@
 class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         """
-        For the six positions make a decision open or close
+        For the each positions make a decision open or close
         return valid
 
         constraints:
