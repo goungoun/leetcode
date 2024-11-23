@@ -16,6 +16,9 @@ class Solution:
         depth_right = self.maxDepth(root.right) 
 
         return max(depth_left, depth_right) + 1
+
+    def maxDepth_oneline(self, root: Optional[TreeNode], i=0) -> int:
+        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1 if root else 0
     
     def maxDepth_bak1(self, root: Optional[TreeNode], i=0) -> int:
         """
