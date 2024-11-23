@@ -28,8 +28,8 @@ class Solution:
         For each node, calculate the target for search.
         Do binary search
         
-        T = O(nlogn), beats 5.13 %
-        S = avg O(nlogn) max O(n) for call stack, beats 28.68%
+        T = O(nlogn), beats 18.38 %
+        S = avg O(nlogn) max O(n) for call stack, beats 20.97%
 
         * It performs better to use set and dfs ignoring the BST property
         """
@@ -44,10 +44,10 @@ class Solution:
             if node.val == target and node.val != root.val:
                 return True
 
-            if node.left and binary_search(node.left, target):
+            if node.val > target and node.left and binary_search(node.left, target):
                 return True
 
-            if node.right and binary_search(node.right, target):
+            if node.val < target and node.right and binary_search(node.right, target):
                 return True
 
             return False
@@ -66,7 +66,4 @@ class Solution:
 
             if node.right:
                 q.append(node.right)
-
-        return False
-
         
