@@ -37,10 +37,13 @@ class Solution:
         The results of Example 1 and Example 2 are the same. 
         The level does matter, it doesn't matter if the child belongs to left or right.
 
-        Approach:
+        Approach: Level order traversal
         To traverse the tree BFS (level order), a queue is required to control its order in FIFO
-        Consider using double loop to ensure one iteration on the while loop collects all values within the same level
+        Use nested loop to ensure one iteration on the while loop collects all values within the same level
         No avg() in Python, combine sum() and len() instead.
+
+        T=O(n)
+        S=O(n) for a queue
         """
         if not root:
             return []
@@ -52,8 +55,9 @@ class Solution:
         while q:
             # nodes in the same level
             level_sum = 0
-            len_q = len(q)
-            for _ in range(len_q): 
+            level_cnt = len(q)
+            
+            for _ in range(level_cnt): 
                 node = q.popleft()
                 node_val = node.val if node.val else 0
                 level_sum += node_val
@@ -65,7 +69,7 @@ class Solution:
                 if node.right:
                     q.append(node.right)
             
-            level_avg = level_sum/len_q if len_q !=0 else 0
+            level_avg = level_sum/level_cnt #if level_cnt !=0 else 0
             level_avgs.append(level_avg)
 
         return level_avgs
