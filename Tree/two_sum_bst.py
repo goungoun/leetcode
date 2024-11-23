@@ -36,29 +36,14 @@ class Solution:
         if not root:
             return False
         
-        # binary search to find the value from the root- O(log n)
-        def binary_search(node, target):
-            if not node:
-                return False
-
-            if node.val == target and node.val != root.val:
-                return True
-
-            if node.val > target and node.left and binary_search(node.left, target):
-                return True
-
-            if node.val < target and node.right and binary_search(node.right, target):
-                return True
-
-            return False
-
         # BFS to traverse all values - O(n)
         q = deque([root])
         while q:
             node = q.popleft()
             target = k-node.val
 
-            if target != node.val and binary_search(root, target):
+            # O(log n)
+            if target != node.val and self.binary_search(root, target):
                 return True
 
             if node.left:
@@ -66,4 +51,27 @@ class Solution:
 
             if node.right:
                 q.append(node.right)
+
+        return False
+
+    def binary_search(self, node, target):
+        """
+        binary search to find the value from the root
         
+        T=O(log n) worst O(n)
+        S=O(log n) worst O(n)
+        """
+        if not node:
+            return False
+
+        if node.val == target:
+            return True
+
+        if node.val > target and node.left and self.binary_search(node.left, target):
+            return True
+
+        if node.val < target and node.right and self.binary_search(node.right, target):
+            return True
+
+        return False
+
