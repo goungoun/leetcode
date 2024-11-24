@@ -19,6 +19,9 @@ class Solution:
         Iterate characters in the string
         If it is an opener, put in the stack
         If it is a closer, check the top of the stack to see if it does match with the latest opener
+
+        T=O(n)
+        S=O(n)
         """
         if not s:
             return False
