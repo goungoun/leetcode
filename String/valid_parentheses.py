@@ -18,7 +18,7 @@ class Solution:
         Appraoch:
         Iterate characters in the string
         If it is an opener, put in the stack
-        If it is a closer, check the top of the stack to see if it does match with the latest opener
+        If it is a closer, check the top of the stack to see if it does d with the latest opener
 
         T=O(n)
         S=O(n)
@@ -29,17 +29,17 @@ class Solution:
         stack = []
 
         # key: closer, value: opener
-        match = {')':'(', 
+        d = {')':'(', 
                  '}':'{',
                  ']':'['}
         
-        closers = match.keys()
+        closers = d.keys()
 
         for token in s:
             if token in closers and not stack:
                 return False
             elif token in closers:
-                if stack.pop() != match[token]:
+                if stack.pop() != d[token]:
                     return False
             else:
                 stack.append(token)
