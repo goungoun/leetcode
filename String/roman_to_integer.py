@@ -6,12 +6,12 @@ class Solution:
         """
         return original_number
 
-        Example 1: add from left to right
+        Example 1: value decreasing case
         II -> 2
-        XII -> 10+ 1+ 1 = 12
-        XXVII -> 10 + 10+ 5 + 1 + 1 = 27
+        XII -> 10 + 1 + 1 = 12
+        XXVII -> 10 + 10 + 5 + 1 + 1 = 27
         
-        Example 2: edge cases
+        Example 2: value increasing case
         IV(4), IX(9), XL(40), XC(90), CD(400), CM(900)
 
         IV -> 1 + 5 != 6
@@ -24,7 +24,7 @@ class Solution:
         CD -> -100 + 50 = 50 
 
         Appraoch:
-        Define a dictionary to map symbol and char
+        Define a dictionary to map symbol and value
         For each letter, compare its number with the next one
         If it is increasing minus the current value
         If it is decreasing add he current value
