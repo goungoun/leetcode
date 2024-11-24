@@ -85,6 +85,8 @@ from functools import reduce
 1 if search in d: # O(1)
 508 if n not in memo:
 
+20 closers = match.keys() # cf.values()
+
 105 d = {val:idx for idx, val in enumerate(inorder)}
 
 383 from collections import Counter
