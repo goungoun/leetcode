@@ -22,6 +22,7 @@ class Solution:
         
         q = deque([node]) # not head
         visited = set([node]) # not head
+        # TODO: actually it is duplicated variable use. I can use created instead of visited.
 
         while q:
             old_n = q.popleft()
