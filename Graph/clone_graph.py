@@ -33,24 +33,21 @@ class Solution:
         if not node:
             return None
 
-        head = Node(node.val)
-        created = {head.val:head} # Node.val is unique for each node.
-        
-        q = deque([node]) # not head
-        visited = set([node]) # not head
+        start_node = Node(node.val) # val=1
+        created = {node:start_node}
+
+        q = deque([node])
 
         while q:
-            old_n = q.popleft()
-            new_n = created[old_n.val]
+            node = q.popleft()
+            new_node = created[node]
 
-            for nei in old_n.neighbors:
-                if nei.val not in created:
-                    created[nei.val] = Node(nei.val)
-
-                new_n.neighbors.append(created[nei.val])
-              
-                if nei not in visited:
+            for nei in node.neighbors:
+                if nei not in created:
+                    created[nei] = Node(nei.val)
                     q.append(nei)
-                    visited.add(nei)
+                
+                new_node.neighbors.append(created[nei])
 
-        return head
+        return start_node
+    
