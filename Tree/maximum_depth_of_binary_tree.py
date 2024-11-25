@@ -8,6 +8,10 @@
 #         self.left = left
 #         self.right = right
 class Solution:
+    def maxDepth(self, root: Optional[TreeNode], i=0) -> int:
+        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1 if root else 0
+    
+    """
     def maxDepth(self, root: Optional[TreeNode]) -> int:
         if not root:
             return 0
@@ -16,11 +20,10 @@ class Solution:
         right = self.maxDepth(root.right) if root.right else 0
 
         return max(left, right)+1
+    """
 
-    def maxDepth_oneline(self, root: Optional[TreeNode], i=0) -> int:
-        return max(self.maxDepth(root.left), self.maxDepth(root.right)) + 1 if root else 0
-    
-    def maxDepth_bak1(self, root: Optional[TreeNode], i=0) -> int:
+    """
+    def maxDepth(self, root: Optional[TreeNode], i=0) -> int:
         """
         DFS - post order
         """
@@ -31,9 +34,9 @@ class Solution:
         depth_right = self.maxDepth(root.right, i+1)
 
         return max(depth_left, depth_right)
+    """
 
-
-    def maxDepth_bak2(self, root: Optional[TreeNode]) -> int:
+    def maxDepth_bak(self, root: Optional[TreeNode]) -> int:
         """
         DFS - pre order, with helper function
         """
