@@ -15,6 +15,9 @@ class Solution:
         Iterate the all node values in the list and build a min heap
         Pop values from the heap and make new list nodes
         Return the first node
+
+        T=O(n)
+        S=O(n)
         """
         if not lists:
             return None
