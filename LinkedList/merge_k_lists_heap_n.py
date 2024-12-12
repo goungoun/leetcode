@@ -16,7 +16,7 @@ class Solution:
         Pop values from the heap and make new list nodes
         Return the first node
 
-        T=O(n)
+        T=O(nlogn)
         S=O(n)
         """
         if not lists:
