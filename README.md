@@ -129,6 +129,9 @@ from functools import reduce
 1971 visited.add(adj_vertex)
 
 128 starters = {num for num in nums if num-1 not in set_nums} # handle duplicates ahead
+
+2133 expected = {i for i in range(1, n+1)} # all the integers from 1 to n (inclusive)
+2133 set([1,2,3]) == set([3,2,1]) # True
 ```
 
 ### Tuple
