@@ -35,7 +35,7 @@ class Solution:
         len_word2 = len(word2)
 
         # word1: row, word2: col
-        cost = [[0] * (len_word2 + 1) for _ in range(len_word1 + 1)]
+        cost = ? # Complete here *****
 
         # Left column: The cost of change when word2 is empty
         for row in range(1, len_word1+1):
