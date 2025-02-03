@@ -16,6 +16,7 @@ class Solution:
 
     Approach: DP (Tabular, bottom-up)
     You don't need to store all dp array. by Maksim Shekhunov(WhatCanWeDo)
+    Replace cost[i-1] to prev and cost[i]= cur
     
     T=O(mn) Beats 80 %, S=O(n) 98 %
     """
