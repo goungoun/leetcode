@@ -11,25 +11,44 @@
 class Solution:
     def isSymmetric(self, root: Optional[TreeNode]) -> bool:
         """
-        Check the binary tree symmetric around its center
-        * F/U: Could you solve it both recursively and iteratively? 
+        Check whether it is symmetric or not
+        return True/False
 
-        Approach: iterative solution using stack
+        Example 1: symmetric
+        root = [1,2,2,3,4,4,3]
+                 1
+              2    2
+            3  4  4  3
+
+        return True
+
+        Example 2: Not symmetric
+        root = [1,2,2,null,3,null,3]
+
+               1
+            2     2
+        null 3    null 3
+
+        return False
+
+        Approach: recursive
         """
         if not root:
             return False
+            
+        self.is_symmetric = True
 
-        stk = []
-        stk.append((root.left,root.right))
-
-        while stk:
-            left, right = stk.pop()
-
-            if (not left and right) or (not right and left) or \
+        def rec_compare(left, right):
+            if (not left and right) or \
+                (not right and left) or \
                 (left and right and left.val != right.val):
-                return False
-            elif left and right:
-                stk.append((left.left, right.right))
-                stk.append((left.right, right.left))
+                self.is_symmetric = False
+                return
 
-        return True
+            if left and right:
+                rec_compare(left.left, right.right)
+                rec_compare(left.right, right.left)
+
+        rec_compare(root.left, root.right)
+
+        return self.is_symmetric
