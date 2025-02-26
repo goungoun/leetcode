@@ -6,9 +6,9 @@ class Solution:
         Reverse the string in the array s
         Do not return anything, modify s "in-place" instead.
 
-        Approach:
-        Use two pointer left(l) and right(r)
-        Swap s[l], s[r] 
+        Approach: Two pointer
+        On pointer starts from the left, and the other starts from the right
+        Swap s[l], s[r]
         Increase l and decrease r
         Repeat until l < r
 
