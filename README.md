@@ -1,7 +1,7 @@
 ## Syntax Cheatsheet
-### String
+### String (Immutable)
 ```python
-9 return s == s[::-1] # "".join(list(reversed(s)))
+9 return s == s[::-1] # "".join(list(reversed(s))) 
 28 haystack.find(needle) # cf. index() return error if not found, but find() returns -1
 191 return str(bin(n))[2:].count('1')
 
@@ -195,7 +195,7 @@ from functools import reduce
 
 ### Swap
 ```python
-344 s[l], s[r] = s[r], s[l]
+344 s[l], s[r] = s[r], s[l] # s: List[str] String is immutable, so the argument is given as a List type for in-place algorithm
 266 root.left, root.right = root.right, root.left
 48 matrix[i][j], matrix[j][i] = matrix[j][i], matrix[i][j]
 189 nums[:k], nums[k:] = nums[-k:], nums[:-k]
