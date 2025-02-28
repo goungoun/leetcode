@@ -1,4 +1,4 @@
-### nums[:]
+### slice assignment - nums[:]
 ```python3
 189 nums[:] = nums[-k:] + nums[:-k]
 
