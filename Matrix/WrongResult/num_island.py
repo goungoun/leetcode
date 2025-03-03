@@ -1,6 +1,9 @@
 # 200. Number of Islands (Medium)
 # https://leetcode.com/problems/number-of-islands/
 
+# Warning!! This is a buggy code, need to fix
+# Symptom : it returns all count of element, not an island count
+
 class Solution:
     def numIslands(self, grid: List[List[str]]) -> int:
         """
