@@ -32,7 +32,7 @@ class Solution:
 
         return 3
 
-        Approach: DFS (or BFS is good to)
+        Approach: DFS (or BFS is good too)
         First, implement a simple land count. This is just a nested for loop.
         Expand the idea to island by using recursive calls to remove duplicated counts
         Convert it to use stack to prevent stack overflow, the number of rows and columns will be up to 300, the maximum number of calls can be 90,000
