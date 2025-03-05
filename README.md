@@ -2,7 +2,7 @@
 ### Float
 ```python
 53 max_sum = float('-inf')
-```python
+```
 
 ### String (Immutable)
 ```python
