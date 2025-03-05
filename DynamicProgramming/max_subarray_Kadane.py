@@ -54,5 +54,5 @@ class Solution:
         return max_sum
 
 
-# Divide & Concour can improve the time and space complexity, O(log n)
+# Divide & Concour time complexity, O(nlog n)
 # https://medium.com/@reza.shokrzad/exploring-kadanes-algorithm-a-path-to-maximum-subarray-ec1e8db6edab
