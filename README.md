@@ -1,4 +1,9 @@
 ## Syntax Cheatsheet
+### Float
+```python
+53 max_sum = float('-inf')
+```python
+
 ### String (Immutable)
 ```python
 9 return s == s[::-1] # "".join(list(reversed(s))) 
