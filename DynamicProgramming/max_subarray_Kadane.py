@@ -5,14 +5,9 @@ class Solution:
     def maxSubArray(self, nums: List[int]) -> int:
         """
         Find a contiguous subarray that makes the largest sum
-        return max_so_far
+        return max_sum
 
-        Approach: Kadane's algorithm
-        Iteratge each element, update max_ending_here 
-        Update max_so_far as the maximum of either the current max_so_far or max_ending_here.
-        If max_ending_here becomes negative, reset to zero 
-
-        Example:
+        Example 1: negative values and positive values
         nums = [-2,1,-3,4,-1,2,1,-5,4]
         -2,1 => 1
         -2,1,-3 => -2 (reset)
@@ -21,7 +16,7 @@ class Solution:
         4,-1,2,1,-5,4 => 5
         return 6
 
-        Example:
+        Example 2: All negative values
         nums = [-2,-1,-3,-4]
         -2 => -2 (reset)
         -1 => -1 (reset)
@@ -29,17 +24,35 @@ class Solution:
         -4 => -4 (reset)
 
         return -1
+
+        Example 3: Edge case, max_sum returns negative value (hidden)
+        nums = [-1]
+        -1 => -1 (reset)
+
+        return -1
+
+        Approach: Kadane's algorithm
+        Iteratge each element, update curr_sum 
+        Update max_sum as the maximum of either the current max_sum or curr_sum.
+        If curr_sum becomes negative, reset to zero
+
+        T=O(n), S=O(1)
         """
-        
-        if nums is None or len(nums) == 0:
-            return 
-        max_ending_here, max_so_far = 0, float('-inf')
+        if not nums:
+            return 0
+
+        curr_sum = 0
+        max_sum = float('-inf')
 
         for num in nums:
-            max_ending_here += num
-            max_so_far = max(max_so_far, max_ending_here)
+            curr_sum += num
+            max_sum = max(curr_sum, max_sum)
 
-            if max_ending_here < 0:
-                max_ending_here = 0
+            if curr_sum < 0:              
+                curr_sum = 0
 
-        return max_so_far
+        return max_sum
+
+
+# Divide & Concour can improve the time and space complexity, O(log n)
+# https://medium.com/@reza.shokrzad/exploring-kadanes-algorithm-a-path-to-maximum-subarray-ec1e8db6edab
