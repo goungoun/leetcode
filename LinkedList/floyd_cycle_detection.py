@@ -9,9 +9,9 @@
 
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
-    """
-    Floyd's Cycle Detection Algorithm, also known as the "tortoise and hare" 
-    """
+        """
+        Floyd's Cycle Detection Algorithm, also known as the "tortoise and hare" 
+        """
         slow, fast = head, head
 
         while fast and fast.next :
