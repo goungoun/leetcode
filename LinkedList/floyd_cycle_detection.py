@@ -30,7 +30,11 @@ class Solution:
         +2: 1 <End>
         return False
         """
-        slow, fast = head, head
+        if not head:
+            return False
+            
+        slow = head
+        fast = head
 
         while fast and fast.next :
             slow = slow.next
