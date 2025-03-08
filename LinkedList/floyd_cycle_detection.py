@@ -10,7 +10,25 @@
 class Solution:
     def hasCycle(self, head: Optional[ListNode]) -> bool:
         """
-        Floyd's Cycle Detection Algorithm, also known as the "tortoise and hare" 
+        Floyd's Cycle Detection Algorithm, also known as the "tortoise and hare"
+
+        Example 1:
+        head = [3,2,0,-4], pos = 1
+        +1: 3 2 0 "-4" 2 0 -4 2 ...
+        +2: 3 0 2 "-4" 0 2 ...
+        return True
+
+        Example 2:
+        head = [1,2], pos = 0
+        +1: 1 2 "1" 2 1 2 1 2 ...
+        +2: 1 1 "1" 1 1 1 1 1 ...
+        return True
+
+        Example 3:
+        head = [1], pos = -1
+        +1: 1 <End>
+        +2: 1 <End>
+        return False
         """
         slow, fast = head, head
 
