@@ -3,7 +3,9 @@
 
 class Solution:
     def validPath(self, n: int, edges: List[List[int]], source: int, destination: int) -> bool:
-        if not n:
+        if source == destination:
+            return True
+        elif not edges or not n:
             return False
 
         g = defaultdict(list)
