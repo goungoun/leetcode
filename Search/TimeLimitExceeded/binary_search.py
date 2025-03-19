@@ -4,15 +4,14 @@
 # Time Limit Exceeded!!
 class Solution:
     def search(self, nums: List[int], target: int) -> int:
-        if not nums or target is None:
+        if not nums or not target: ## Fix This! target is None
             return False
 
         l = 0
         r = len(nums) - 1
-        mid = l + (r - l)//2 # (l + r)//2
 
         while l <= r:
-            mid = l + (r - l)//2 
+            mid = (r - l)//2 ## Fix This! mid = l + (r - l)//2
 
             if nums[mid] == target:
                 return mid
