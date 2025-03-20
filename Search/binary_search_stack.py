@@ -10,7 +10,8 @@ class Solution:
         return index (not its value) if target exists, otherwise -1
 
         Approach: Divide & concour
-        Replaced a recursive call to use stack
+        Just an attempt to replace a recursive call to use stack
+        Less intuitive than a two pointer or recursive approach
         """
         if not nums or target is None:
             return -1
@@ -32,3 +33,5 @@ class Solution:
                 stk.append((l, mid - 1))
     
         return -1
+
+# See also: binary_search.py, binary_search_recursive.py
