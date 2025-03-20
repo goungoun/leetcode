@@ -5,12 +5,13 @@ class Solution:
     def search(self, nums: List[int], target: int) -> int:
         """
         Write a binary search algorithm with O(log n) complexity
-        nums are sorted in ascending order
+        * nums are sorted in ascending order!
         
         return index (not its value) if target exists, otherwise -1
 
         Approach: Two pointer
-        Update left or right to decrease its search scope
+        Update left or right to decrease its search scope by half
+        Take advantage of the fact that the elements in the array are sorted
         
         Example: 
         nums = [-1,0,3,5,9,12], target = 9
