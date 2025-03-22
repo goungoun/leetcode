@@ -1,22 +1,27 @@
 # 1046. Last Stone Weight
 # https://leetcode.com/problems/last-stone-weight
 
+from heapq import heapify, heappop, heappush
+
 class MaxHeap:
     """
     Python heap is min heap by default
     The purpose of MaxHeap is to simplify code when max heap is required.
     """
-    def __init__(self):
-        self._h = []
-
-    def heapify(self, l):
-        self._h = [-x for x in l]
+    def __init__(self, iterable=None):
+        self._h = [-x for x in iterable] if iterable else []
         heapq.heapify(self._h)
 
     def heappush(self, value):
+        if value is None:
+            raise ValueError("Cannot push the empty value to the heap.")
+            
         heapq.heappush(self._h, -value)
 
     def heappop(self):
+        if not self._h:
+            raise IndexError("The heap is empty. Cannot pop from it")
+            
         return -heapq.heappop(self._h)
 
     def len(self):
@@ -49,8 +54,7 @@ class Solution:
         if not stones:
             return 0
             
-        h = MaxHeap()
-        h.heapify(stones)
+        h = MaxHeap(stones)
 
         while h.len() > 1:
             w1 = h.heappop()
