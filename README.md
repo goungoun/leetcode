@@ -216,6 +216,8 @@ from functools import reduce
 import traceback
 except Exception as e:
      traceback.print_exc()
+
+1046 raise IndexError("The heap is empty. Ensure the heap is not empty before calling pop method.")
 ```
 
 ### Functions
