@@ -12,13 +12,13 @@ class MaxHeap:
         self._h = [-x for x in iterable] if iterable else []
         heapq.heapify(self._h)
 
-    def heappush(self, value):
+    def heappush(self, value:int):
         if value is None:
             raise ValueError("Cannot push the empty value to the heap.")
             
         heapq.heappush(self._h, -value)
 
-    def heappop(self):
+    def heappop(self) -> int:
         if not self._h:
             raise IndexError("The heap is empty. Cannot pop from it")
             
