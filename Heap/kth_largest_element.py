@@ -63,6 +63,7 @@ class Solution:
 
             # Space requires only k, less than the length of nums
             if len(h) > k:
-                heappop(h) 
+                heappop(h)
+                # print (f"num={num}, h={h}")
 
         return h[0]
