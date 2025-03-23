@@ -19,11 +19,11 @@ class Solution:
         1,1 : [-,-,1] => [1]
         return 1
 
-        Approach:
+        Approach: Use Max Heap
         Use heap to pickup the heaviest two stones
         Use min heap (by default) like a max heap by making negative values in each element
-        One round, heappop twice and push elements according tho the result
-
+        
+        T=O(n log n), S=O(n)
         Beats 97.24%
         """
         if not stones:
