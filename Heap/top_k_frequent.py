@@ -15,10 +15,7 @@ class Solution:
         counter = {1:3, 2:2, 3:1}
         return [1,2]
 
-        Approach:
-        heapify() time complexity is documented as O(n)
-        heappush() in a loop, time complexity is O(nlogn)
-        
+        T=O(k log n), S=O(n)
         Beats 76.22%
         """
         if not nums or not k:
@@ -28,7 +25,7 @@ class Solution:
         counter = Counter(nums)
         
         h = [(-cnt, num) for num, cnt in counter.items()]
-        heapify(h) #O(n)
+        heapify(h)
         
         while k > 0:
             _, num = heappop(h)
