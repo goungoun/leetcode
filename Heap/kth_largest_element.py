@@ -7,10 +7,6 @@ class Solution:
         Kth Largest Element in nums
         return num (not index)
 
-        Idea:
-        Use heap, but the python heap is meanheap by default
-        So, *-1 to all elements in the nums and then return -smallest_value 
-
         Example:
         nums = [3,2,1,5,6,4], k = 2
         6,5 => return 5
@@ -37,6 +33,12 @@ class Solution:
         heappop() -> -5 : Second Smallest Element
 
         return -(-5) : Second Largest Element, k=2
+
+        Approach:
+        Use heap, but the python heap is meanheap by default
+        So, *-1 to all elements in the nums and then return -smallest_value 
+
+        T=O(k log n), S=O(n)
         """
         if not nums or not k or k <= 0:
             return None
@@ -53,6 +55,13 @@ class Solution:
     def findKthLargest_fu(self, nums: List[int], k: int) -> int:
         """
         Follow Up: Decrease the space complexity
+
+        Approach:
+        Iterating through all the elements, maintain a Min-Heap of size K
+        Add each element to the heap removing the minimum element that exceeds K
+        Now we have K elements, the root element is the k th largest        
+
+        T=O(n log k), S=O(k)
         """
         if not nums or not k or k <= 0:
             return None
