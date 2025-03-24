@@ -43,8 +43,8 @@ class Solution:
         if not nums or not k or k <= 0:
             return None
 
-        h = [-x for x in nums]
-        heapify(h)
+        h = [-x for x in nums] # if nums are allowed to be modified, update itself can decrease the space usage
+        heapify(h) # In-place algorithm 
 
         for _ in range(k):
             smallest_val = heappop(h)
@@ -54,12 +54,27 @@ class Solution:
 
     def findKthLargest_fu(self, nums: List[int], k: int) -> int:
         """
-        Follow Up: Decrease the space complexity
-
         Approach:
-        Iterating through all the elements, maintain a Min-Heap of size K
-        Add each element to the heap removing the minimum element that exceeds K
-        Now we have K elements, the root element is the k th largest        
+        Maintain the min heap with the size of k
+        The first element is the kth largest element
+        
+        Example 1:
+        nums = [3,2,1,5,6,4], k = 2
+            5 <- root 
+         6
+
+        return 5
+
+        Example 2:
+        nums = [3,2,3,1,2,4,5,5,6], k = 4
+            4 <- root
+          5   5
+        6 
+
+        The other indexes doesn't mean anything, but
+        Among the [4,5,5,6] the first element 4 is the 4th largest
+
+        return 4
 
         T=O(n log k), S=O(k)
         """
