@@ -117,6 +117,7 @@ from functools import reduce
 
 12 d1.update(d2)
 12 for k, v in sorted(d1.items(), reverse=True):
+347 l = sorted(d.items(), key=lambda x: x[1], reverse=True)
 
 208 d = {'T':{'r':{'i':{'e':{'<END>':''}}, 'y':{'<END>':''}}}} # Trie
 ```
