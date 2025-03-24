@@ -36,7 +36,8 @@ class Solution:
         ret = []
 
         for k, v in sorted(d1.items(), reverse=True):
-            s, r = divmod(num,k)
+            # s, r = divmod(num,k)
+            s = num // k
             if s > 0:
                 ret.append(v*s)
                 num -= k*s
