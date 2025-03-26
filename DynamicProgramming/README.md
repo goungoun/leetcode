@@ -24,12 +24,11 @@
 ~~~
 
 # by Raman WaliaRaman Walia @meta
-https://www.linkedin.com/posts/ramanwalia_i-sat-down-for-3-4-hours-to-find-20-dp-patterns-activity-7310640125317656576-iZVF?utm_source=share&utm_medium=member_desktop&rcm=ACoAABPtrNMBbFr4Gl68UAYB65B4LPTJidxlg6o
 
 I sat down for 3-4 hours to find 20 DP patterns and 56 LeetCode problems so that you can master DP:
 
 (12 patterns are in the post and 8 patterns are in comment section)
-
+~~~
 1. Fibonacci sequence:
 
 a) Leetcode 70
@@ -105,5 +104,7 @@ c) Leetcode 1000
 
 a) Leetcode 91
 b) Leetcode 2266
+~~~
+Original post: https://www.linkedin.com/posts/ramanwalia_i-sat-down-for-3-4-hours-to-find-20-dp-patterns-activity-7310640125317656576-iZVF?utm_source=share&utm_medium=member_desktop&rcm=ACoAABPtrNMBbFr4Gl68UAYB65B4LPTJidxlg6o
  
 
