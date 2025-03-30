@@ -36,7 +36,7 @@ class Solution:
         course_status = [''] * numCourses
         course_order = []
 
-        def cycle(course):
+        def is_cycle(course):
             """
             It updates a course_status and a course_order
             return True if there is a cycle
@@ -48,7 +48,7 @@ class Solution:
             course_status[course] = 'START'
             
             for pre in graph[course]:
-                if cycle(pre):
+                if is_cycle(pre):
                     return True
             
             course_status[course] = 'END'
@@ -62,7 +62,7 @@ class Solution:
 
         for i in range(numCourses):
             # If there is a cycle, we cannot finish the courses
-            if cycle(i):
+            if is_cycle(i):
                 return []
         
         return course_order
