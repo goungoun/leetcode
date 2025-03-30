@@ -30,6 +30,9 @@ class Solution:
         return []
 
         Approach: Kahn's algorithm, BFS
+        Start with in-degree 0 classes that no prerequsites are required
+        Check the next courses and decrease the in-degree
+        Check another in-degree 0 classes after the update and repeat until all courses are taken
         """
         if not numCourses or not 1 <= numCourses <= 2000:
             raise ValueError(f"1 <= numCourses <= 2000, numCourses={numCourses}")
