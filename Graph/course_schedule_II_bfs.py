@@ -49,14 +49,10 @@ class Solution:
         for course, cnt in enumerate(in_degree):
             if cnt == 0:
                 q.append(course)
-        
-        # BFS
-        taken = set()
-
+                
         while q:
-            course = q.popleft()
+            course = q.popleft() # BFS
             course_order.append(course)
-            taken.add(course)
 
             # next course
             for next_course in g[course]:
