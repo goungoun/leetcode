@@ -34,35 +34,34 @@ class Solution:
         Check the next courses and decrease the in-degree
         Check another in-degree 0 classes after the update and repeat until all courses are taken
         """
+        def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         if not numCourses or not 1 <= numCourses <= 2000:
-            raise ValueError(f"1 <= numCourses <= 2000, numCourses={numCourses}")
+            raise ValueError (f"1 <= numCourses <= 2000, numCourses={numCourses}")
 
-        course_order = []
+        # build one directional graph: pre -(next)-> course
+        g = defaultdict(list)
         in_degree = [0] * numCourses
 
-        # build a direcitonal graph : pre -(next)-> course & accumulate in-degree
-        g = defaultdict(list)
         for course, pre in prerequisites:
             g[pre].append(course)
             in_degree[course] += 1
-
+        
         q = deque()
 
-        # we can start from all courses with in-degree 0, which means no prerequsite
-        for course, cnt in enumerate(in_degree):
-            if cnt == 0:
+        # courses does not require prerequisites
+        for course in range(numCourses):
+            if in_degree[course] == 0:
                 q.append(course)
-                
+
+        course_order = []
+
         while q:
-            course = q.popleft() # BFS
-            course_order.append(course)
+            pre = q.popleft() # BFS
+            course_order.append(pre)
 
-            # next course
-            for next_course in g[course]:
-                in_degree[next_course] -= 1
+            for course in g[pre]:
+                in_degree[course] -= 1
+                if in_degree[course] == 0:
+                    q.append(course)
 
-                # add in-degree 0 to the queue
-                if in_degree[next_course] == 0:
-                    q.append(next_course)
-        
         return course_order if len(course_order) == numCourses else []
