@@ -32,6 +32,8 @@ class Solution:
     Start with in-degree 0 classes that no prerequsites are required
     Check the next courses and decrease the in-degree
     Check another in-degree 0 classes after the update and repeat until all courses are taken
+
+    T=O(V+E), S=(V+E)
     """
     def findOrder(self, numCourses: int, prerequisites: List[List[int]]) -> List[int]:
         if not numCourses or not 1 <= numCourses <= 2000:
