@@ -39,15 +39,18 @@ class Solution:
         q = deque([node])
 
         while q:
-            node = q.popleft()
-            new_node = created[node]
+            old_node = q.popleft()
+            new_node = created[old_node]
 
-            for nei in node.neighbors:
+            for nei in old_node.neighbors:
                 if nei not in created:
                     created[nei] = Node(nei.val)
                     q.append(nei)
                 
                 new_node.neighbors.append(created[nei])
+
+            #print(f"old_node={old_node.val}:{[x.val for x in old_node.neighbors]}")  
+            #print(f"new_node={new_node.val}:{[x.val for x in new_node.neighbors]}")    
 
         return start_node
     
