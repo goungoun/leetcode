@@ -17,15 +17,22 @@ class Solution:
         Clone a connected undirected (always bi-directional) graph
         return new_start_node
 
-        * adjacency list : a collection of unordered lists used to represent a finite graph (1-indexed)
+        * adjacency list: a collection of unordered lists used to represent a finite graph (1-indexed)
 
         Example 1: 
-        adjList = [[2,4],[1,3],[2,4],[1,3]]
+        adjList = [[2,4],[1,3],[2,4],[1,3]] 
         
-        1: {2,4}
-        2: {1,3}
-        3: {2,4}
-        4: {1,3}
+        The index is used as a node
+        Another form of graph representation to make index explicit..
+        
+        g = {
+            1: [2,4],
+            2: [1,3],
+            3: [2,4],
+            4: [1,3]
+        }
+
+        edges = [[1,2], [1,4], [2,1], [2,3], [3,2], [3,4], [4.1], [4,3]]
     
         1 - 2
         |   |
@@ -36,16 +43,15 @@ class Solution:
         Example 2:
         adjList = [[2,3],[1,3],[1,2]]
         
-        1: {2,4}
-        2: {1,3}
-        3: {1,2}
+        1: [2,4]
+        2: [1,3]
+        3: [1,2]
     
         1 - 2
          \  |
             3
            
-        return  [[1,2],[2,3],[1,2]]
-    
+        return  [[1,2],[2,3],[1,2]    
 
         Approach: BFS
         Prepare (create or get) a new node before the visit
