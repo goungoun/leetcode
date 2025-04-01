@@ -50,7 +50,16 @@ class Solution:
      \  |
         3
        
-    return  [[1,2],[2,3],[1,2]    
+    return  [[1,2],[2,3],[1,2]
+
+    Example 3: 
+    adjList = [[3],[4],[1,4],[2,3]]
+
+    2 - 4
+        |
+    1 - 3
+
+    return [[3],[4],[1,4],[2,3]]
 
     Approach: BFS
     Prepare (create or get) a new node before the visit
