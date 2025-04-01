@@ -21,7 +21,7 @@ class Solution:
     Example 1: 
     adjList = [[2,4],[1,3],[2,4],[1,3]] 
     
-    The index is used as a node
+    Source node is hidden, but need to treat its index as a node
     Another form of graph representation to make index explicit..
     
     g = {
