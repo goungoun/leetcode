@@ -12,54 +12,54 @@ class Node:
 from typing import Optional
 from collections import deque
 class Solution:
+    """
+    Clone a connected undirected (always bi-directional) graph
+    return new_start_node
+
+    * adjacency list: a collection of unordered lists used to represent a finite graph (1-indexed)
+
+    Example 1: 
+    adjList = [[2,4],[1,3],[2,4],[1,3]] 
+    
+    The index is used as a node
+    Another form of graph representation to make index explicit..
+    
+    g = {
+        1: [2,4],
+        2: [1,3],
+        3: [2,4],
+        4: [1,3]
+    }
+
+    edges = [[1,2], [1,4], [2,1], [2,3], [3,2], [3,4], [4.1], [4,3]]
+
+    1 - 2
+    |   |
+    4 - 3
+    
+    return [[2,4],[1,3],[2,4],[1,3]]
+
+    Example 2:
+    adjList = [[2,3],[1,3],[1,2]]
+    
+    1: [2,4]
+    2: [1,3]
+    3: [1,2]
+
+    1 - 2
+     \  |
+        3
+       
+    return  [[1,2],[2,3],[1,2]    
+
+    Approach: BFS
+    Prepare (create or get) a new node before the visit
+    While visiting the existing node, get a new node and append the corresponding neighbors
+    Graph looks the same, but the nodes are all new with the same way of connections.
+
+    Beats 90.46%
+    """
     def cloneGraph(self, node: Optional['Node']) -> Optional['Node']:
-        """
-        Clone a connected undirected (always bi-directional) graph
-        return new_start_node
-
-        * adjacency list: a collection of unordered lists used to represent a finite graph (1-indexed)
-
-        Example 1: 
-        adjList = [[2,4],[1,3],[2,4],[1,3]] 
-        
-        The index is used as a node
-        Another form of graph representation to make index explicit..
-        
-        g = {
-            1: [2,4],
-            2: [1,3],
-            3: [2,4],
-            4: [1,3]
-        }
-
-        edges = [[1,2], [1,4], [2,1], [2,3], [3,2], [3,4], [4.1], [4,3]]
-    
-        1 - 2
-        |   |
-        4 - 3
-        
-        return [[2,4],[1,3],[2,4],[1,3]]
-
-        Example 2:
-        adjList = [[2,3],[1,3],[1,2]]
-        
-        1: [2,4]
-        2: [1,3]
-        3: [1,2]
-    
-        1 - 2
-         \  |
-            3
-           
-        return  [[1,2],[2,3],[1,2]    
-
-        Approach: BFS
-        Prepare (create or get) a new node before the visit
-        While visiting the existing node, get a new node and append the corresponding neighbors
-        Graph looks the same, but the nodes are all new with the same way of connections.
-
-        Beats 90.46%
-        """
         if not node:
             return
             
