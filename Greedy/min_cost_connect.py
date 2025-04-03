@@ -3,18 +3,18 @@
 
 from heapq import heappop, heappush
 class Solution:
+    """
+    Connect all points with the minimum distance
+    return min_dist
+
+    * manhattan distance :|xi - xj| + |yi - yj|
+
+    Approach: Minimum Spanning Tree
+    Start with an any point and make a group
+    Expand the group by adding a nearest point which is greedy
+    Repeat until the group includes all points
+    """
     def minCostConnectPoints(self, points: List[List[int]]) -> int:
-        """
-        Connect all points with the minimum distance
-        return min_dist
-
-        * manhattan distance :|xi - xj| + |yi - yj|
-
-        Approach: Minimum Spanning Tree
-        Start with an any point and make a group
-        Expand the group by adding a nearest point which is greedy
-        Repeat until the group includes all points
-        """
         if not points:
             return 0
 
@@ -39,9 +39,6 @@ class Solution:
                         heappush(h, (manhattan_dist, j))
 
         return min_cost
-        
-
-        
         
 # Reference: Gregg Hog
         
