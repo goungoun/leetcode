@@ -9,6 +9,17 @@ class Solution:
 
     * manhattan distance :|xi - xj| + |yi - yj|
 
+    Example 1:
+    points = [[0,0],[2,2],[3,10],[5,2],[7,0]]
+    [0,0]~[2,2]: 2 + 2 = 4
+    [2,2]~[3,10]: 1 + 8 = 9
+    [2,2]~[5,2]: 3 + 0 = 3
+    [5,2]~[7,0]: 2 + 2 = 4
+
+    4 + 9 + 3 + 4 = 20
+
+    return 20
+
     Approach: Minimum Spanning Tree
     Start with an any point and make a group
     Expand the group by adding a nearest point which is greedy
