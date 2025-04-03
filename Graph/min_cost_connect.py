@@ -42,8 +42,8 @@ class Solution:
                 min_cost += dist
                 xi, yi = points[i]
 
-                # points ordered by the distance
-                for j in range(n):
+                # No edge lists are given, all other edges are potentially to be connected except already selected nodes in the group
+                for j in range(n): 
                     if j not in group:
                         xj, yj = points[j]
                         manhattan_dist = abs(xi-xj) + abs(yi-yj)
