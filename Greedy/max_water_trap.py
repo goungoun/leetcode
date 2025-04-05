@@ -22,16 +22,23 @@ class Solution:
         l,r = 0, 0
         while r < len_height:
             if height[r] >= height[l]:
+                wall_height = height[l]
                 for i in range(l, r):
-                    water += max(height[l]-height[i], 0)
+                    elivated = height[i]
+                    water += max(wall_height-elivated, 0)
+                    
+                    #print(f"1) l={l}, r={r}, i={i}, wall_height={wall_height}, elivated={elivated}, diff={wall_height - elivated}")                  
                 l = r
             r += 1
 
         l,r = len_height-1, len_height-1
         while l >= 0:
-            if height[l] > height[r]:    
+            if height[l] > height[r]:
+                wall_height = height[r]
                 for i in range(l, r):
-                    water += max(height[r]-height[i], 0)
+                    elivated = height[i]
+                    water += max(wall_height-elivated, 0)
+                    #print(f"2) l={l}, r={r}, i={i}, wall_height={wall_height}, elivated={elivated}, diff={wall_height - elivated}")          
                 r = l
             l -= 1
 
