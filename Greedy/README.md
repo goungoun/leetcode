@@ -8,4 +8,5 @@
 #### Graph (../Graph)
 ~~~
 1584. Min Cost to Connect All Points
+743. Network Delay Time
 ~~~
