@@ -20,7 +20,7 @@ class Solution:
 
     return 20
 
-    Approach: Minimum Spanning Tree
+    Approach: Prim's Minimum Spanning Tree
     Start with an any point and make a group
     Expand the group by adding a nearest point which is greedy
     Repeat until the group includes all points
@@ -40,16 +40,12 @@ class Solution:
             if i not in group:
                 group.add(i)
                 min_cost += dist
-                xi, yi = points[i]
 
                 # No edge lists are given, all other edges are potentially to be connected except already selected nodes in the group
                 for j in range(n): 
                     if j not in group:
-                        xj, yj = points[j]
-                        manhattan_dist = abs(xi-xj) + abs(yi-yj)
+                        manhattan_dist = abs(points[i][0]-points[j][0]) + abs(points[i][1]-points[j][1])
                         heappush(h, (manhattan_dist, j))
 
         return min_cost
-        
-# Reference: Gregg Hog
         
