@@ -9,3 +9,8 @@
 207. Course Schedule (Medium)
 210. Course Schedule II (Medium)
 ~~~
+
+~~~
+1584. Min Cost to Connect All Points
+743. Network Delay Time
+~~~
