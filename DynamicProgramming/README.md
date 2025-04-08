@@ -23,6 +23,11 @@
 322. Coin Change (Medium)
 ~~~
 
+#### ../Graph
+~~~
+743. Network Delay Time
+~~~
+
 # by Raman WaliaRaman Walia @meta
 
 I sat down for 3-4 hours to find 20 DP patterns and 56 LeetCode problems so that you can master DP:
