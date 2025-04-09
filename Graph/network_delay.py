@@ -51,9 +51,8 @@ class Solution:
         for departure, arrival, interval in times:
             g[departure].append((arrival, interval))
 
-        group = set() # key: node, value: accumlated time from k
+        group = set()
         h = [(0, k)] # (arrival_time, curr_node)
-
         min_delay = 0
 
         while h and len(group) < n:
