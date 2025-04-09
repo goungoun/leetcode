@@ -1,4 +1,4 @@
-# 743. Network Delay Time
+# 743. Network Delay Time (Medium)
 # https://leetcode.com/problems/network-delay-time
 
 from collections import defaultdict
@@ -6,7 +6,7 @@ from collections import defaultdict
 class Solution:
     """
     Minimum time to travel n nodes from the source k
-    return delay (or -1)
+    return min_delay (or -1)
 
     * times[i] = (ui, vi, wi)
 
@@ -46,27 +46,26 @@ class Solution:
         if not times:
             return 0
 
-        # Build a graph : u -(time)-> v
+        # Build a graph : departure -(interval)-> arrival
         g = defaultdict(list)
-        for u, v, time in times:
-            g[u].append((v,time))
+        for departure, arrival, interval in times:
+            g[departure].append((arrival, interval))
 
-        group = set() # key: node, value: time to take from k
-        h = [(0, k)] # (accumulated_time, curr_node)
+        group = set() # key: node, value: accumlated time from k
+        h = [(0, k)] # (arrival_time, curr_node)
 
-        delay = 0
+        min_delay = 0
 
-        while h:
-            time, node = heapq.heappop(h) # nearest neighbor
+        while h and len(group) < n:
+            arrival_time, node = heapq.heappop(h) # nearest neighbor
 
             if node not in group:
                 group.add(node) 
-                delay = max(time, delay)
+                min_delay = max(arrival_time, min_delay)
   
-                for adj_node, adj_time in g[node]:
-                    if adj_node not in group:
-                        accumulated_time = time + adj_time
-                        heapq.heappush(h, (accumulated_time, adj_node))
+                for neighbor_node, interval in g[node]:
+                    if neighbor_node not in group:
+                        heapq.heappush(h, (arrival_time + interval, neighbor_node))
 
-        return delay if len(group) == n else -1
+        return min_delay if len(group) == n else -1
       
