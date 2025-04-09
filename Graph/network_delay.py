@@ -22,7 +22,8 @@ class Solution:
     2 -(time:1)-> 1, 2 -(time:1)-> 3 in parallel
     3 -(time:1)-> 4
 
-    Note that the node 1 and the node 3 receive a signal at once, so it take time 1 
+    Note that the node 1 and the node 3 receive a signal at once, so it take time 1
+    2 -(time:1)-> 1, 2 -(time:1)-> 3 -(time:1)-> 4 in parallel
 
     return 2
 
