@@ -10,10 +10,10 @@ class Solution:
 
     * times[i] = (ui, vi, wi)
 
-    Example 1:
+    Example 1: Possible to propagate a signal to all nodes
     times = [[2,1,1],[2,3,1],[3,4,1]], n = 4, k = 2
-    Start from the node 2 and the other "all nodes" will be receve a signal
-          2 <- start 
+    
+          2 <- start node k
         /   \
        1     3
             / 
@@ -26,8 +26,19 @@ class Solution:
 
     return 2
 
+    Example 2: Not possible, no outgoing edge from the start node
+    times = [[1,2,1]], n = 2, k = 2
+
+          1 
+        /   
+       2 <- start node k 
+     
+    1 -(time:1) -> 2
+
+    return -1
+
     Approach: Dijkstra's shortest path
-    Use min heap to decide the next node 
+    From one source to reach out to all nodes with minimum time
     The time to the next node is the fastest from a group that includes all visited node (Greedy)
     The first element of the heap include accumulated time to take so far from k to current node (DP)
     """
