@@ -12,6 +12,9 @@ class MaxHeap:
         self._h = [-x for x in iterable] if iterable else []
         heapq.heapify(self._h)
 
+    def __repr__(self):
+        return f"{self._h}"
+
     def heappush(self, value:int):
         if value is None:
             raise ValueError("Cannot push the empty value to the heap.")
@@ -57,6 +60,7 @@ class Solution:
         h = MaxHeap(stones)
 
         while h.len() > 1:
+            #print (repr(h))
             w1 = h.heappop()
             w2 = h.heappop()
 
@@ -64,6 +68,5 @@ class Solution:
             if diff > 0:
                 h.heappush(diff)
             
+            
         return h.heappop() if h.len() > 0 else 0
-
-
