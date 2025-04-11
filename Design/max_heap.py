@@ -66,7 +66,6 @@ class Solution:
 
             diff = abs(w1-w2)
             if diff > 0:
-                h.heappush(diff)
-            
+                h.heappush(diff)          
             
         return h.heappop() if h.len() > 0 else 0
