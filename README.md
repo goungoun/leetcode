@@ -284,6 +284,15 @@ True
 77 @lru_cache(None)
 ```
 
+## Class
+### Magic Method
+```python
+1046 __init__(self)
+1046 __repr__(self) #print (repr(h)) or print(h) if __str__ is not defined
+1046 __str__(self) #print (str(h)) or print(h)
+1046 __len__(self)
+```
+
 ## Errors
 ### RecursionError
 RecursionError: maximum recursion depth exceeded in comparison
