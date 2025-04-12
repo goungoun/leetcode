@@ -13,7 +13,10 @@ class MaxHeap:
         heapq.heapify(self._h)
 
     def __repr__(self):
-        return f"{self._h}"
+        return f"{self.__class__.__name__} object at {hex(id(self))}, {self._h}"
+
+    def __str__(self):
+        return f"{[-x for x in self._h]}"
 
     def heappush(self, value:int):
         if value is None:
@@ -61,11 +64,12 @@ class Solution:
 
         while h.len() > 1:
             #print (repr(h))
+            #print (str(h))
             w1 = h.heappop()
             w2 = h.heappop()
 
             diff = abs(w1-w2)
             if diff > 0:
-                h.heappush(diff)          
+                h.heappush(diff)        
             
         return h.heappop() if h.len() > 0 else 0
