@@ -18,6 +18,12 @@ class MaxHeap:
     def __str__(self):
         return f"{[-x for x in self._h]}"
 
+    def __len__(self):
+        if not self._h:
+            return 0
+            
+        return len(self._h)
+
     def heappush(self, value:int):
         if value is None:
             raise ValueError("Cannot push the empty value to the heap.")
@@ -29,12 +35,6 @@ class MaxHeap:
             raise IndexError("The heap is empty. Cannot pop from it")
             
         return -heapq.heappop(self._h)
-
-    def len(self):
-        if not self._h:
-            return 0
-            
-        return len(self._h)
 
 class Solution:
     def lastStoneWeight(self, stones: List[int]) -> int:
@@ -62,9 +62,9 @@ class Solution:
             
         h = MaxHeap(stones)
 
-        while h.len() > 1:
-            #print (repr(h))
-            #print (str(h))
+        while len(h) > 1:
+            # print(h)
+
             w1 = h.heappop()
             w2 = h.heappop()
 
@@ -72,4 +72,4 @@ class Solution:
             if diff > 0:
                 h.heappush(diff)        
             
-        return h.heappop() if h.len() > 0 else 0
+        return h.heappop() if len(h) > 0 else 0
