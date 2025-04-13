@@ -13,11 +13,10 @@ class BrowserHistory:
     Start from a homepage, visit url
     And then, back or forward the history
     
-    Approach:
-    Double linked list
+    Approach: Double linked list
 
-    T=O(1) for visit
-    T=O(steps) for back and forward
+    T=O(1) for visit()
+    T=O(steps) for back() and forward(), it is up to 100 steps
     
     S=O(n)
 
@@ -31,14 +30,12 @@ class BrowserHistory:
         Visits url from the current page. 
         It clears up all the forward history.
 
-        self.curr <=(link)=> new_node 
-
-        T=O(1), S=O(1)
+        self.curr <=(link)=> new_node
         """
         # Create a new node with the given url
         new_node = VisitNode(url)
 
-        # Link up the current node and the new one, bi-drectionally (Double linked list)
+        # Link up the current node and the new one, bi-directionally (Double linked list)
         self.curr.next = new_node
         new_node.prev = self.curr
 
@@ -50,8 +47,6 @@ class BrowserHistory:
         Move steps back in history. 
         If you can only return x steps in the history and steps > x, you will return only x steps. 
         Return the current url after moving back in history at most steps.
-
-        T=O(n), S=O(1)
         """
         while self.curr.prev and steps:
             self.curr = self.curr.prev
@@ -64,8 +59,6 @@ class BrowserHistory:
         Move steps forward in history. 
         If you can only forward x steps in the history and steps > x, you will forward only x steps. 
         Return the current url after forwarding in history at most steps.
-
-        T=O(n), S=O(1)
         """
         while self.curr.next and steps:
             self.curr = self.curr.next
