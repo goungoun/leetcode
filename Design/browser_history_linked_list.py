@@ -26,6 +26,13 @@ class BrowserHistory:
         Visits url from the current page. 
         It clears up all the forward history.
 
+        Approach:
+        self.curr <-(link)-> new_node 
+
+        1. create a new node
+        2. link between self.curr and the node
+        3. update the current node to the new one
+
         T=O(1), S=O(1)
         """
         node = VisitNode(url)
