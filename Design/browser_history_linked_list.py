@@ -16,6 +16,11 @@ class BrowserHistory:
     Approach:
     Double linked list
 
+    T=O(1) for visit
+    T=O(steps) for back and forward
+    
+    S=O(n)
+
     Beats 53.85%
     """
     def __init__(self, homepage: str):
@@ -26,21 +31,20 @@ class BrowserHistory:
         Visits url from the current page. 
         It clears up all the forward history.
 
-        Approach:
-        self.curr <-(link)-> new_node 
-
-        1. create a new node
-        2. link between self.curr and the node
-        3. update the current node to the new one
+        self.curr <=(link)=> new_node 
 
         T=O(1), S=O(1)
         """
-        node = VisitNode(url)
-        node.prev = self.curr
-        node.next = None # ignores existing forward history
-        self.curr.next = node
-        self.curr = node
+        # Create a new node with the given url
+        new_node = VisitNode(url)
 
+        # Link up the current node and the new one, bi-drectionally (Double linked list)
+        self.curr.next = new_node
+        new_node.prev = self.curr
+
+        # Update the current node to a new node
+        self.curr = new_node
+        
     def back(self, steps: int) -> str:
         """
         Move steps back in history. 
