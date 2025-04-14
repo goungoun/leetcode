@@ -67,13 +67,12 @@ class LRUCache:
         """
         Update the value of the key if the key exists. 
         Otherwise, add the key-value pair to the cache. 
-
-        If the cache is already full for insert, evict first.
         """
         # print(f"\nCalled put({key}, {value})..")
         # print(f"self.cache={self.cache}")
 
-        if len(self.cache) >= self.capacity and key not in self.cache:
+        # trying to insert but already full, evict first to make a space
+        if key not in self.cache and len(self.cache) >= self.capacity:
             self.cache.popitem(last=False)
 
         if key in self.cache:
