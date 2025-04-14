@@ -6,6 +6,7 @@
 # param_1 = obj.get(key)
 # obj.put(key,value)
 
+import logging
 from collections import OrderedDict
 
 class LRUCache:
@@ -50,11 +51,17 @@ class LRUCache:
         """
         Return the value of the key if the key exists, otherwise return -1.
         """
+        # print(f"\nCalled get({key})..")
+        # print(f"self.cache={self.cache}")
+
         if key not in self.cache:
             return -1
         
         # Do not pop or remove it. Just return the value, but need to be "touched".
         self.cache.move_to_end(key)
+
+        # print(f"self.cache={self.cache}")
+        
         return self.cache[key]
 
     def put(self, key: int, value: int) -> None:
@@ -64,16 +71,19 @@ class LRUCache:
 
         If the cache is already full for insert, evict first.
         """
+        # print(f"\nCalled put({key}, {value})..")
+        # print(f"self.cache={self.cache}")
+
         if len(self.cache) >= self.capacity and key not in self.cache:
             self.cache.popitem(last=False)
 
         if key in self.cache:
-            self.cache.move_to_end(key) 
+            self.cache.move_to_end(key)
 
         self.cache[key] = value
+
+        # print(f"self.cache={self.cache}")
 
 
 # Referenced an idea to use ordered dict from a deleted_user
 # https://leetcode.com/problems/lru-cache/solutions/3171305/solution/
-
-
