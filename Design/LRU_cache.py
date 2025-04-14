@@ -6,7 +6,6 @@
 # param_1 = obj.get(key)
 # obj.put(key,value)
 
-import logging
 from collections import OrderedDict
 
 class LRUCache:
