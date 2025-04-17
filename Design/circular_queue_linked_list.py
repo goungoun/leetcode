@@ -26,6 +26,8 @@ class MyCircularQueue:
     deQueue() return True
     enQueue(4) return True
     Rear() return 4
+
+    T=O(1) for all operations, S=O(n)
     """
 
     def __init__(self, k: int):
@@ -46,8 +48,8 @@ class MyCircularQueue:
         if self.isEmpty():
             self.rear = self.front = n
         else:
-            self.rear.next = n      
-            self.rear = n
+            self.rear.next = n # link the end node to the next 
+            self.rear = n # n is the current rear
         
         self.rear.next = self.front # circle back
         self.size += 1
@@ -59,18 +61,16 @@ class MyCircularQueue:
         Deletes an element from the circular queue. 
         Return true if the operation is successful.
         """
-        if self.size == 0:
+        if self.isEmpty():
             return False
 
-        if self.size == 1:
-            self.front = self.rear = None
-            self.size = 0
-        else:
-            self.front = self.front.next
-            self.rear.next = self.front
-            self.size -= 1
+        # remove the front because it is FIFO
+        self.front = self.front.next
+        self.size -= 1
 
-        return True      
+        # No changes to the rear
+
+        return True  
 
     def Front(self) -> int:
         """
