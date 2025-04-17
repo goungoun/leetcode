@@ -48,8 +48,8 @@ class MyCircularQueue:
         if self.isEmpty():
             self.rear = self.front = n
         else:
-            self.rear.next = n # link the end node to the next 
-            self.rear = n # n is the current rear
+            self.rear.next = n # link the end node and the new node 
+            self.rear = n # the new node becomes the rear
         
         self.rear.next = self.front # circle back
         self.size += 1
