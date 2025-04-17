@@ -8,7 +8,12 @@ class ListNode:
 
 class MyCircularQueue:
     """
-    Design circular queue
+    Design circular queue (aka. Ring Buffer)
+    1) It is a queue : FIFO (First In First Out)
+    2) It is a cicle: The last is connected to the first
+
+    * attributes: front, rear, capacity, size
+    * operations: enQueue, deQueue, (get)Front, (get)Rear, isEmpty, isFull
     """
 
     def __init__(self, k: int):
