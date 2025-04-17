@@ -66,9 +66,9 @@ class MyCircularQueue:
 
         # remove the front because it is FIFO
         self.front = self.front.next
-        self.size -= 1
 
-        # No changes to the rear
+        self.rear.next = self.front # circle back 
+        self.size -= 1
 
         return True  
 
