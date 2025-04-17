@@ -14,6 +14,18 @@ class MyCircularQueue:
 
     * attributes: front, rear, capacity, size
     * operations: enQueue, deQueue, (get)Front, (get)Rear, isEmpty, isFull
+
+    Example 1: capacity=3
+    isEmpty() return True
+    enQueue(1) return True <- Front
+    enQueue(2) return True
+    enQueue(3) return True <- Rear
+    enQueue(4) return False // above the capaicty, just return False
+    Rear() return 3
+    isFull() return True
+    deQueue() return True
+    enQueue(4) return True
+    Rear() return 4
     """
 
     def __init__(self, k: int):
