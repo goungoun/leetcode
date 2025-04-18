@@ -27,13 +27,17 @@ class MyCircularQueue:
     enQueue(4) return True
     Rear() return 4
 
-    T=O(1) for all operations, S=O(n)
+    T=O(1) for all operations, beats 79.43
+    S=O(n) for a single linked list, beats 10.88
     """
 
     def __init__(self, k: int):
         self.capacity = k
         self.front = self.rear = None
-        self.size = 0
+        self.length = 0
+
+    def __len__(self):
+        return self.length
 
     def enQueue(self, value: int) -> bool:
         """
@@ -52,7 +56,7 @@ class MyCircularQueue:
             self.rear = n # the new node becomes the rear
         
         self.rear.next = self.front # circle back
-        self.size += 1
+        self.length += 1
 
         return True
 
@@ -68,7 +72,7 @@ class MyCircularQueue:
         self.front = self.front.next
 
         self.rear.next = self.front # circle back 
-        self.size -= 1
+        self.length -= 1
 
         return True  
 
@@ -93,8 +97,8 @@ class MyCircularQueue:
         return self.rear.val
 
     def isEmpty(self) -> bool:
-        return self.size == 0
+        return self.length == 0
 
     def isFull(self) -> bool:
-        return self.size == self.capacity
+        return self.length == self.capacity
         
