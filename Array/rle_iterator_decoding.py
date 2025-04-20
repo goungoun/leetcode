@@ -17,10 +17,10 @@ class RLEIterator:
 
     Approach:
     Create a sequence and put in a queue
-    Whenevere next(n) is called, pop left   
+    Whenevere next(n) is called, pop left
     """
     def __init__(self, encoding: List[int]):
-        self.seq = deque([])
+        self.decoding = deque([])
         len_encoding = len(encoding)
 
         i = 0
@@ -28,23 +28,25 @@ class RLEIterator:
             cnt = encoding[i]
             val = encoding[i+1]
             if cnt > 0:
-                self.seq.append([val, cnt])
+                self.decoding.append([val, cnt])
             i += 2
 
     def next(self, n: int) -> int:
         val = -1
         while n > 0:
-            if not self.seq:
+            if not self.decoding:
                 return -1
 
-            val, cnt = self.seq[0]
-            self.seq[0][1] -= n
-            if self.seq[0][1] <= 0:
-                self.seq.popleft()
+            val, cnt = self.decoding[0]
+            self.decoding[0][1] -= n
+            if self.decoding[0][1] <= 0:
+                self.decoding.popleft()
             n -= cnt
             
         return val
-        
+
+# To solve this problem, we do not need to decode the encoding
+# See also: rle_iterator.py
 
 
 # Your RLEIterator object will be instantiated and called as such:
