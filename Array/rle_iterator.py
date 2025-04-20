@@ -1,4 +1,4 @@
-# 900. RLE Iterator
+# 900. RLE Iterator (Medium)
 # https://leetcode.com/problems/rle-iterator
 
 from typing import List
