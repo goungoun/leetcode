@@ -233,6 +233,8 @@ except Exception as e:
 173 yield from self._inorder(node.left)
 173 yield node.val
 173 self.nxt = next(self.iter, None) # next(iterator[, default])
+
+1286 self.iter = itertools.combinations(characters, combinationLength)
 ```
 
 ### Not
