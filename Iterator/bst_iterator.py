@@ -32,8 +32,8 @@ class BSTIterator:
         
     def hasNext(self) -> bool:
         """
-        Check the existence a number in the traversal to the right
-        Returns True/False 
+        Check a number existence in the traversal to the right
+        Returns True/False
         """
         return self.nxt is not None
         
