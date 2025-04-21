@@ -228,7 +228,7 @@ except Exception as e:
 209 min_length = min(min_length, r-l+1)
 ```
 
-## Iterator
+### Iterator
 ```python
 173 yield from self._inorder(node.left)
 173 yield node.val
