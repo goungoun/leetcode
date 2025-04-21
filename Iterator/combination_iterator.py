@@ -4,6 +4,15 @@
 from itertools import combinations
 
 class CombinationIterator:
+    """
+    Design combination iterators
+
+    * operations: next, hasNext
+
+    Approach: use itertools.combinations
+    >>> list(combinations("abc",2))
+    [('a', 'b'), ('a', 'c'), ('b', 'c')]
+    """
     def __init__(self, characters: str, combinationLength: int):
         self.iter = combinations(characters, combinationLength)
         self.nxt = next(self.iter, None)
