@@ -281,19 +281,19 @@ True
 380 idx = random.randint(0, len(self.dummy)-1)
 ```
 
-## Thresholds
+### Thresholds
 ```python
 200 Stack overvlow limit in leetcode is 998
 1051 For arrays of size 63 or less, Tim sort uses insertion sort.
 ```
 
-## Cache
+### Cache
 ```python
 77 from functools import lru_cache
 77 @lru_cache(None)
 ```
 
-## Class
+### Class
 ### Magic Method
 ```python
 1046 __init__(self)
