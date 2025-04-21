@@ -228,6 +228,13 @@ except Exception as e:
 209 min_length = min(min_length, r-l+1)
 ```
 
+## Iterator
+```python
+173 yield from self._inorder(node.left)
+173 yield node.val
+173 self.nxt = next(self.iter, None) # next(iterator[, default])
+```
+
 ### Not
 ```python
 207 if not prerequisites: # if prerequisites is None or len(prerequisites) == 0:
