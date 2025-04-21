@@ -11,7 +11,7 @@ class BSTIterator:
 
     def __init__(self, root: Optional[TreeNode]):
         self.iter = self._inorder(root)
-        self.nxt = next(self.iter, None)
+        self.nxt = next(self.iter, None) # next(iterator[, default]): Default value None instead of exception
     
     def _inorder(self, node: Optional[TreeNode]) -> Generator[int, None, None]:
         """
