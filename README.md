@@ -302,6 +302,14 @@ True
 1046 __len__(self)
 ```
 
+### Time
+```python
+import time
+start = time.time()
+end = time.time()
+print(f"elapsed time: {end-start:.5f} sec")
+```
+
 ## Errors
 ### RecursionError
 RecursionError: maximum recursion depth exceeded in comparison
