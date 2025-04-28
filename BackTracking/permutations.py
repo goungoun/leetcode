@@ -4,7 +4,7 @@
 class Solution:
     def permute(self, nums: List[int]) -> List[List[int]]:
         """
-        List up the possible permutation using nums
+        Generate permutations from the given array nums
         return permutations
         
         Example 1:
@@ -17,11 +17,11 @@ class Solution:
 
         Example 3:
         nums = [1,2,3]
-        L1           [1]            [2]            [3]
-        L2        [1,2] [1,3]    [2,1] [2,3]    [3,1] [3,2]
-        L3   [1,2,3]    [1,3,2] [2,1,3][2,3,1] [3,1,2] [3,2,1]
+        i=0:         [1]          [2]             [3]
+        i=1:   [1,2]  [1,3]    [2,1] [2,3]     [3,1] [3,2]
+        i=2: [1,2,3] [1,3,2]  [2,1,3] [2,3,1] [3,1,2] [3,2,1]
 
-        return [[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+        return [[1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1]]
 
         Approach:
         Pick one of the nums and add it to a tmp list
@@ -56,10 +56,4 @@ class Solution:
 
         return permutations
 
-    def permute_bak(self, nums: List[int]) -> List[List[int]]:
-        """
-        The built-in python function returns a list of tuples, it also pass the test cases.
-        return [(1, 2, 3), (1, 3, 2), (2, 1, 3), (2, 3, 1), (3, 1, 2), (3, 2, 1)]
-        """
-        from itertools import permutations
-        return list(permutations(nums))
+# See also: ./Iterator/permutations.py
