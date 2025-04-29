@@ -29,7 +29,7 @@ class Solution:
         If tmp is filled with all numbers, append it to the result list
         Go back where it was and remove the value to prepare next iteration
 
-        T=O(n!), S=O(n*n!)
+        T=O(n*n!), S=O(n*n!)
         """
         if not nums:
             return []
