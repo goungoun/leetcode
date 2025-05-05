@@ -17,9 +17,6 @@ class Solution:
 
         return 2
 
-        Exampel 2: k = 5
-        nums = [0,0,1,1,1,2,2,3,3,4]
-
         Approach: Two pointers
         One index i from the start to end
         The other j is to place the value
