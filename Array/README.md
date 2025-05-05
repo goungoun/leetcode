@@ -1,9 +1,10 @@
-# Practice Orders
+## Practice Orders
 ~~~
 26. Remove Duplicates from Sorted Array
 80. Remove Duplicates from Sorted Array II
 ~~~
 
+## Syntax Cheatsheet
 ### Slice assignment
 Slice assignment selects a specific portion of the list and replaces it with new values, directly modifying the original list object.
 ```python3
