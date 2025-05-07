@@ -4,38 +4,46 @@
 class Solution:
     def twoSum(self, nums: List[int], target: int) -> List[int]:
         """
-        Find two numbers in nums such that they add up to target.
-        return [i, j]
+        Find out two numbers that the sum of them becomes the target
+        return idxs # [idx1, idx2]
 
-        Example:
+        * do not use the same element twice
+
+        Example 1:
         nums = [2,7,11,15], target = 9
+        nums[0] + nums[1] = 2 + 7 = 9
         return [0,1]
+
+        Example 2:
+        nums = [3,2,4], target = 6
+        nums[1] + nums[2] = 2 + 4 = 6
+
+        return [1,2]
+
+        Example 3:
+        nums = [3,3], target = 6
+        nums[0] + nums[1] = 3 + 3 = 6
+
+        return [0,1] # [0,0] or [1,1] cannot be the answer
         
         Approach:
         Buliding dictionary and search number within the same for loop. - well known approach!
         T=O(n), S=O(n)
         """
-        d = {} # key=num, value=index
+        if not nums:
+            return []
+            
+        # d = {num:i for i, num in enumerate(nums)} # key: nums, values: index
+        # This keeps the last occurrence of each number in the dictionary when a number appears multiple times
 
-        for i, num in enumerate(nums):
-            search = target - num
-            if search in d:
-                return [d[search], i]
-            else:
-                d[num] = i
-
-    def twoSum_bak(self, nums: List[int], target: int) -> List[int]:
-        """
-        Approach: 
-        This is easier approach to come up with easily from the beginning.
-        Two phases, build dictionary and use. 
-        T=O(n), S=O(n) - acceptable!
-        """
-        d = {num:i for i, num in enumerate(nums)} # key: nums, values: index
-
+        d = {}
+        
         for i, num in enumerate(nums):
             search = target - num
             if search in d and i != d[search]:
                 return [d[search], i]
+            d[num] = i
+
+        return []
 
 
