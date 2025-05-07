@@ -28,8 +28,8 @@ class Solution:
         
         Approach:
         Buliding dictionary and search number within the same for loop. - well known approach!
-        A pre-built dictionary keeps the last occurrence of each number when a number appears multiple times, which could result in unexpected result
-        Do not use d = {num:i for i, num in enumerate(nums)}. Move the set-up while searching the value
+        It is ok to pre-built dictionary such as d = {num:i for i, num in enumerate(nums)}
+        But, have in mind that it keeps the last occurrence by overwriting when the number appears multiple times
         
         T=O(n), S=O(n)
         """
@@ -41,7 +41,7 @@ class Solution:
         for i, num in enumerate(nums):
             search = target - num
             if search in d and i != d[search]:
-                return [d[search], i]
+                return [i, d[search]]
             d[num] = i
 
         return []
