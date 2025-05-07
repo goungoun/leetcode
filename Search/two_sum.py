@@ -41,7 +41,7 @@ class Solution:
         for i, num in enumerate(nums):
             search = target - num
             if search in d and i != d[search]:
-                return [i, d[search]]
+                return [d[search], i]
             d[num] = i
 
         return []
