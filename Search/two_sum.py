@@ -28,13 +28,13 @@ class Solution:
         
         Approach:
         Buliding dictionary and search number within the same for loop. - well known approach!
+        A pre-built dictionary keeps the last occurrence of each number when a number appears multiple times, which could result in unexpected result
+        So, move the set-up while searching the value
+        
         T=O(n), S=O(n)
         """
         if not nums:
             return []
-            
-        # d = {num:i for i, num in enumerate(nums)} # key: nums, values: index
-        # This keeps the last occurrence of each number in the dictionary when a number appears multiple times
 
         d = {}
         
