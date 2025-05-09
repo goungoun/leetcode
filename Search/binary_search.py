@@ -30,6 +30,8 @@ class Solution:
 
         nums = [5], target = 5
         return 5
+
+        T=O(log n), S=O(1)
         """
         if not nums or target is None:
             return -1
