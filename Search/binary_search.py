@@ -15,6 +15,13 @@ class Solution:
         
         Example: 
         nums = [-1,0,3,5,9,12], target = 9
+
+        
+        Index     0 1 2 3 4 5 
+        pointer         ^   ^
+        value    -1 0 3 5 9 12
+        target        ?   !
+        
         [-,-,-,-,9,12]
         l=0, r=5, mid=(0+5)//2=2 nums[mid]=3 < 9
         l=3, r=5, mid=(3+5)//2=4 nums[mid]=9 == 9
@@ -31,6 +38,13 @@ class Solution:
         nums = [5], target = 5
         return 5
 
+        Appraoch: Two pointer
+        Start l, r from the edges
+        While l <=r check the value in the middle (mid index)
+        If the value is more than the expected, decrease r
+        If the value is less than the expected, increase l 
+        If the value is equal to target return its value
+
         T=O(log n), S=O(1)
         """
         if not nums or target is None:
@@ -40,7 +54,7 @@ class Solution:
         r = len(nums) -1 
 
         # l < r vs l <=r : to handle the case of having length 1, = is required
-        while l <= r:
+        while l <= r: # add equal because of its value can be the target
             mid = l + (r - l)//2 # to prevent overflow (l + r)//2, especially in other languages
             
             if nums[mid] == target:
