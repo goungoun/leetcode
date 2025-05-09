@@ -15,6 +15,8 @@ class Solution:
         First, sort nums array list
         Fix one of the numbers and loop (@ Hint 1)
         Two-pointer approach is chosen inside of the loop
+
+        T=O(n**2), S=O(n**2) upperbound
         """
 
         nums.sort()
