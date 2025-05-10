@@ -4,12 +4,25 @@
 class Solution:
     def threeSum(self, nums: List[int]) -> List[List[int]]:
         """
-        Find a combination of numbers that makes sum to 0
-        return all the triplets, no duplicates allowed
+        Find three numbers that make zero sum
+        return [[val1, val2, val3], ..] # more than one result, do not return its index
+    
+        * i != j, i != k, and j != k
+        * nums[i] + nums[j] + nums[k] == 0
 
-        Example:
-        nums = [-1,0,1,2,-1,-4]
-        return [[-1,-1,2],[-1,0,1]]
+        Example 1:
+        nums = [-1,0,1,2,-1,-4], target = 0
+    
+        sort()
+        -4 -1 -1 0 1 2
+    
+        -4 => target=4 (x)
+        -1 => target=1 (0,1), (-1,2) 
+        0 => target = 0 (x)
+        1 => target = -1 (-1,0)
+        2 => target = -2 (x) index must not be duplicated
+    
+        return [[-1,0,1], [-1,-1,2]]
 
         Approach:
         First, sort nums array list
