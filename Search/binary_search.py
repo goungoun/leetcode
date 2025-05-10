@@ -8,10 +8,6 @@ class Solution:
         * nums are sorted in ascending order!
         
         return index (not its value) if target exists, otherwise -1
-
-        Approach: Two pointer
-        Update left or right to decrease its search scope by half
-        Take advantage of the fact that the elements in the array are sorted
         
         Example: 
         nums = [-1,0,3,5,9,12], target = 9
@@ -39,11 +35,8 @@ class Solution:
         return 5
 
         Appraoch: Two pointer
-        Start l, r from the edges
-        While l <=r check the value in the middle (mid index)
-        If the value is more than the expected, decrease r
-        If the value is less than the expected, increase l 
-        If the value is equal to target return its value
+        Update left or right to decrease its search scope by half
+        Take advantage of the fact that the elements in the array are sorted
 
         T=O(log n), S=O(1)
         """
