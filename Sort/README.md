@@ -1,12 +1,12 @@
 ## Practice Orders
 
-### Implement Sort Algorithm
+### Implement Algorithm
 ~~~
 1051. Height Checker
 210. Course Schedule II (Medium) # Graph, topological sort
 ~~~
 
-### sort method usage
+### Sort method usage
 ~~~
 1051. Height Checker
 15. 3Sum (Medium)
