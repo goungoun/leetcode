@@ -37,7 +37,8 @@
 from functools import reduce
 136 return reduce(lambda x, y: x ^ y, nums, 0)
 
-90 return list(map(list, ret)) # ret={(1, 2), (2,), (1,), (1, 2, 2), (2, 2), ()}
+90 return list(map(list, ret)) # ret = {(1, 2), (2,), (1,), (1, 2, 2), (2, 2), ()}
+15 return list(map(list, s)) # s = {(-1,0,1),(-2,1,1)}
 
 72 import numpy as np
 72 print(np.array(cost))
