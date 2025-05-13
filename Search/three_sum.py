@@ -50,4 +50,4 @@ class Solution:
                 else:
                     k -= 1
 
-        return list(s)
+        return list(map(list,s))
