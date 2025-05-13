@@ -37,7 +37,7 @@ class Solution:
 
         dfs(0)
 
-        print (f"ret={ret}")
+        # print (f"ret={ret}")
 
         return list(map(list, ret))
 
