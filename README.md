@@ -140,6 +140,8 @@ from functools import reduce
 2133 expected = {i for i in range(1, n+1)} # all the integers from 1 to n (inclusive)
 2133 expected = set(range(1,n+1)) 
 2133 set([1,2,3]) == set([3,2,1]) # True
+
+18 len(set([a,b,c,d])) == 4 # a,b,c,d are distinct
 ```
 
 ### Tuple
