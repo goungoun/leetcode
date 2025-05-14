@@ -1,8 +1,9 @@
 ## Practice Order
 ~~~
 1046. Last Stone Weight
-215. Kth Largest Element in an Array (Medium)
-347. Top K Frequent Elements (Medium)
+215. Kth Largest Element in an Array
+347. Top K Frequent Elements
+973. K Closest Points to Origin
 ~~~
 
 #### Graph (../Graph)
