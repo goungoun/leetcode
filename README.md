@@ -125,6 +125,8 @@ from functools import reduce
 
 ### Set
 ```python
+1 d = {num:i for i, num in enumerate(nums)}
+
 # add(), remove()
 3 while s[r] in dup_chk:
 3 dup_chk.remove(s[l])
