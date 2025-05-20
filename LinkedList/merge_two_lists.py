@@ -13,6 +13,25 @@
 #         self.val = val
 #         self.next = next
 class Solution:
+    """
+    Merge two sorted list
+    return head
+
+    Example 1:
+    list1 = [1,2,4], list2 = [1,3,4]
+
+    - 2 4
+    2 3 4
+
+    1->1->2->3->4->4
+
+    Approach:
+    Make one dummy node and also create the current point
+    Iterate one of the list list1 or list2 while picking up the smallest element
+    Connect small one to the next node
+    Repeat until one of the list is used up to the end
+    If necessary, link up the current point to the remained list
+    """
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
 
         dummy = ListNode()
