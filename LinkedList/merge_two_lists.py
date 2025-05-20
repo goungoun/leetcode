@@ -25,12 +25,14 @@ class Solution:
 
     1->1->2->3->4->4
 
-    Approach:
+    Approach: Do not create new nodes to save space. Reuse nodes and change the next pointer
     Make one dummy node and also create the current point
     Iterate one of the list list1 or list2 while picking up the smallest element
     Connect small one to the next node
     Repeat until one of the list is used up to the end
     If necessary, link up the current point to the remained list
+
+    T=O(n), S=O(1)
     """
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
 
