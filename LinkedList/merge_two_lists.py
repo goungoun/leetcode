@@ -31,6 +31,18 @@ class Solution:
     -     4
 
     1->1->2->3->4->4
+    
+    return head
+
+    Example 2: the lists are all empty
+    list1 = [], list2 = []
+
+    return None
+
+    Example 3: one of the lists is empty
+    list1 = [], list2 = [0]
+
+    return head (head of the list2)
 
     Approach: Do not create new nodes to save space. Reuse nodes and change the next pointer
     Make one dummy node and also create the current point
@@ -43,12 +55,20 @@ class Solution:
     T=O(m+n), S=O(1)
     """
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-
+        # Edge cases: Example 2 and Example 3
+        if not list1 and not list2:
+            return None
+        elif not list1:
+            return list2
+        elif not list2:
+            return list1
+            
         dummy = ListNode()
         curr = dummy
-
+        
         while list1 and list2:
-            if list1.val <= list2.val:
+            # non decreasing order
+            if list1.val <= list2.val: 
                 curr.next = list1
                 list1 = list1.next
             else:
@@ -56,10 +76,12 @@ class Solution:
                 list2 = list2.next
             curr = curr.next
 
+        # if the lists are not reaching to the end, it is not None
         if list1:
             curr.next = list1
 
         if list2:
             curr.next = list2
 
-        return dummy.next
+        head = dummy.next
+        return head
