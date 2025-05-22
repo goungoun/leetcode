@@ -24,7 +24,7 @@ class Solution:
 
         if idx1 >= 0:
             ret.extend(arr1[idx1:])
-        if idx2 >=0:
+        if idx2 >= 0:
             ret.extend(arr2[idx2:])
         
         return ret
