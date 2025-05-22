@@ -20,8 +20,15 @@ class Solution:
     Example 1:
     list1 = [1,2,4], list2 = [1,3,4]
 
-    - 2 4
-    2 3 4
+    -,-,-
+    -,-,4
+
+    (1,1) 1
+    (2,1) 1
+    (2,3) 2
+    (4,3) 3
+    (4,4) 4
+    -     4
 
     1->1->2->3->4->4
 
@@ -29,10 +36,11 @@ class Solution:
     Make one dummy node and also create the current point
     Iterate one of the list list1 or list2 while picking up the smallest element
     Connect small one to the next node
+    Make sure to move curr, list1 or list 2.
     Repeat until one of the list is used up to the end
     If necessary, link up the current point to the remained list
 
-    T=O(n), S=O(1)
+    T=O(m+n), S=O(1)
     """
     def mergeTwoLists(self, list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
 
