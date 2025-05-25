@@ -14,8 +14,10 @@
 #         self.next = next
 class Solution:
     """
-    Merge two sorted list
+    Merge two sorted list into one sorted list by splicing together
     return head
+
+    * splicing: cut and link
 
     Example 1:
     list1 = [1,2,4], list2 = [1,3,4]
@@ -24,13 +26,15 @@ class Solution:
     -,-,4
 
     (1,1) 1
-    (2,1) 1
-    (2,3) 2
-    (4,3) 3
-    (4,4) 4
-    -     4
+    (2,1) 1->1
+    (2,3) 1->1->2
+    (4,3) 1->1->2->3
+    (4,4) 1->1->2->3->4
+    -     1->1->2->3->4->4
 
     1->1->2->3->4->4
+    ^
+    (head)
     
     return head
 
