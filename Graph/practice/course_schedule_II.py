@@ -1,7 +1,7 @@
 # 210. Course Schedule II
 # https://leetcode.com/problems/course-schedule-ii
 
-# Warning!!!!! It does not pass the test case. Need to deal with a cycle detection 
+# Warning!!!!! It does not pass the test case. Need to deal with a cycle detection or consider to apply Khan's algorithm (BFS)
 # numCourses = 2, prerequisites = [[0,1],[1,0]]
 # output [1,0]
 # expected []
