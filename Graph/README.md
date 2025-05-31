@@ -7,7 +7,7 @@
 
 ~~~
 207. Course Schedule (Medium)
-210. Course Schedule II (Medium)
+210. Course Schedule II (Medium) # Kahn's algorithm
 ~~~
 
 ~~~
