@@ -3,6 +3,8 @@
 
 # This code does not pass the cycle case
 # prerequisites = [[1,0],[1,2],[0,1]], numCourses = 3
+# wrong outcome = [2]
+# expected = []
 
 from collections import defaultdict, deque
 class Solution:
@@ -32,6 +34,8 @@ class Solution:
             return []
 
         taken = set()
+        # print (f"q={q}") # Check This: The cycle 0 <-> 1 does not allow the course in the queue
+        
         while q:
             pre = q.popleft()
             taken.add(pre)
