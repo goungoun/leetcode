@@ -15,10 +15,11 @@ class Solution:
 
         g = defaultdict(list)
 
-        # to take the course, must take other prep courses
+        # build incoming graph
         for course, prep in prerequisites:
             g[course].append(prep)
 
+        # dfs
         def can_finish(course):
             if course in taken:
                 return
