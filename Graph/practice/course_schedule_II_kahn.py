@@ -34,9 +34,9 @@ class Solution:
             return []
 
         taken = set()
-        # print (f"q={q}") # Check This: The cycle 0 <-> 1 does not allow the course in the queue
-        
+             
         while q:
+            # print (f"q={q}") # Check This: The cycle 0 <-> 1 does not allow the course in the queue
             pre = q.popleft()
             taken.add(pre)
             course_order.append(pre)
