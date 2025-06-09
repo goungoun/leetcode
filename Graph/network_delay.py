@@ -2,6 +2,7 @@
 # https://leetcode.com/problems/network-delay-time
 
 from collections import defaultdict
+from heapq import heappush, heappop
 
 class Solution:
     """
