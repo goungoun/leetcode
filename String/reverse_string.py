@@ -21,14 +21,21 @@ class Solution:
         Input: s = ["H","a","n","n","a","h"]
         s = ["h","a","n","n","a","H"] 
         if chars are the same, do not need to swap
+
+        T=O(n), S=O(1)
         """
+        if not s:
+            return
 
         l = 0
         r = len(s) -1
 
         while l < r:
             if s[l] != s[r]:
-                s[l], s[r] = s[r], s[l]
+                s[l], s[r] = s[r], s[l] # String is immutable, but s is given as an array of char
             l += 1
             r -= 1
-        
+
+        return
+
+            
