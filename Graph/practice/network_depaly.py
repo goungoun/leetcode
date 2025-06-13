@@ -17,7 +17,7 @@ class Solution:
             g[departure].append((arrival, interval))
 
         group = set()
-        h = [(0, k)] # (arrival_time, curr_node)
+        h = [(?, ?)] # The order is important to pick up the fastest path fisrt!!!
         min_delay = 0
 
         while h and len(group) < n:
