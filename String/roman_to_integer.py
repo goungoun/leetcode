@@ -4,7 +4,8 @@
 class Solution:
     def romanToInt(self, s: str) -> int:
         """
-        return original_number
+        Convert roman numerals to an original integer value
+        return number
 
         Example 1: value decreasing case
         II -> 2
@@ -25,9 +26,10 @@ class Solution:
 
         Appraoch:
         Define a dictionary to map symbol and value
-        For each letter, compare its number with the next one
-        If it is increasing minus the current value
-        If it is decreasing add he current value
+        Ideas to cover the edge cases:
+        - Add more symbols IV, IX, XL, XC, CD, CM into the dictionary
+        - Rule based conditions for each I, X, C
+        - Simply check if the value is increasing or not (v)
         """
         if not s:
             return 0
@@ -48,8 +50,8 @@ class Solution:
 
         for i, symbol in enumerate(s):
             if (i+1) < len_s and d.get(symbol) < d.get(s[i+1]):
-                num -= d[symbol]
+                num -= d[symbol] # value increasing edge case
             else:
-                num += d[symbol]
+                num += d[symbol] # generally value decreasing case
 
         return num
