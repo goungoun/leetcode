@@ -11,8 +11,17 @@ class Solution:
         II -> 2
         XII -> 10 + 1 + 1 = 12
         XXVII -> 10 + 10 + 5 + 1 + 1 = 27
+
+        s = "LVIII"
+
+        L:50, V:5, I: 1 
+        50 > 5 > 1 = 1 = 1
+    
+        50 + 5 + 1 + 1 + 1 = 58
+    
+        return 58
         
-        Example 2: value increasing case
+        Example 2: value decreasing, but partially increasing case
         IV(4), IX(9), XL(40), XC(90), CD(400), CM(900)
 
         IV -> 1 + 5 != 6
@@ -23,6 +32,17 @@ class Solution:
         
         CD -> 100 + 500 != 600
         CD -> -100 + 50 = 50 
+
+        s = "MCMXCIV"
+
+        M: 1000, C: 100, X: 10, C:100, I: 1, V:5
+    
+        M CM XC IV
+        1000 > 900 > 90 > 4
+    
+        1000 + 900 + 90 + 4 = 1994
+    
+        return 1994
 
         Appraoch:
         Define a dictionary to map symbol and value
@@ -56,3 +76,5 @@ class Solution:
                 num += d[symbol] # generally value decreasing case
 
         return num
+
+# https://github.com/goungoun/leetcode/issues/83
