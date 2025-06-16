@@ -30,6 +30,7 @@ class Solution:
         - Add more symbols IV, IX, XL, XC, CD, CM into the dictionary
         - Rule based conditions for each I, X, C
         - Simply check if the value is increasing or not (v)
+        Applied the last idea because it is flexible enough to handle possibly unspecified combinations of new characters
         """
         if not s:
             return 0
