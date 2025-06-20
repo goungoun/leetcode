@@ -31,10 +31,8 @@ class Solution:
         """
         if not num or not isinstance(num, int):
             return ""       
-        
-        d = {1:'I', 5:'V', 10:'X', 50:'L', 100:'C', 500: 'D', 1000:'M',
-            4:'IV', 9: 'IX', 40: 'XL',90: 'XC', 400: 'CD', 900: 'CM'}
-        
+
+        # Step 1. decompose
         decompose = [] 
         weight = 1
 
@@ -48,6 +46,10 @@ class Solution:
                 decompose.append((value, weight))
             weight *= 10
 
+        # Step 2. get symbols from a dictionary
+        d = {1:'I', 5:'V', 10:'X', 50:'L', 100:'C', 500: 'D', 1000:'M',
+            4:'IV', 9: 'IX', 40: 'XL',90: 'XC', 400: 'CD', 900: 'CM'}
+
         n = len(decompose)
         res = []
 
@@ -60,3 +62,4 @@ class Solution:
             res.append(symbol)
 
         return "".join(res)
+
