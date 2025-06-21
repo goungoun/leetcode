@@ -25,7 +25,7 @@ class Solution:
 
     Approach:
     First decompose decimal place value into each digit and its place value
-    If the value is more than 5 and less than 9, decompose one more time
+    If the digit is more than 5 and less than 9, decompose one more time
     Find the right character from the value-symbol map and repeat
     """
     def intToRoman(self, num: int) -> str:
