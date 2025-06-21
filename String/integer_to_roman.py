@@ -3,7 +3,7 @@
 
 class Solution:
     """
-    Convert given num to a Roman String
+    Convert a decimal place value into a Roman numeral
     return roman_string
 
     Example 1:
@@ -24,31 +24,31 @@ class Solution:
     return "LVIII"
 
     Approach:
-    First decompose numbers into each number and the weight
+    First decompose decimal place value into each digit and its place value
     If the value is more than 5 and less than 9, decompose one more time
     Find the right character from the value-symbol map and repeat
     """
     def intToRoman(self, num: int) -> str:
-        if not num:
-            return ""
+        if not num or not 1 <= num <= 3999:
+            raise ValueError("Valid range: 1 <= num <= 3999, num={num}")
 
         ret = []
-        weight = 1
-
+        
         d = {1:"I", 5:"V", 10:"X", 50:"L", 100:"C", 500:"D", 1000:"M",
             4: "IV", 9:"IX", 40:"XL", 90:"XC", 400: "CD", 900: "CM"}
 
+        place = 1
         while num > 0:
-            num, value = divmod(num, 10)
-            if value in [4,9]:
-                ret.append(d.get(weight*value))
-            elif value >=5 and value < 10: # 700 = 500 *1  + 100*2
-                ret.append(d[weight]*(value-5))
-                ret.append(d[5*weight])     
+            num, digit = divmod(num, 10) # digit range: 0 ~ 9
+            if digit in [4,9]:
+                ret.append(d.get(place*digit))
+            elif digit >=5 and digit < 10: # e.g 700 = 500 *1 + 100*2
+                ret.append(d[place]*(digit-5))
+                ret.append(d[5*place])
             else:
-                ret.append(d.get(weight)*value)
+                ret.append(d.get(place)*digit)
             
-            weight *= 10
+            place *= 10
 
         return "".join(reversed(ret))
 
