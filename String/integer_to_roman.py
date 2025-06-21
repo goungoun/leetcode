@@ -29,7 +29,6 @@ class Solution:
     Find the right character from the value-symbol map and repeat
     """
     def intToRoman(self, num: int) -> str:
-
         if not num:
             return ""
 
