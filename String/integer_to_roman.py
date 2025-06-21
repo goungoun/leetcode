@@ -41,13 +41,13 @@ class Solution:
         while num > 0:
             num, digit = divmod(num, 10) # digit range: 0 ~ 9
             if digit in [4,9]:
-                ret.append(d.get(place*digit))
+                symbol = d[place*digit]
             elif digit >=5 and digit < 10: # e.g 700 = 500 *1 + 100*2
-                ret.append(d[place]*(digit-5))
-                ret.append(d[5*place])
+                symbol = d[5*place] + d[place]*(digit-5)
             else:
-                ret.append(d.get(place)*digit)
-            
+                symbol = d[place]*digit
+
+            ret.append(symbol)          
             place *= 10
 
         return "".join(reversed(ret))
