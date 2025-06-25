@@ -194,6 +194,7 @@ from functools import reduce
 704 while l <= r:
 215 for _ in range(k):
 509 for i in range(1, n): # n=1: range(1,1) does not loop
+204 for j in range(i + i, n, i): # multiples
 1971 for u,v in edges:
 1051 return sum(1 for i in range(n) if heights[i]!=expected[i])
 
