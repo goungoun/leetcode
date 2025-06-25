@@ -1,4 +1,4 @@
-# 204. Count Primes
+# 204. Count Primes (Medium)
 # https://leetcode.com/problems/count-primes/
 
 class Solution:
@@ -14,7 +14,7 @@ class Solution:
     Remained numbers are prime numbers 
     """
     def countPrimes(self, n: int) -> int:
-        if n == 0 or n == 1:
+        if not n or n < 2:
             return 0
 
         # set all element to True, potentially they are prime number
