@@ -17,16 +17,17 @@ class Solution:
         Approach: bottom-up DP
         replace array S=O(n) to variables S=O(1) if all the spaces are not required.      
         """
-        if not n or n < 0:
-            return 0
-        
-        pprv, prv, curr = 0, 1, 1
+        if n <= 1:
+            return n
 
-        for i in range(1, n): # Hint: if n=1, range(1,1) does not loop
+        pprv, prv = 0, 1
+        curr = 0
+
+        for i in range(2, n+1):
             curr = pprv + prv
             pprv = prv
             prv = curr
-            
+
         return curr
 
     def fib_dp(self, n: int) -> int:
