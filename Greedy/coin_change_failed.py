@@ -14,7 +14,7 @@ class Solution:
         500 * 1 +  100 * 3 = 800
         return 4
         """
-        if not coins:
+        if not coins or not amount:
             return 0
 
         coins.sort(reverse=True)
