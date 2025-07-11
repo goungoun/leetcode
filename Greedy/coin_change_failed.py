@@ -15,7 +15,7 @@ class Solution:
         return 4
         """
         if not coins or not amount:
-            return 0
+            return -1
 
         coins.sort(reverse=True)
 
