@@ -13,10 +13,9 @@ class Solution:
         amount = 800
         500 * 1 +  100 * 3 = 800
         return 4
+
+        # T=O(n), S=O(1)
         """
-        if not amount:
-            return 0
-        
         if not coins:
             return -1
 
@@ -24,16 +23,12 @@ class Solution:
 
         cnt_coins = 0
         
-        # T=O(n), S=O(1)
         for coin in coins:
             while coin <= amount and amount > 0:
                 amount -= coin
                 cnt_coins += 1
-
-        if amount > 0:
-            return -1 
         
-        return cnt_coins
+        return cnt_coins if amount == 0 else -1
 
 # 51 / 189 testcases passed
 # Failed case : coins = [186,419,83,408]
