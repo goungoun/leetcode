@@ -6,7 +6,7 @@ class Solution:
     Maximize money without visiting adjacent houses
     return max_money
 
-    * nums[i] = max(nums[i-2]+nums[i], nums[i-1])
+    * curr = max(pprv+amount, prv)
 
     Approach: bottom up dp
     """
@@ -14,12 +14,9 @@ class Solution:
         if not nums:
             return 0
 
-        prv = 0
-        pprv = 0
+        prv, curr = 0
 
         for amount in nums:
-            curr = max(pprv+amount, prv)
-            pprv = prv
-            prv = curr
+            prv, curr = curr, max(prv+amount, curr)
 
-        return prv
+        return curr
