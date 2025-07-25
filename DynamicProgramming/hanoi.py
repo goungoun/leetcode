@@ -46,6 +46,35 @@ class Solution:
 
 """
 * Dry run to imagine the excution order is actually not easier than the algorithm design if n is more than 3.
+Thought process should like this, group 1 is 3 and the group 2 is the other, 1 and 2.
+
+1
+2
+3
+-- -- --
+S  E  T
+
+The recursive call don't move 1 and 2 at once, move one disk per one call 
+
+      1
+3     2
+-- -- --
+S  E  T
+
+Moving 3 from S to E does not require recursive call. It is just easy. 
+      1
+   3  2 
+-- -- --
+S  E  T
+
+The recursive call don't move 1 and 2 at once, move one disk per one call
+   1
+   2
+   3   
+-- -- --
+S  E  T
+
+
 
 s = Solution()
 
