@@ -42,7 +42,7 @@ class Solution:
             return 0
 
         curr_sum = 0
-        max_sum = float('-inf')
+        max_sum = float('-inf') # do not initialize 0 to cover example 2: all negative values
 
         for num in nums:
             curr_sum += num
@@ -50,6 +50,7 @@ class Solution:
 
             if curr_sum < 0:              
                 curr_sum = 0
+            # You might think moving max_sum in the else block for efficienty, but max_sum should be updated when the current_sum is negative 
 
         return max_sum
 
