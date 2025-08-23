@@ -1,68 +1,66 @@
-# 6. Zigzag Conversion
+# 6. Zigzag Conversion (Medium)
 # https://leetcode.com/problems/zigzag-conversion
 
 class Solution:
+    """
+    Convert the given string s to a zigzag pattern
+    return str_converted
+
+    Example:
+    s = "PAY", numRows = 3
+    P
+    A
+    Y
+
+    return "PAY"
+
+    s = "PAYPAL", numRows = 3
+    P     A
+    A  P  L
+    Y
+
+    return "PAAPLY"
+
+    s = "PAYPALISHIRING", numRows = 3
+    P   A   H   N
+    A P L S I I G
+    Y   I   R
+
+    return "PAHNAPLSIIGYIR"
+
+    Approach:
+    Use True/False flag to decide its direction Up and Down
+    """
     def convert(self, s: str, numRows: int) -> str:
-        """
-        Read a string and convert it with a zigzag pattern
+        if not s or not numRows:
+            return 
 
-        Example:
-        s = "PAY", numRows = 3
-        P
-        A
-        Y
+        tmpSpace = [[] for _ in range(numRows)]
 
-        return "PAY"
-
-        s = "PAYPAL", numRows = 3
-        P     A
-        A  P  L
-        Y
-
-        return "PAAPLY"
-
-        s = "PAYPALISHIRING", numRows = 3
-        P   A   H   N
-        A P L S I I G
-        Y   I   R
-
-        return "PAHNAPLSIIGYIR"
-
-        Approach:
-        Use True/False flag to decide its direction Up and Down
-        Change the direction around the top (first row) and the bottom (last row)
-        Used dictionary instead of 2-D array initialization as it will going be sparse
-        """
-        if s is None or len(s) <= 1 or numRows == 1:
-            return s
-        
-        d = {} # key: (row,col), value: char
         is_down = True
-        
-        row, col = -1, 0
+
+        row, col = 0, 0
         max_row, max_col = 0, 0
 
-        # T=O(n), S=O(n)
-        for c in s:
-            if is_down:
-                row += 1
-                max_row = max(row, max_row)
-            else:
-                row -= 1
-                col += 1
-                max_col = max(col, max_col)
+        for token in s:
+            tmpSpace[row].append(token)
 
-            d[(row, col)] = c
-
-            if row == numRows - 1:
+            if row == numRows -1:
                 is_down = False
             elif row == 0:
                 is_down = True
 
+            if is_down:
+                row += 1
+            else:
+                row -= 1
+                row = max(0, row)
+                col += 1
+
         ret = []
-        for i in range(max_row+1):
-            for j in range(max_col+1):
-                if (i,j) in d:
-                    ret.append(d[(i,j)])
+
+        for r in tmpSpace:
+            ret.append("".join(r))
 
         return "".join(ret)
+
