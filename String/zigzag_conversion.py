@@ -38,7 +38,7 @@ class Solution:
         tmpSpace = [[] for _ in range(numRows)]
 
         is_down = True
-        row, col = 0, 0
+        row = 0
 
         for token in s:
             tmpSpace[row].append(token)
@@ -53,7 +53,6 @@ class Solution:
             else:
                 row -= 1
                 row = max(0, row)
-                col += 1
 
         ret = []
 
@@ -61,4 +60,3 @@ class Solution:
             ret.append("".join(r))
 
         return "".join(ret)
-
