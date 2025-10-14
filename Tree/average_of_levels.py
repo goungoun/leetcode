@@ -62,7 +62,7 @@ class Solution:
                 node_val = node.val if node.val else 0
                 level_sum += node_val
 
-                # all children belongs to the node to be ready on the queue
+                # all children belong to the node to be ready on the queue
                 if node.left:
                     q.append(node.left)
                     
