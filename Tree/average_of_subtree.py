@@ -31,9 +31,9 @@ class Solution:
         return 5
 
         Approach: DFS
-        To calculate average of nodes, track two variable sum_vals and cnt_nodes for each nodes
-        If there is no such left or right child, sum_val is the node.val itself and the node count is 1
-        If there is a left or right child, recursive call to add the the sum and count of "subtrees"
+        To calculate the average of nodes, track two variables, sum_vals and cnt_nodes for each node.
+        If there is no such left or right child, sum_val is the node.val itself and the node count is 1.
+        If there is a left or right child, recursive call to add the sum and count of "subtrees".
         """
 
         if root is None:
