@@ -58,7 +58,7 @@ class Solution:
             level_cnt = len(q)
             
             for _ in range(level_cnt): 
-                node = q.popleft()
+                node = q.popleft() # Queue: <-popleft-[deque]<-append-
                 node_val = node.val if node.val else 0
                 level_sum += node_val
 
