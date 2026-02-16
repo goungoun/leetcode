@@ -11,17 +11,25 @@ class Solution:
     Example 1: Can finish
     numCourses = 2, prerequisites = [[1,0]]
 
-    1 -> 0
+    1 <- 0
 
     return [0, 1]
+
+    * debug
+    {0: [1]}
+    in_degree:[0, 1]
 
     Example 2: Can finish
     numCourses = 4, prerequisites = [[1,0],[2,0],[3,1],[3,2]]
 
-    - 3 -> 1 -> 0 <- 2 <- 3 -
+    - 3 <- 1 <- 0 - 2 -> 3 -
     0, (1,2), 3
     
     return [0,1,2,3] (or [0,2,1,3])
+
+    * debug
+    {0: [1, 2], 1: [3], 2: [3]})
+    in_degree:[0, 1, 1, 2]
 
     Example 3: Cannot finish
     numCourses = 4, prerequisites = [[5,6],[6,7],[7,5]]
