@@ -47,7 +47,7 @@ from functools import reduce
  [2 0 0 0 0 0]
  [3 0 0 0 0 0]]
 
-reversed(l) # just a iterator, it does not change the list
+reversed(l) # just an iterator, it does not change the list
 ```
 
 ### Stack
